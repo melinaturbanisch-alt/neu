@@ -78,36 +78,41 @@ MARGIN = 40
 LOGO_HALF = LOGO_W / 2
 LINE_Y = (16, H - 16)
 
-for name, v in VARIANTS.items():
-    d1, w1 = text_path(v["font"], "MELVONA", v["cap"], v["tracking"])
-    d2, w2 = text_path(v["font"], "MARKETING", v["cap"], v["tracking"])
-    base = CY + v["cap"] / 2
-    left_area = (MARGIN, CX - LOGO_HALF - GAP / 2)
-    right_area = (CX + LOGO_HALF + GAP / 2, W - MARGIN)
-    x1 = (left_area[0] + left_area[1]) / 2 - w1 / 2
-    x2 = (right_area[0] + right_area[1]) / 2 - w2 / 2
-    assert x1 >= MARGIN and x2 + w2 <= W - MARGIN, (name, x1, x2 + w2)
-    stops = "".join(f'<stop offset="{o}" stop-color="{c}"/>' for o, c in COPPER_STOPS)
-    defs = (f'<defs><linearGradient id="kupfer" gradientUnits="userSpaceOnUse" '
-            f'x1="0" y1="{base - v["cap"]:.2f}" x2="0" y2="{base:.2f}">{stops}</linearGradient></defs>')
-    for mode, bg in (("mit-balken", f'<rect id="BALKEN" width="{W}" height="{H}" fill="{BLACK}"/>'),
-                     ("ohne-balken", "")):
-        svg = f'''<?xml version="1.0" encoding="UTF-8"?>
-<!-- MELVONA MARKETING Frontscheibe | 1100 x 300 mm | {name} ({v["label"]}) | {mode} -->
-<svg xmlns="http://www.w3.org/2000/svg" width="1100mm" height="300mm" viewBox="0 0 {W} {H}">
-  {defs}
-  {bg}
-  <g id="LINIEN" stroke="{COPPER}" stroke-width="1.2">
-    <line x1="{MARGIN}" y1="{LINE_Y[0]}" x2="{W - MARGIN}" y2="{LINE_Y[0]}"/>
-    <line x1="{MARGIN}" y1="{LINE_Y[1]}" x2="{W - MARGIN}" y2="{LINE_Y[1]}"/>
-  </g>
-  <g id="SCHRIFT" fill="url(#kupfer)">
-    <path transform="translate({x1:.2f},{base:.2f})" d="{d1}"/>
-    <path transform="translate({x2:.2f},{base:.2f})" d="{d2}"/>
-  </g>
-  {LOGO_SVG}
-</svg>
-'''
-        (OUT / f"melvona_frontscheibe_110x30_{name}_{mode}.svg").write_text(svg)
-    print(name, "MELVONA", round(w1), "mm  MARKETING", round(w2), "mm  Versalhöhe", v["cap"], "mm  Logo",
-          LOGO_H, "x", round(LOGO_W), "mm")
+def main():
+    for name, v in VARIANTS.items():
+        d1, w1 = text_path(v["font"], "MELVONA", v["cap"], v["tracking"])
+        d2, w2 = text_path(v["font"], "MARKETING", v["cap"], v["tracking"])
+        base = CY + v["cap"] / 2
+        left_area = (MARGIN, CX - LOGO_HALF - GAP / 2)
+        right_area = (CX + LOGO_HALF + GAP / 2, W - MARGIN)
+        x1 = (left_area[0] + left_area[1]) / 2 - w1 / 2
+        x2 = (right_area[0] + right_area[1]) / 2 - w2 / 2
+        assert x1 >= MARGIN and x2 + w2 <= W - MARGIN, (name, x1, x2 + w2)
+        stops = "".join(f'<stop offset="{o}" stop-color="{c}"/>' for o, c in COPPER_STOPS)
+        defs = (f'<defs><linearGradient id="kupfer" gradientUnits="userSpaceOnUse" '
+                f'x1="0" y1="{base - v["cap"]:.2f}" x2="0" y2="{base:.2f}">{stops}</linearGradient></defs>')
+        for mode, bg in (("mit-balken", f'<rect id="BALKEN" width="{W}" height="{H}" fill="{BLACK}"/>'),
+                         ("ohne-balken", "")):
+            svg = f'''<?xml version="1.0" encoding="UTF-8"?>
+    <!-- MELVONA MARKETING Frontscheibe | 1100 x 300 mm | {name} ({v["label"]}) | {mode} -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="1100mm" height="300mm" viewBox="0 0 {W} {H}">
+      {defs}
+      {bg}
+      <g id="LINIEN" stroke="{COPPER}" stroke-width="1.2">
+        <line x1="{MARGIN}" y1="{LINE_Y[0]}" x2="{W - MARGIN}" y2="{LINE_Y[0]}"/>
+        <line x1="{MARGIN}" y1="{LINE_Y[1]}" x2="{W - MARGIN}" y2="{LINE_Y[1]}"/>
+      </g>
+      <g id="SCHRIFT" fill="url(#kupfer)">
+        <path transform="translate({x1:.2f},{base:.2f})" d="{d1}"/>
+        <path transform="translate({x2:.2f},{base:.2f})" d="{d2}"/>
+      </g>
+      {LOGO_SVG}
+    </svg>
+    '''
+            (OUT / f"melvona_frontscheibe_110x30_{name}_{mode}.svg").write_text(svg)
+        print(name, "MELVONA", round(w1), "mm  MARKETING", round(w2), "mm  Versalhöhe", v["cap"], "mm  Logo",
+              LOGO_H, "x", round(LOGO_W), "mm")
+
+
+if __name__ == "__main__":
+    main()
