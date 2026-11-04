@@ -75,6 +75,20 @@ def logo_placeholder():
     )
 
 
+def logo_image():
+    """Original-Logo (PNG mit Transparenz), exakt 180 mm hoch, mittig."""
+    import base64
+    from PIL import Image
+    f = OUT / "logo_melvona_M.png"
+    w_px, h_px = Image.open(f).size
+    w = LOGO_H * w_px / h_px
+    data = base64.b64encode(f.read_bytes()).decode()
+    return w, (f'<image id="LOGO" x="{CX - w / 2:.2f}" y="{CY - LOGO_H / 2:.2f}" width="{w:.2f}" '
+               f'height="{LOGO_H}" href="data:image/png;base64,{data}"/>')
+
+
+LOGO_W, LOGO_SVG = logo_image()
+
 VARIANTS = {
     "A-klassisch": dict(font="/usr/share/fonts/truetype/crosextra/Caladea-Regular.ttf",
                         cap=28, tracking=0.28, label="Serif, klassisch-edel (nah am Entwurf)"),
@@ -83,7 +97,7 @@ VARIANTS = {
 }
 
 GAP = 55   # Abstand Schrift <-> Logo (vom Logo-Rand aus)
-LOGO_HALF = 95
+LOGO_HALF = LOGO_W / 2
 
 for name, v in VARIANTS.items():
     d1, w1 = text_path(v["font"], "MELVONA", v["cap"], v["tracking"])
@@ -108,7 +122,7 @@ for name, v in VARIANTS.items():
     <path transform="translate({x1:.2f},{base:.2f})" d="{d1}"/>
     <path transform="translate({x2:.2f},{base:.2f})" d="{d2}"/>
   </g>
-  {logo_placeholder()}
+  {LOGO_SVG}
 </svg>
 '''
     (OUT / f"melvona_frontscheibe_110x30_{name}.svg").write_text(svg)
