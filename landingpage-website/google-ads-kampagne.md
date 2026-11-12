@@ -5,10 +5,10 @@
 |---|---|
 | Kampagnentyp | **Suche** (ohne Ziel-Assistent oder Ziel „Leads“) |
 | Netzwerke | **Suchnetzwerk-Partner AUS, Displaynetzwerk AUS** |
-| Standorte | **Deutschland** |
+| Standorte | **Hungen + Umkreis 100 km** (Standort → „Umkreis“ → Hungen, 100 km). Deckt u. a. Frankfurt, Gießen, Marburg, Fulda, Wiesbaden, Darmstadt ab |
 | Standortoption | **„Präsenz: Personen, die sich in Ihren Zielregionen befinden“** |
 | Sprache | Deutsch |
-| Budget | ab ca. 15–20 €/Tag. Bundesweit ist die Konkurrenz größer, rechne grob mit nur einer Handvoll Klicks pro Tag, deshalb Fokus auf Handwerk-Keywords |
+| Budget | ab ca. 15–20 €/Tag. Im Rhein-Main-Gebiet ist die Konkurrenz groß, deshalb Fokus auf Handwerk-Keywords und CPC-Limit |
 | Gebote | Start: **„Klicks maximieren“ mit max. CPC-Limit ~3–4 €** → nach 15–30 Conversions auf „Conversions maximieren“ |
 | Werbezeiten | Mo–Sa, z. B. 7–20 Uhr (passt zu „erreichbar Mo–Sa“) |
 | Automatisch angewendete Empfehlungen | **AUS** (Tools → Empfehlungen → automatisch anwenden) |
@@ -17,7 +17,7 @@
 
 ## Anzeigengruppe 1: Website erstellen lassen
 Keywords (Wortgruppe = in "Anführungszeichen", genau = in [Klammern]).
-Die allgemeinen Begriffe nur als [genau passend]: Die sind bundesweit teuer und hart umkämpft.
+Die allgemeinen Begriffe nur als [genau passend]: Die sind teuer und hart umkämpft.
 ```
 "website für handwerker"
 "homepage für handwerker"
@@ -75,7 +75,7 @@ app
 4. Websites ab 854 €
 5. Festpreis-Angebot vorab
 6. Kostenloses Erstgespräch
-7. Deutschlandweit per Video
+7. Per Telefon & Video-Call
 8. Mit neuer Website ins 2027
 9. Kein Baukasten – individuell
 10. Mobil, schnell, persönlich
@@ -89,14 +89,14 @@ app
 1. Website für Ihren Betrieb – individuell gestaltet, persönlich betreut. Ab 854 €.
 2. Kostenloses Erstgespräch in 15 Minuten. Danach festes Angebot, keine offene Rechnung.
 3. Schnell, mobil, auf Ihren Betrieb abgestimmt. Starten Sie mit neuer Website ins Jahr 2027.
-4. Für Handwerksbetriebe & kleine Unternehmen. Deutschlandweit per Telefon und Video-Call.
+4. Für Handwerksbetriebe & kleine Unternehmen. Per Telefon, Video-Call oder vor Ort.
 
 Anzeigen-Pfad: `melvona.de/website/erstgespraech`
 
 ## Assets (Erweiterungen)
 - **Anruf:** 0171 410 4873, nur zu Werbezeiten
 - **Sitelinks:** „Leistungen“ → /leistungen · „Portfolio“ → /portfolio · „Über uns“ → / · „Kontakt“ → /kontakt
-- **Zusatzinfos (Callouts):** Festpreis vorab · Persönlich betreut · Deutschlandweit · Kein Baukasten
+- **Zusatzinfos (Callouts):** Festpreis vorab · Persönlich betreut · Auch per Video-Call · Kein Baukasten
 - **Snippets „Leistungen“:** Webdesign, Logo, Visitenkarten, Google-Profil, Fotos & Video
 - **Bilder:** Logo + Porträt (aus /images)
 
