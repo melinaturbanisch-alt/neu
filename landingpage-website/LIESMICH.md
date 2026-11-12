@@ -8,6 +8,7 @@
 | `js/ads-tracking.js` | `js/ads-tracking.js` (neu) | Google-Ads-Conversion-Tracking, lädt nur mit Einwilligung |
 | `js/script.js` | `js/script.js` (ersetzen) | Banner-Text nennt jetzt Google Ads; läuft auch auf Landingpages ohne Navi |
 | `danke.html` | `danke.html` (ersetzen) | lädt Banner + Tracking → zählt die Anfrage-Conversion |
+| `datenschutz.html` | `datenschutz.html` (ersetzen) | neue Abschnitte 5 (Banner) + 6 (Google Ads), Rest unverändert |
 
 ## werbung.html (bestehende Landingpage) — 1 Änderung
 Ganz unten diesen Block
@@ -49,11 +50,7 @@ Die drei Werte oben in `js/ads-tracking.js` eintragen. Solange dort `XXX` steht,
 - `website-melvona-desktop.jpg` – melvona.de am Laptop (Querformat, ca. 1600×1000)
 - `website-melvona-handy.jpg` – melvona.de auf dem Handy (Hochformat 9:16, ca. 900×1600)
 
-## Datenschutzerklärung — Abschnitt 5 ersetzen (ENTWURF, bitte prüfen lassen)
-Abschnitt „5. Cookies und Analyse-Tools“ sagt aktuell „keine Marketing-Cookies“ — das stimmt mit Google Ads nicht mehr.
-Vorschlag (vor Veröffentlichung z. B. mit einem Datenschutz-Generator oder Anwalt abgleichen):
+## Datenschutzerklärung
+Fertig in `datenschutz.html` (Abschnitte 5 + 6 neu, Nummern danach verschoben). Entwurf, keine Rechtsberatung — kurz gegenlesen lassen.
 
-> **5. Cookies, Einwilligung und Google Ads Conversion-Tracking**
-> Beim ersten Besuch fragen wir über ein Banner Ihre Einwilligung ab. Ihre Auswahl speichern wir im lokalen Speicher Ihres Browsers (technisch notwendig, Art. 6 Abs. 1 lit. f DSGVO). Sie können sie jederzeit über den Link „Cookie-Einstellungen“ im Seitenfuß ändern oder widerrufen.
->
-> Nur wenn Sie einwilligen, nutzen wir Google Ads Conversion-Tracking der Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland. Dabei werden Cookies gesetzt, mit denen Google erkennt, ob Sie über eine unserer Anzeigen auf unsere Website gekommen sind und danach eine Anfrage gesendet oder auf unsere Telefonnummer getippt haben. Wir erhalten nur zusammengefasste Statistiken, keine Daten, mit denen wir Sie persönlich identifizieren können. Dabei können Daten an Google LLC in den USA übermittelt werden; Google ist nach dem EU-US Data Privacy Framework zertifiziert. Rechtsgrundlage ist Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO, § 25 Abs. 1 TDDDG). Mehr: https://policies.google.com/privacy
+Kampagnen-Vorlage: siehe `google-ads-kampagne.md`.
