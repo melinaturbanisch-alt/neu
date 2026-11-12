@@ -4,8 +4,8 @@
 
    >>> Hier die Werte aus Google Ads eintragen (Ziele → Conversions → Aktion → "Tag einrichten"): */
 var MELVONA_ADS = {
-  id: 'AW-XXXXXXXXXX',            // Google-Tag-ID, z. B. 'AW-123456789'
-  labelAnfrage: 'XXXXXXXXXXXX',   // Label der Conversion "Anfrage über Formular"
+  id: 'AW-18454938553',           // Google-Tag-ID, z. B. 'AW-123456789'
+  labelAnfrage: 'uNOHCNCoqbcdELmHgOBE',  // Label der Conversion "Anfrage über Formular"
   labelTelefon: 'XXXXXXXXXXXX'    // Label der Conversion "Klick auf Telefonnummer"
 };
 
@@ -72,6 +72,7 @@ var MELVONA_ADS = {
   document.addEventListener('click', function (ev) {
     var link = ev.target.closest && ev.target.closest('a[href^="tel:"]');
     if (!link || !geladen) return;
+    if (!cfg.labelTelefon || cfg.labelTelefon.indexOf('XXX') !== -1) return; // Label noch nicht eingetragen
     gtag('event', 'conversion', { send_to: cfg.id + '/' + cfg.labelTelefon });
   });
 
