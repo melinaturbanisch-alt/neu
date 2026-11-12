@@ -13,7 +13,7 @@
 | Werbezeiten | Mo–Sa, z. B. 7–20 Uhr (passt zu „erreichbar Mo–Sa“) |
 | Automatisch angewendete Empfehlungen | **AUS** (Tools → Empfehlungen → automatisch anwenden) |
 | Ziel-URL | `https://www.melvona.de/website` |
-| Conversions | „Anfrage über Formular“ = **primär**, „Klick auf Telefonnummer“ = primär oder sekundär |
+| Conversions / Zielvorhaben | In der Kampagne **beide** Zielvorhaben auswählen: **„Lead-Formular senden“** (→ Anfrage über Formular) **und „Kontakt“** (→ Klick auf Telefonnummer). „Kontakt“ ist kein Konto-Standardziel und zählt sonst nicht! |
 
 ## Anzeigengruppe 1: Website erstellen lassen
 Keywords (Wortgruppe = in "Anführungszeichen", genau = in [Klammern]):

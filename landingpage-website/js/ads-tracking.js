@@ -6,7 +6,7 @@
 var MELVONA_ADS = {
   id: 'AW-18454938553',           // Google-Tag-ID, z. B. 'AW-123456789'
   labelAnfrage: 'uNOHCNCoqbcdELmHgOBE',  // Label der Conversion "Anfrage über Formular"
-  labelTelefon: 'XXXXXXXXXXXX'    // Label der Conversion "Klick auf Telefonnummer"
+  labelTelefon: 'czH_CN2epbcdELmHgOBE', // Label der Conversion "Klick auf Telefonnummer"
 };
 
 (function () {
