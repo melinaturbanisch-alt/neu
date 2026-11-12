@@ -64,7 +64,8 @@ var MELVONA_ADS = {
     s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(cfg.id);
     document.head.appendChild(s);
     gtag('js', new Date());
-    gtag('config', cfg.id);
+    // Keine Formulardaten (E-Mail/Telefon) an Google — siehe Datenschutzerklärung Abschnitt 6
+    gtag('config', cfg.id, { allow_enhanced_conversions: false });
     if (istDankeSeite()) sendeAnfrageConversion();
   }
 
