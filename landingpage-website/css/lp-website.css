@@ -1,0 +1,107 @@
+/* Melvona Marketing — Zusätze für die Website-Landingpage (/website) */
+
+.lp-fakten{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  margin-top: 2rem;
+  border: 1px solid var(--line-strong);
+  max-width: 40rem;
+}
+.lp-fakten li{
+  flex: 1 1 0;
+  min-width: 9rem;
+  padding: 1rem 1.2rem;
+  border-right: 1px solid var(--line);
+}
+.lp-fakten li:last-child{ border-right: none; }
+.lp-fakten strong{
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  color: var(--copper-300);
+  font-weight: 600;
+}
+.lp-fakten span{ font-size: 0.85rem; color: var(--slate); }
+
+.lp-zwei{ display: grid; grid-template-columns: 1.4fr 1fr; gap: 3rem; align-items: start; }
+
+.lp-preis{
+  background: var(--navy-800);
+  border: 1px solid var(--line-strong);
+  border-top: 2px solid var(--copper-500);
+  padding: 2rem 1.8rem;
+}
+.lp-preis-zahl{
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  color: var(--copper-300);
+  margin: 0.6rem 0 1rem;
+}
+.lp-preis p:not(.lp-preis-zahl){ font-size: 0.95rem; margin-bottom: 1.6rem; }
+
+.lp-intro{ margin: -0.6rem 0 2rem; }
+
+.lp-mockups{ display: grid; grid-template-columns: 2.2fr 1fr; gap: 1.6rem; align-items: end; }
+.lp-mockup{ margin: 0; }
+.lp-mockup img{
+  width: 100%;
+  object-fit: cover;
+  border: 1px solid var(--line-strong);
+  border-radius: 2px;
+  background: var(--navy-800);
+}
+.lp-mockup-desktop img{ aspect-ratio: 16 / 10; }
+.lp-mockup-handy img{ aspect-ratio: 9 / 16; max-height: 420px; margin-left: auto; }
+.lp-mockup figcaption{ margin-top: 0.6rem; font-size: 0.82rem; color: var(--slate); }
+
+.lp-plus{
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 1.8rem;
+  align-items: center;
+  margin-top: 2.6rem;
+  padding-top: 2.2rem;
+  border-top: 1px solid var(--line);
+}
+.lp-plus img{ width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 2px; }
+.lp-plus .tag{
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--copper-300);
+}
+.lp-plus h3{ margin: 0.5rem 0 0.6rem; font-size: 1.1rem; }
+
+.lp-wer p + p{ margin-top: 1rem; }
+.lp-abschluss .eyebrow{ margin-bottom: 0.9rem; }
+.lp-abschluss h2{ margin-bottom: 1rem; }
+
+/* Mobile Schnellkontakt-Leiste */
+.lp-sticky{ display: none; }
+
+@media (max-width: 860px){
+  .lp-zwei, .lp-mockups, .lp-plus{ grid-template-columns: 1fr; }
+  .lp-mockup-handy img{ max-width: 220px; margin: 0 auto; }
+  .lp-plus img{ max-width: 320px; }
+
+  .lp-sticky{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    z-index: 90;
+    padding: 0.7rem 1rem calc(0.7rem + env(safe-area-inset-bottom));
+    background: rgba(6, 15, 24, 0.95);
+    border-top: 1px solid var(--line-strong);
+  }
+  .lp-sticky .btn{ justify-content: center; padding: 0.9em 0.6em; letter-spacing: 0.12em; }
+
+  .lp-actions .btn{ width: 100%; justify-content: center; text-align: center; white-space: normal; letter-spacing: 0.14em; }
+  .lp-fakten li{ min-width: 0; padding: 0.8rem 0.7rem; }
+  .lp-fakten strong{ font-size: 1.05rem; }
+  .lp-fakten span{ font-size: 0.74rem; line-height: 1.35; display: block; }
+  body{ padding-bottom: 4.6rem; }
+}
