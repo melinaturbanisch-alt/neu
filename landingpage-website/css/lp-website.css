@@ -53,6 +53,19 @@
 }
 .lp-mockup-desktop img{ aspect-ratio: 16 / 10; }
 .lp-mockup-handy img{ aspect-ratio: 9 / 16; max-height: 420px; margin-left: auto; }
+/* Platzhalter, solange das Foto noch fehlt */
+.lp-foto-fehlt{ position: relative; }
+.lp-foto-fehlt img{ visibility: hidden; border: 1px dashed var(--line-strong); }
+.lp-foto-fehlt::before{
+  content: "Foto folgt";
+  position: absolute; left: 0; right: 0; top: 0;
+  aspect-ratio: inherit;
+  display: flex; align-items: center; justify-content: center;
+  height: calc(100% - 2rem);
+  font-family: var(--font-display); letter-spacing: 0.2em; text-transform: uppercase;
+  font-size: 0.75rem; color: var(--slate);
+  border: 1px dashed var(--line-strong); background: var(--navy-800);
+}
 .lp-mockup figcaption{ margin-top: 0.6rem; font-size: 0.82rem; color: var(--slate); }
 
 .lp-plus{
