@@ -39,6 +39,9 @@
   margin: 0.6rem 0 1rem;
 }
 .lp-preis p:not(.lp-preis-zahl){ font-size: 0.95rem; margin-bottom: 1.6rem; }
+.lp-inklusive{ display: grid; gap: 0.45rem; margin: 0 0 1.4rem; padding: 0; }
+.lp-inklusive li{ list-style: none; position: relative; padding-left: 1.5rem; font-size: 0.95rem; color: var(--cream); }
+.lp-inklusive li::before{ content: "✓"; position: absolute; left: 0; color: var(--copper-400); font-weight: 600; }
 
 .lp-intro{ margin: -0.6rem 0 2rem; }
 

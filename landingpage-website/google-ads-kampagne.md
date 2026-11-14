@@ -8,7 +8,7 @@
 | Standorte | **Hungen + Umkreis 100 km** (Standort → „Umkreis“ → Hungen, 100 km). Deckt u. a. Frankfurt, Gießen, Marburg, Fulda, Wiesbaden, Darmstadt ab |
 | Standortoption | **„Präsenz: Personen, die sich in Ihren Zielregionen befinden“** |
 | Sprache | Deutsch |
-| Budget | ab ca. 15–20 €/Tag. Im Rhein-Main-Gebiet ist die Konkurrenz groß, deshalb Fokus auf Handwerk-Keywords und CPC-Limit |
+| Budget | ab ca. 15–20 €/Tag. Im Rhein-Main-Gebiet ist die Konkurrenz groß, deshalb CPC-Limit setzen und Suchbegriffe eng beobachten |
 | Gebote | Start: **„Klicks maximieren“ mit max. CPC-Limit ~3–4 €** → nach 15–30 Conversions auf „Conversions maximieren“ |
 | Werbezeiten | Mo–Sa, z. B. 7–20 Uhr (passt zu „erreichbar Mo–Sa“) |
 | Automatisch angewendete Empfehlungen | **AUS** (Tools → Empfehlungen → automatisch anwenden) |
@@ -17,20 +17,31 @@
 
 ## Anzeigengruppe 1: Website erstellen lassen
 Keywords (Wortgruppe = in "Anführungszeichen", genau = in [Klammern]).
-Die allgemeinen Begriffe nur als [genau passend]: Die sind teuer und hart umkämpft.
+Start mit Wortgruppe; CPC-Limit setzen, weil die Begriffe umkämpft sind.
 ```
-"website für handwerker"
-"homepage für handwerker"
-"website für handwerksbetrieb"
-"handwerker website erstellen"
-"handwerker homepage erstellen lassen"
-"webdesign für handwerker"
-"webdesigner für handwerker"
-"website erstellen lassen handwerk"
-"website für kleine unternehmen erstellen lassen"
-"website für selbstständige erstellen lassen"
-[website erstellen lassen]
-[homepage erstellen lassen]
+"website erstellen lassen"
+"homepage erstellen lassen"
+"webseite erstellen lassen"
+"website erstellen lassen kosten"
+"homepage erstellen lassen kosten"
+"firmenwebsite erstellen lassen"
+"website für selbstständige"
+"website für kleine unternehmen"
+"webdesign agentur"
+"webdesigner"
+```
+
+## Anzeigengruppe 2 (optional): Regional
+Gleiche Anzeige, Keywords mit Städten aus dem 100-km-Gebiet. Weniger Suchen, aber oft günstiger und sehr kaufbereit.
+```
+"webdesign gießen"
+"webdesigner gießen"
+"website erstellen lassen gießen"
+"webdesign marburg"
+"webdesign wetzlar"
+"webdesign friedberg"
+"webdesign bad nauheim"
+"webdesign fulda"
 ```
 
 ## Ausschließende Keywords (Kampagnenebene, weitgehend passend)
@@ -70,26 +81,26 @@ app
 ## Responsive Suchanzeige
 **Überschriften (max. 30 Zeichen, alle geprüft):**
 1. Website erstellen lassen  ← an Position 1 fixieren
-2. Websites für Handwerker
-3. Webdesign für Handwerker
-4. Websites ab 854 €
+2. Website für Ihr Unternehmen
+3. Websites ab 854 €
+4. In 1–2 Wochen online
 5. Festpreis-Angebot vorab
 6. Kostenloses Erstgespräch
 7. Per Telefon & Video-Call
 8. Mit neuer Website ins 2027
 9. Kein Baukasten – individuell
 10. Mobil, schnell, persönlich
-11. Projektstart sofort möglich
+11. Webdesign für Selbstständige
 12. Feste Ansprechpartner
 13. Persönlich statt Callcenter
 14. Website + Logo aus einer Hand
 15. Jetzt Erstgespräch sichern
 
 **Beschreibungen (max. 90 Zeichen, alle geprüft):**
-1. Website für Ihren Betrieb – individuell gestaltet, persönlich betreut. Ab 854 €.
+1. Basis-Website ab 854 €: Startseite, Leistungen, Kontakt, Impressum & Datenschutz.
 2. Kostenloses Erstgespräch in 15 Minuten. Danach festes Angebot, keine offene Rechnung.
-3. Schnell, mobil, auf Ihren Betrieb abgestimmt. Starten Sie mit neuer Website ins Jahr 2027.
-4. Für Handwerksbetriebe & kleine Unternehmen. Per Telefon, Video-Call oder vor Ort.
+3. Schnell, mobil, individuell gestaltet. In 1–2 Wochen ist Ihre neue Website online.
+4. Für Selbstständige & Unternehmen. Per Telefon, Video-Call oder vor Ort.
 
 Anzeigen-Pfad: `melvona.de/website/erstgespraech`
 
