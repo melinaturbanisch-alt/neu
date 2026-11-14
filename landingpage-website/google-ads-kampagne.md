@@ -145,19 +145,19 @@ hosting
 Hinweis: „günstig“ bewusst **nicht** ausschließen. Wer „website erstellen lassen günstig“ sucht, passt zu ab 854 €.
 
 ## Responsive Suchanzeige (Anzeigengruppe 1)
-**Überschriften (max. 30 Zeichen, alle geprüft):**
-1. Website erstellen lassen  ← an Position 1 fixieren
-2. Website für Ihr Unternehmen
-3. Websites ab 854 €
-4. In 1–2 Wochen online
-5. Festpreis-Angebot vorab
-6. Kostenloses Erstgespräch
-7. Per Telefon & Video-Call
-8. Neue Website fürs neue Jahr  ← ab Februar austauschen, z. B. „Website für Ihr Unternehmen“
-9. Kein Baukasten – individuell
-10. Mobil, schnell, persönlich
-11. Webdesign für Selbstständige
-12. Feste Ansprechpartner
+**Überschriften (max. 30 Zeichen, alle geprüft, nichts fixieren – Pinnen verschlechtert die Anzeigeneffektivität):**
+1. Website erstellen lassen
+2. Homepage erstellen lassen
+3. Webseite erstellen lassen
+4. Webdesign Agentur
+5. Website für Selbstständige
+6. Website für Ihr Unternehmen
+7. Websites ab 854 €
+8. In 1–2 Wochen online
+9. Festpreis-Angebot vorab
+10. Kostenloses Erstgespräch
+11. Neue Website fürs neue Jahr  ← ab Februar austauschen, z. B. „Website mit Festpreis“
+12. Kein Baukasten – individuell
 13. Persönlich statt Callcenter
 14. Website + Logo aus einer Hand
 15. Jetzt Erstgespräch sichern
