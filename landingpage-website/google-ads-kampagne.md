@@ -31,7 +31,20 @@ Start mit Wortgruppe; CPC-Limit setzen, weil die Begriffe umkämpft sind.
 "webdesigner"
 ```
 
-## Anzeigengruppe 2: Website bauen in der Nähe
+## Anzeigengruppe 2: Regional (Städte im Umkreis)
+Weniger Suchen als die allgemeinen Begriffe, aber oft günstiger und sehr kaufbereit.
+```
+"webdesign gießen"
+"webdesigner gießen"
+"website erstellen lassen gießen"
+"webdesign marburg"
+"webdesign wetzlar"
+"webdesign friedberg"
+"webdesign bad nauheim"
+"webdesign fulda"
+```
+
+## Anzeigengruppe 3: Website bauen in der Nähe
 Für Leute, die gezielt jemanden aus der Umgebung suchen. Google nutzt bei „in der Nähe“
 den Standort der suchenden Person, das passt genau zum 100-km-Umkreis.
 ```
@@ -44,17 +57,8 @@ den Standort der suchenden Person, das passt genau zum 100-km-Umkreis.
 "webdesigner nähe"
 "webdesign agentur in der nähe"
 ```
-Optional zusätzlich in dieselbe Gruppe (Städte im Umkreis, oft günstig und sehr kaufbereit):
-```
-"webdesign gießen"
-"webdesigner gießen"
-"webdesign marburg"
-"webdesign wetzlar"
-"webdesign friedberg"
-"webdesign bad nauheim"
-```
 
-**Eigene Anzeige für Gruppe 2**
+**Regionale Anzeige für Gruppe 2 und 3** (in beiden Gruppen dieselbe Anzeige anlegen)
 Überschriften (max. 30 Zeichen, alle geprüft):
 1. Webdesigner in Ihrer Nähe  ← an Position 1 fixieren
 2. Website erstellen lassen
