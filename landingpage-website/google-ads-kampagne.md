@@ -151,14 +151,14 @@ Hinweis: „günstig“ bewusst **nicht** ausschließen. Wer „website erstelle
 3. Webseite erstellen lassen
 4. Webdesign Agentur
 5. Website für Selbstständige
-6. Website für Ihr Unternehmen
+6. Website für kleine Unternehmen
 7. Websites ab 854 €
 8. In 1–2 Wochen online
 9. Festpreis-Angebot vorab
 10. Kostenloses Erstgespräch
-11. Neue Website fürs neue Jahr  ← ab Februar austauschen, z. B. „Website mit Festpreis“
+11. Firmenwebsite erstellen lassen
 12. Kein Baukasten – individuell
-13. Persönlich statt Callcenter
+13. Webdesigner mit Festpreis
 14. Website + Logo aus einer Hand
 15. Jetzt Erstgespräch sichern
 
@@ -186,4 +186,4 @@ Anzeigen-Pfad: `melvona.de/website/erstgespraech`
 - Erste 1–2 Wochen: alle 2–3 Tage **Suchbegriffe** ansehen (Keywords → Suchbegriffe) und Unpassendes ausschließen.
 - 22.12.–1.1.: Budget runter oder pausieren, ab 2.1. wieder normal.
 - Nach 2 Wochen prüfen: Wenn bei „Impressionsanteil“ viel „Verloren (Rang)“ steht, CPC-Limit leicht anheben (z. B. auf 5 €).
-- Ab Februar: „2027“-Überschriften auf Landingpage und in der Anzeige austauschen.
+- Ab Februar: „2027“-Überschrift auf der Landingpage austauschen.
