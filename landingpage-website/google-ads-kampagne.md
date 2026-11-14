@@ -8,7 +8,7 @@
 | Standorte | **Hungen + Umkreis 100 km** (Standort → „Umkreis“ → Hungen, 100 km). Deckt u. a. Frankfurt, Gießen, Marburg, Fulda, Wiesbaden, Darmstadt ab |
 | Standortoption | **„Präsenz: Personen, die sich in Ihren Zielregionen befinden“** |
 | Sprache | Deutsch |
-| Budget | **Phase 1:** 400 € eigenes Budget (+ ca. 19 % USt. = ca. 476 € echte Kosten) → falls angeboten „Gesamtbudget Kampagne“ 400 € mit Enddatum in 30 Tagen, sonst **13 €/Tag + Enddatum 30 Tage**. Schaltet das 400-€-Google-Guthaben frei. **Phase 2:** mit dem Guthaben gleich weiterlaufen lassen, wieder mit Enddatum, damit danach nichts mehr abgebucht wird |
+| Budget | **Phase 1 (Bonus freischalten, nicht mehr):** „Gesamtbudget Kampagne“ **402 €**, Laufzeit 30 Tage – oder **13,40 €/Tag** mit Start- und Enddatum **genau 30 Tage** (max. 402 €). Ca. 476 € echte Kosten inkl. 19 % USt. Fehlen am Ende ein paar Euro bis 400 €: 1–2 Tage verlängern. **Phase 2 (Google-Guthaben 400 €):** 13 €/Tag, max. 30 Tage (≤ 390 €), damit danach nichts mehr abgebucht wird |
 | Gebote | Start: **„Klicks maximieren“ mit max. CPC-Limit ~3–4 €** → nach 15–30 Conversions auf „Conversions maximieren“ |
 | Werbezeiten | **Rund um die Uhr** (viele recherchieren abends/am Wochenende, das Formular ist immer da). Nur das **Anruf-Asset** auf Mo–Sa, z. B. 8–19 Uhr begrenzen |
 | Automatisch angewendete Empfehlungen | **AUS** (Tools → Empfehlungen → automatisch anwenden) |
