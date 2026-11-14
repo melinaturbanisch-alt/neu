@@ -162,11 +162,11 @@ Hinweis: „günstig“ bewusst **nicht** ausschließen. Wer „website erstelle
 14. Website + Logo aus einer Hand
 15. Jetzt Erstgespräch sichern
 
-**Beschreibungen (max. 90 Zeichen, alle geprüft):**
-1. Basis-Website ab 854 €: Startseite, Leistungen, Kontakt, Impressum & Datenschutz.
-2. Kostenloses Erstgespräch in 15 Minuten. Danach festes Angebot, keine offene Rechnung.
-3. Schnell, mobil, individuell gestaltet. In 1–2 Wochen ist Ihre neue Website online.
-4. Für Selbstständige & Unternehmen. Per Telefon, Video-Call oder vor Ort.
+**Beschreibungen (max. 90 Zeichen, alle geprüft, mit Keywords):**
+1. Website erstellen lassen ab 854 € – mit Startseite, Leistungen, Kontakt und Impressum.
+2. Homepage erstellen lassen: kostenloses Erstgespräch, danach festes Angebot zum Festpreis.
+3. Webdesign Agentur mit persönlicher Betreuung. In 1–2 Wochen ist Ihre neue Website online.
+4. Website für Selbstständige & Unternehmen. Per Telefon, Video-Call oder vor Ort.
 
 Anzeigen-Pfad: `melvona.de/website/erstgespraech`
 
@@ -177,6 +177,7 @@ Anzeigen-Pfad: `melvona.de/website/erstgespraech`
   - „Referenzen“ → /portfolio · „Marken, die wir gestaltet haben“ / „Logo, Print und mehr“
   - „Über uns“ → / · „Feste Ansprechpartner“ / „Persönlich statt Callcenter“
   - „Kontakt“ → /kontakt · „Schreiben Sie uns“ / „Antwort in 1–2 Werktagen“
+  - „Gratis Auftritt-Check“ → /werbung · „15 Minuten, kostenlos“ / „Ehrliche Einschätzung“
 - **Zusatzinfos (Callouts):** Festpreis vorab · Persönlich betreut · Auch per Video-Call · Kein Baukasten
 - **Snippets** (Überschrift „Dienstleistungen“): Webdesign, Logo-Design, Visitenkarten, Google-Profil, Fotos & Video
 - **Bilder:** Logo + Porträt (aus /images)
