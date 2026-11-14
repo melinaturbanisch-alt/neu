@@ -31,18 +31,52 @@ Start mit Wortgruppe; CPC-Limit setzen, weil die Begriffe umkämpft sind.
 "webdesigner"
 ```
 
-## Anzeigengruppe 2 (optional): Regional
-Gleiche Anzeige, Keywords mit Städten aus dem 100-km-Gebiet. Weniger Suchen, aber oft günstiger und sehr kaufbereit.
+## Anzeigengruppe 2: Website bauen in der Nähe
+Für Leute, die gezielt jemanden aus der Umgebung suchen. Google nutzt bei „in der Nähe“
+den Standort der suchenden Person, das passt genau zum 100-km-Umkreis.
+```
+"webdesigner in der nähe"
+"webdesign in der nähe"
+"webagentur in der nähe"
+"website erstellen lassen in der nähe"
+"homepage erstellen lassen in der nähe"
+"website bauen lassen in der nähe"
+"webdesigner nähe"
+"webdesign agentur in der nähe"
+```
+Optional zusätzlich in dieselbe Gruppe (Städte im Umkreis, oft günstig und sehr kaufbereit):
 ```
 "webdesign gießen"
 "webdesigner gießen"
-"website erstellen lassen gießen"
 "webdesign marburg"
 "webdesign wetzlar"
 "webdesign friedberg"
 "webdesign bad nauheim"
-"webdesign fulda"
 ```
+
+**Eigene Anzeige für Gruppe 2**
+Überschriften (max. 30 Zeichen, alle geprüft):
+1. Webdesigner in Ihrer Nähe  ← an Position 1 fixieren
+2. Website erstellen lassen
+3. Agentur aus Mittelhessen
+4. Auch Termine vor Ort
+5. Websites ab 854 €
+6. In 1–2 Wochen online
+7. Kostenloses Erstgespräch
+8. Festpreis-Angebot vorab
+9. Persönlich statt Callcenter
+10. Kein Baukasten – individuell
+11. Feste Ansprechpartner
+12. Jetzt Erstgespräch sichern
+
+Beschreibungen (max. 90 Zeichen, alle geprüft):
+1. Ihre Webagentur aus der Region: persönlich, vor Ort oder per Video-Call. Ab 854 €.
+2. Basis-Website ab 854 €: Startseite, Leistungen, Kontakt, Impressum & Datenschutz.
+3. Kostenloses Erstgespräch in 15 Minuten. Danach festes Angebot, keine offene Rechnung.
+4. Schnell, mobil, individuell gestaltet. In 1–2 Wochen ist Ihre neue Website online.
+
+Tipp: Wenn ihr ein **Google-Unternehmensprofil** habt, unter Assets als **Standort** verknüpfen.
+Bei „in der Nähe“-Suchen zeigt Google dann Adresse und Entfernung direkt in der Anzeige.
 
 ## Ausschließende Keywords (Kampagnenebene, weitgehend passend)
 ```
@@ -78,7 +112,7 @@ ki
 app
 ```
 
-## Responsive Suchanzeige
+## Responsive Suchanzeige (Anzeigengruppe 1)
 **Überschriften (max. 30 Zeichen, alle geprüft):**
 1. Website erstellen lassen  ← an Position 1 fixieren
 2. Website für Ihr Unternehmen
