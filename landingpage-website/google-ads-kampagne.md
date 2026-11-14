@@ -10,10 +10,14 @@
 | Sprache | Deutsch |
 | Budget | ab ca. 15–20 €/Tag. Im Rhein-Main-Gebiet ist die Konkurrenz groß, deshalb CPC-Limit setzen und Suchbegriffe eng beobachten |
 | Gebote | Start: **„Klicks maximieren“ mit max. CPC-Limit ~3–4 €** → nach 15–30 Conversions auf „Conversions maximieren“ |
-| Werbezeiten | Mo–Sa, z. B. 7–20 Uhr (passt zu „erreichbar Mo–Sa“) |
+| Werbezeiten | **Rund um die Uhr** (viele recherchieren abends/am Wochenende, das Formular ist immer da). Nur das **Anruf-Asset** auf Mo–Sa, z. B. 8–19 Uhr begrenzen |
 | Automatisch angewendete Empfehlungen | **AUS** (Tools → Empfehlungen → automatisch anwenden) |
+| AI Max / „Optimierung der Suchbegriffe“ | **AUS** (sonst erweitert Google die Keywords eigenmächtig) |
+| „Final URL Expansion“ / URL-Optionen | **AUS** (alle Klicks sollen auf /website landen) |
+| Automatisch erstellte Assets | **AUS** (Google würde sonst eigene Texte erfinden, z. B. falsche Preise) |
+| Weitgehend passende Keywords (Broad Match) für die Kampagne | **AUS** |
 | Ziel-URL | `https://www.melvona.de/website` |
-| Conversions / Zielvorhaben | In der Kampagne **beide** Zielvorhaben auswählen: **„Lead-Formular senden“** (→ Anfrage über Formular) **und „Kontakt“** (→ Klick auf Telefonnummer). „Kontakt“ ist kein Konto-Standardziel und zählt sonst nicht! |
+| Conversions / Zielvorhaben | In der Kampagne **beide** Zielvorhaben auswählen: **„Lead-Formular senden“** (→ Anfrage über Formular) **und „Kontakt“** (→ Klick auf Telefonnummer). Beide sind inzwischen Konto-Standardziele, trotzdem beim Anlegen kontrollieren, dass beide angehakt sind |
 
 ## Anzeigengruppe 1: Website erstellen lassen
 Keywords (Wortgruppe = in "Anführungszeichen", genau = in [Klammern]).
@@ -29,6 +33,17 @@ Start mit Wortgruppe; CPC-Limit setzen, weil die Begriffe umkämpft sind.
 "website für kleine unternehmen"
 "webdesign agentur"
 "webdesigner"
+```
+**Ausschließende Keywords nur in Gruppe 1** (damit Stadt- und Nähe-Suchen sauber in Gruppe 2/3 landen
+und dort die regionale Anzeige bekommen):
+```
+nähe
+gießen
+marburg
+wetzlar
+friedberg
+nauheim
+fulda
 ```
 
 ## Anzeigengruppe 2: Regional (Städte im Umkreis)
@@ -114,7 +129,20 @@ freelancer
 fiverr
 ki
 app
+werden
+programmieren
+selbständig machen
+canva
+chatgpt
+google sites
+hostinger
+godaddy
+one.com
+webflow
+domain kaufen
+hosting
 ```
+Hinweis: „günstig“ bewusst **nicht** ausschließen. Wer „website erstellen lassen günstig“ sucht, passt zu ab 854 €.
 
 ## Responsive Suchanzeige (Anzeigengruppe 1)
 **Überschriften (max. 30 Zeichen, alle geprüft):**
@@ -125,7 +153,7 @@ app
 5. Festpreis-Angebot vorab
 6. Kostenloses Erstgespräch
 7. Per Telefon & Video-Call
-8. Mit neuer Website ins 2027
+8. Neue Website fürs neue Jahr  ← ab Februar austauschen, z. B. „Website für Ihr Unternehmen“
 9. Kein Baukasten – individuell
 10. Mobil, schnell, persönlich
 11. Webdesign für Selbstständige
@@ -144,11 +172,17 @@ Anzeigen-Pfad: `melvona.de/website/erstgespraech`
 
 ## Assets (Erweiterungen)
 - **Anruf:** 0171 410 4873, nur zu Werbezeiten
-- **Sitelinks:** „Leistungen“ → /leistungen · „Portfolio“ → /portfolio · „Über uns“ → / · „Kontakt“ → /kontakt
+- **Sitelinks** (je Text max. 25 Zeichen, Beschreibungszeilen max. 35):
+  - „Unsere Leistungen“ → /leistungen · „Design, Website, Print“ / „Alles aus einer Hand“
+  - „Referenzen“ → /portfolio · „Marken, die wir gestaltet haben“ / „Logo, Print und mehr“
+  - „Über uns“ → / · „Feste Ansprechpartner“ / „Persönlich statt Callcenter“
+  - „Kontakt“ → /kontakt · „Schreiben Sie uns“ / „Antwort in 1–2 Werktagen“
 - **Zusatzinfos (Callouts):** Festpreis vorab · Persönlich betreut · Auch per Video-Call · Kein Baukasten
-- **Snippets „Leistungen“:** Webdesign, Logo, Visitenkarten, Google-Profil, Fotos & Video
+- **Snippets** (Überschrift „Dienstleistungen“): Webdesign, Logo-Design, Visitenkarten, Google-Profil, Fotos & Video
 - **Bilder:** Logo + Porträt (aus /images)
 
 ## Nach dem Start
 - Erste 1–2 Wochen: alle 2–3 Tage **Suchbegriffe** ansehen (Keywords → Suchbegriffe) und Unpassendes ausschließen.
 - 22.12.–1.1.: Budget runter oder pausieren, ab 2.1. wieder normal.
+- Nach 2 Wochen prüfen: Wenn bei „Impressionsanteil“ viel „Verloren (Rang)“ steht, CPC-Limit leicht anheben (z. B. auf 5 €).
+- Ab Februar: „2027“-Überschriften auf Landingpage und in der Anzeige austauschen.
