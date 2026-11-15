@@ -1,8 +1,7 @@
-// Sanisa – Startseite
-// Fahrzeuge kommen aus data/fahrzeuge.json. Später liefert der
-// Mitarbeiter-Bereich dieselben Daten über eine API.
+// Sanisa – gemeinsames Script für Startseite und Ankaufs-Landingpage
 
 const MOBILE_DE_URL = "#"; // TODO: Link zum Sanisa-Händlerprofil auf mobile.de
+const SPRITE = "assets/img/icons.svg";
 
 const ICONS = {
   Bagger: "i-bagger",
@@ -15,17 +14,55 @@ const ICONS = {
 };
 
 const fmt = new Intl.NumberFormat("de-DE");
-let vehicles = [];
+const $ = (s, el = document) => el.querySelector(s);
+const $$ = (s, el = document) => [...el.querySelectorAll(s)];
 
 function esc(s) {
   return String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 }
 
+/* Header: transparent über dem Hero, dunkel beim Scrollen */
+const header = $(".site-header");
+if (header) {
+  const onScroll = () => header.classList.toggle("scrolled", window.scrollY > 40);
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
+}
+
+/* Mobile Navigation */
+const toggle = $(".nav-toggle");
+const nav = $("#main-nav");
+if (toggle && nav) {
+  toggle.addEventListener("click", () => {
+    const open = nav.classList.toggle("open");
+    toggle.setAttribute("aria-expanded", open);
+    header.classList.toggle("solid", open);
+  });
+  $$("a", nav).forEach((a) => a.addEventListener("click", () => {
+    nav.classList.remove("open");
+    toggle.setAttribute("aria-expanded", "false");
+    header.classList.remove("solid");
+  }));
+}
+
+/* Einblenden beim Scrollen */
+if ("IntersectionObserver" in window) {
+  const io = new IntersectionObserver((entries) => entries.forEach((e) => {
+    if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+  }), { threshold: 0.12 });
+  $$(".reveal").forEach((el) => io.observe(el));
+} else {
+  $$(".reveal").forEach((el) => el.classList.add("in"));
+}
+
+/* Fahrzeugbestand (nur auf der Startseite) */
+let vehicles = [];
+
 function card(v) {
   const icon = ICONS[v.kategorie] || "i-lkw";
   const media = v.bild
     ? `<img src="${esc(v.bild)}" alt="${esc(v.hersteller + " " + v.modell)}" loading="lazy">`
-    : `<svg aria-hidden="true"><use href="#${icon}"/></svg>`;
+    : `<svg aria-hidden="true"><use href="${SPRITE}#${icon}"/></svg>`;
   const specs = [
     v.baujahr && `Bj. ${v.baujahr}`,
     v.betriebsstunden && `${fmt.format(v.betriebsstunden)} Bh`,
@@ -33,80 +70,92 @@ function card(v) {
     v.zustand,
   ].filter(Boolean);
   return `
-    <article class="vehicle">
+    <article class="vehicle reveal in">
       <div class="vehicle-media">${media}<span class="vehicle-tag">${esc(v.kategorie)}</span></div>
       <div class="vehicle-body">
         <h3>${esc(v.modell)}</h3>
         <ul class="specs">${specs.map((s) => `<li>${esc(s)}</li>`).join("")}</ul>
         <div class="vehicle-foot">
           <div class="price">${v.preis ? fmt.format(v.preis) + " €" : "Auf Anfrage"}<small>${esc(v.mwst || "")}</small></div>
-          <a class="vehicle-link" href="#kontakt">Anfragen</a>
+          <a class="link-arrow" href="#kontakt">Anfragen</a>
         </div>
       </div>
     </article>`;
 }
 
 function render(filter = "alle") {
-  const grid = document.getElementById("vehicle-grid");
+  const grid = $("#vehicle-grid");
+  if (!grid) return;
   const list = filter === "alle" ? vehicles : vehicles.filter((v) => v.kategorie === filter);
   grid.innerHTML = list.length
     ? list.map(card).join("")
-    : `<p class="empty">Aktuell kein Fahrzeug in dieser Kategorie. Rufen Sie uns an, wir finden etwas für Sie.</p>`;
+    : `<p class="empty">Aktuell nichts in dieser Kategorie. Rufen Sie uns an, wir finden etwas für Sie.</p>`;
 }
 
-function setFilter(f) {
-  document.querySelectorAll(".chip").forEach((c) => c.classList.toggle("is-active", c.dataset.filter === f));
-  render(f);
+if ($("#vehicle-grid")) {
+  $$(".chip").forEach((c) => c.addEventListener("click", () => {
+    $$(".chip").forEach((x) => x.classList.toggle("is-active", x === c));
+    render(c.dataset.filter);
+  }));
+  fetch("data/fahrzeuge.json", { cache: "no-store" })
+    .then((r) => r.json())
+    .then((d) => { vehicles = d; render(); })
+    .catch(() => render());
 }
 
-async function loadVehicles() {
-  try {
-    const res = await fetch("data/fahrzeuge.json", { cache: "no-store" });
-    vehicles = await res.json();
-  } catch {
-    vehicles = [];
-  }
-  render();
+const ml = $("#mobile-link");
+if (ml) {
+  ml.href = MOBILE_DE_URL;
+  if (MOBILE_DE_URL === "#") ml.removeAttribute("target");
 }
 
-document.querySelectorAll(".chip").forEach((c) => c.addEventListener("click", () => setFilter(c.dataset.filter)));
-document.querySelectorAll(".cat").forEach((c) =>
-  c.addEventListener("click", () => {
-    setFilter(c.dataset.filter);
-    document.getElementById("fahrzeuge").scrollIntoView();
-  })
-);
+/* Mehrstufiges Ankaufsformular */
+$$(".js-quote").forEach((form) => {
+  const steps = $$(".fstep", form);
+  const card = form.closest(".quote-card");
+  const num = card && $(".js-stepnum", card);
+  const bar = card && $(".js-progress", card);
+  const msg = $(".form-msg", form);
+  let i = 0;
 
-// Mobile Navigation
-const toggle = document.querySelector(".nav-toggle");
-const nav = document.getElementById("main-nav");
-toggle.addEventListener("click", () => {
-  const open = nav.classList.toggle("open");
-  toggle.setAttribute("aria-expanded", open);
+  const show = (n) => {
+    i = n;
+    steps.forEach((s, k) => s.classList.toggle("is-active", k === i));
+    if (num) num.textContent = i + 1;
+    if (bar) bar.style.width = `${((i + 1) / steps.length) * 100}%`;
+    msg.textContent = "";
+  };
+
+  const valid = () => {
+    const fields = $$("input, select, textarea", steps[i]);
+    const bad = fields.find((f) => !f.checkValidity());
+    if (bad) {
+      msg.className = "form-msg err";
+      msg.textContent = bad.type === "radio" ? "Bitte wählen Sie eine Maschinenart."
+        : bad.type === "checkbox" ? "Bitte stimmen Sie der Datenverarbeitung zu."
+        : "Bitte füllen Sie die Pflichtfelder aus.";
+      if (bad.type !== "radio") bad.focus();
+      return false;
+    }
+    return true;
+  };
+
+  $$(".js-next", form).forEach((b) => b.addEventListener("click", () => valid() && show(i + 1)));
+  $$(".js-prev", form).forEach((b) => b.addEventListener("click", () => show(i - 1)));
+  // Bei Auswahl der Maschinenart direkt weiter
+  $$('input[name="art"]', form).forEach((r) => r.addEventListener("change", () => setTimeout(() => show(1), 180)));
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if (!valid()) return;
+    // TODO: an Backend / E-Mail senden, sobald der Server steht
+    msg.className = "form-msg ok";
+    msg.textContent = "Vielen Dank! Wir melden uns schnellstmöglich. (Vorschau, die Anfrage wird noch nicht versendet.)";
+    form.reset();
+    setTimeout(() => show(0), 3500);
+  });
+
+  show(0);
 });
-nav.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => {
-  nav.classList.remove("open");
-  toggle.setAttribute("aria-expanded", "false");
-}));
 
-// Ankaufsformular: wird noch nicht versendet, das kommt mit dem Backend
-document.getElementById("ankauf-form").addEventListener("submit", (e) => {
-  e.preventDefault();
-  const form = e.target;
-  const msg = document.getElementById("form-msg");
-  if (!form.checkValidity()) {
-    msg.className = "form-msg err";
-    msg.textContent = "Bitte Art, Name, Telefon und die Datenschutz-Zustimmung ausfüllen.";
-    return;
-  }
-  msg.className = "form-msg ok";
-  msg.textContent = "Danke! (Vorschau: Die Anfrage wird noch nicht wirklich versendet.)";
-  form.reset();
-});
-
-const ml = document.getElementById("mobile-link");
-if (MOBILE_DE_URL === "#") ml.removeAttribute("target");
-ml.href = MOBILE_DE_URL;
-document.getElementById("year").textContent = new Date().getFullYear();
-
-loadVehicles();
+$$(".js-year").forEach((el) => (el.textContent = new Date().getFullYear()));

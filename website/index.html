@@ -4,94 +4,149 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sanisa Baumaschinen</title>
-  <meta name="description" content="Sanisa GmbH aus Butzbach: An- und Verkauf von gebrauchten Baumaschinen und Nutzfahrzeugen, darunter Bagger, Radlader, LKW, Transporter und Anhänger.">
+  <meta name="description" content="Sanisa GmbH, Butzbach: Wir kaufen gebrauchte Baumaschinen und Nutzfahrzeuge an, darunter Bagger, Radlader, LKW, Transporter und Anhänger, und verkaufen geprüfte Maschinen aus unserem Bestand.">
   <link rel="icon" href="assets/img/favicon.png">
   <!-- Vor dem Livegang Schriften lokal einbinden (DSGVO) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-<!-- Icon-Bibliothek (Platzhalter, bis echte Fotos da sind) -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <defs>
-    <symbol id="i-bagger" viewBox="0 0 96 64"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><rect x="6" y="46" width="46" height="12" rx="6"/><circle cx="13" cy="52" r="2.5"/><circle cx="45" cy="52" r="2.5"/><path d="M10 46V34h22v12M32 34V22h-12v12"/><path d="M32 30 58 10l18 18"/><path d="M76 28l6 14-14 2z"/></g></symbol>
-    <symbol id="i-minibagger" viewBox="0 0 96 64"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><rect x="16" y="48" width="32" height="10" rx="5"/><path d="M20 48V30h20v18M22 30V18h14v12"/><path d="M40 34l18-14 12 14"/><path d="M70 34l4 10-10 1z"/><path d="M10 58h4"/></g></symbol>
-    <symbol id="i-radlader" viewBox="0 0 96 64"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><circle cx="24" cy="50" r="9"/><circle cx="62" cy="50" r="9"/><path d="M14 44V30h20V14h16v20h20v10"/><path d="M70 34l12 8"/><path d="M78 28h12l-2 18H76z"/></g></symbol>
-    <symbol id="i-lkw" viewBox="0 0 96 64"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><circle cx="20" cy="50" r="7"/><circle cx="62" cy="50" r="7"/><circle cx="78" cy="50" r="7"/><path d="M6 50V26l8-10h14v34M28 22h62l-6 20H28"/><path d="M6 50h7M27 50h28M85 50h5"/></g></symbol>
-    <symbol id="i-transporter" viewBox="0 0 96 64"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><circle cx="24" cy="50" r="7"/><circle cx="70" cy="50" r="7"/><path d="M8 50V30l10-14h26v34M44 32h44v18M8 50h9M31 50h32M77 50h11"/><path d="M14 30h24"/></g></symbol>
-    <symbol id="i-anhaenger" viewBox="0 0 96 64"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><circle cx="46" cy="50" r="6"/><circle cx="62" cy="50" r="6"/><circle cx="78" cy="50" r="6"/><path d="M4 40h12l6 4h68v-6H22"/></g></symbol>
-    <symbol id="i-stapler" viewBox="0 0 96 64"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><circle cx="32" cy="52" r="6"/><circle cx="60" cy="52" r="6"/><path d="M22 46V22h22l8 18h14v6"/><path d="M70 8v46h14"/></g></symbol>
-    <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
-    <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></g></symbol>
-    <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></g></symbol>
-    <symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></g></symbol>
-    <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
-    <symbol id="i-lock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></g></symbol>
-  </defs>
-</svg>
-
 <header class="site-header" id="top">
   <div class="wrap header-inner">
-    <a href="#top" class="brand" aria-label="Sanisa Baumaschinen Handel – Startseite">
-      <img src="assets/img/logo.png" alt="Sanisa Baumaschinen Handel" width="317" height="82">
-    </a>
+    <a href="#top" class="brand" aria-label="Sanisa – zur Startseite"><img src="assets/img/logo-hell.png" alt="Sanisa Baumaschinen Handel" width="317" height="82"></a>
     <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation">
-      <a href="#fahrzeuge">Fahrzeuge</a>
       <a href="#ankauf">Ankauf</a>
-      <a href="#leistungen">Leistungen</a>
+      <a href="#bestand">Bestand</a>
       <a href="#ueber-uns">Über uns</a>
+      <a href="#faq">FAQ</a>
       <a href="#kontakt">Kontakt</a>
-      <a href="login.html" class="nav-login"><svg><use href="#i-lock"/></svg>Mitarbeiter</a>
+      <a href="login.html" class="nav-login"><svg><use href="assets/img/icons.svg#i-lock"/></svg>Mitarbeiter</a>
     </nav>
-    <a href="tel:+490000000000" class="btn btn-gold header-cta"><svg><use href="#i-phone"/></svg><span>Anrufen</span></a>
-    <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
+    <a href="tel:+490000000000" class="header-phone"><svg><use href="assets/img/icons.svg#i-phone"/></svg><span class="ph">[Telefon]</span></a>
+    <a href="#anfrage" class="btn btn-gold header-cta">Maschine verkaufen</a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Menü"><span></span><span></span><span></span></button>
   </div>
 </header>
 
 <main>
 
-  <!-- HERO -->
+  <!-- HERO: Ankauf im Vordergrund -->
   <section class="hero">
-    <div class="hero-stripes" aria-hidden="true"></div>
+    <div class="hero-art" aria-hidden="true"><span class="pill p1"></span><span class="pill p2"></span><span class="pill p3"></span></div>
     <div class="wrap hero-inner">
-      <p class="eyebrow">Butzbach · Wetteraukreis</p>
-      <h1>Baumaschinen &amp; Nutzfahrzeuge.<br><span>Kaufen. Verkaufen.</span></h1>
-      <p class="lead">Wir verkaufen geprüfte gebrauchte Bagger, Radlader, LKW und Transporter und kaufen Ihre Maschine zu einem fairen Preis an.</p>
-      <div class="hero-actions">
-        <a href="#fahrzeuge" class="btn btn-gold">Aktuelle Fahrzeuge <svg><use href="#i-arrow"/></svg></a>
-        <a href="#ankauf" class="btn btn-ghost">Maschine verkaufen</a>
-      </div>
-      <ul class="hero-facts">
-        <li><strong>Ankauf</strong><span>auch mit Mängeln</span></li>
-        <li><strong>Barzahlung</strong><span>oder Überweisung</span></li>
-        <li><strong>Abholung</strong><span>deutschlandweit</span></li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- KATEGORIEN -->
-  <section class="categories" aria-label="Kategorien">
-    <div class="wrap cat-grid">
-      <button class="cat" data-filter="Bagger"><svg><use href="#i-bagger"/></svg><span>Bagger</span></button>
-      <button class="cat" data-filter="Minibagger"><svg><use href="#i-minibagger"/></svg><span>Minibagger</span></button>
-      <button class="cat" data-filter="Radlader"><svg><use href="#i-radlader"/></svg><span>Radlader</span></button>
-      <button class="cat" data-filter="LKW"><svg><use href="#i-lkw"/></svg><span>LKW</span></button>
-      <button class="cat" data-filter="Transporter"><svg><use href="#i-transporter"/></svg><span>Transporter</span></button>
-      <button class="cat" data-filter="Anhänger"><svg><use href="#i-anhaenger"/></svg><span>Anhänger</span></button>
-    </div>
-  </section>
-
-  <!-- FAHRZEUGE -->
-  <section class="section" id="fahrzeuge">
-    <div class="wrap">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow dark">Bestand</p>
-          <h2>Aktuelle Fahrzeuge</h2>
+      <div>
+        <p class="eyebrow">Baumaschinen &amp; Nutzfahrzeuge · Butzbach</p>
+        <h1>Ihre Maschine verdient einen <em>fairen Preis.</em></h1>
+        <p class="lead">Wir kaufen gebrauchte Baumaschinen und Nutzfahrzeuge an, von der einzelnen Maschine bis zum ganzen Fuhrpark. Gleichzeitig verkaufen wir ausgewählte Maschinen aus unserem Bestand.</p>
+        <div class="hero-actions">
+          <a href="#anfrage" class="btn btn-gold">Kostenlos bewerten lassen <svg><use href="assets/img/icons.svg#i-arrow"/></svg></a>
+          <a href="#bestand" class="btn btn-line">Bestand ansehen</a>
         </div>
+        <ul class="hero-proof">
+          <li><strong>Unverbindlich</strong>Kostenlose Bewertung</li>
+          <li><strong>Persönlich</strong>Ein fester Ansprechpartner</li>
+          <li><strong>Unkompliziert</strong>Abholung &amp; Papiere inklusive</li>
+        </ul>
+      </div>
+
+      <div class="quote-card" id="anfrage">
+        <div class="qc-head"><h2>Angebot anfordern</h2><span class="qc-step">Schritt <b class="js-stepnum">1</b>/3</span></div>
+        <p class="qc-sub">In zwei Minuten erledigt und unverbindlich.</p>
+        <div class="progress"><span class="js-progress"></span></div>
+        <form class="form dark js-quote" novalidate>
+          <fieldset class="fstep is-active" style="border:0;padding:0;margin:0">
+            <legend class="qc-step" style="margin-bottom:12px;color:#a3a3a8">Was möchten Sie verkaufen?</legend>
+            <div class="choice">
+              <label><input type="radio" name="art" value="Bagger" required><span><svg><use href="assets/img/icons.svg#i-bagger"/></svg>Bagger</span></label>
+              <label><input type="radio" name="art" value="Minibagger"><span><svg><use href="assets/img/icons.svg#i-minibagger"/></svg>Minibagger</span></label>
+              <label><input type="radio" name="art" value="Radlader"><span><svg><use href="assets/img/icons.svg#i-radlader"/></svg>Radlader</span></label>
+              <label><input type="radio" name="art" value="LKW"><span><svg><use href="assets/img/icons.svg#i-lkw"/></svg>LKW</span></label>
+              <label><input type="radio" name="art" value="Transporter"><span><svg><use href="assets/img/icons.svg#i-transporter"/></svg>Transporter</span></label>
+              <label><input type="radio" name="art" value="Sonstiges"><span><svg><use href="assets/img/icons.svg#i-sonstiges"/></svg>Sonstiges</span></label>
+            </div>
+            <div class="fnav"><button type="button" class="btn btn-gold js-next">Weiter <svg><use href="assets/img/icons.svg#i-arrow"/></svg></button></div>
+          </fieldset>
+
+          <fieldset class="fstep" style="border:0;padding:0;margin:0">
+            <label>Hersteller &amp; Modell<input name="modell" required placeholder="z. B. Kettenbagger 14 t"></label>
+            <div class="row">
+              <label>Baujahr<input name="baujahr" inputmode="numeric" placeholder="z. B. 2016"></label>
+              <label>Std. / km<input name="stunden" inputmode="numeric" placeholder="z. B. 6.500 h"></label>
+            </div>
+            <label>Zustand
+              <select name="zustand">
+                <option>Voll einsatzbereit</option>
+                <option>Einsatzbereit mit Mängeln</option>
+                <option>Defekt / nicht fahrbereit</option>
+              </select>
+            </label>
+            <label>Fotos (optional)<input type="file" name="fotos" accept="image/*" multiple></label>
+            <div class="fnav"><button type="button" class="btn btn-back js-prev" aria-label="Zurück">←</button><button type="button" class="btn btn-gold js-next">Weiter <svg><use href="assets/img/icons.svg#i-arrow"/></svg></button></div>
+          </fieldset>
+
+          <fieldset class="fstep" style="border:0;padding:0;margin:0">
+            <label>Ihr Name<input name="name" required autocomplete="name"></label>
+            <div class="row">
+              <label>Telefon<input name="telefon" type="tel" required autocomplete="tel"></label>
+              <label>PLZ / Standort<input name="standort" autocomplete="postal-code"></label>
+            </div>
+            <label class="check"><input type="checkbox" name="dsgvo" required><span>Ich bin einverstanden, dass meine Angaben zur Bearbeitung der Anfrage verwendet werden (<a href="datenschutz.html">Datenschutz</a>).</span></label>
+            <div class="fnav"><button type="button" class="btn btn-back js-prev" aria-label="Zurück">←</button><button type="submit" class="btn btn-gold">Angebot anfordern</button></div>
+          </fieldset>
+          <p class="form-msg" role="status"></p>
+          <div class="form-trust"><span><svg><use href="assets/img/icons.svg#i-check"/></svg>Kostenlos</span><span><svg><use href="assets/img/icons.svg#i-check"/></svg>Unverbindlich</span><span><svg><use href="assets/img/icons.svg#i-check"/></svg>Kein Spam</span></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROZESS -->
+  <section class="section ivory on-light" id="ankauf">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div><p class="eyebrow">Ankauf</p><h2>So verkaufen Sie <em>an Sanisa.</em></h2></div>
+        <p class="lead">Kein Inserat, keine Besichtigungstouristen, kein Feilschen mit Fremden. Sie haben einen Ansprechpartner und ein klares Angebot.</p>
+      </div>
+      <ol class="process process-wrap reveal">
+        <li><span class="n">01</span><h3>Anfrage senden</h3><p>Formular ausfüllen, anrufen oder Fotos per WhatsApp schicken. Ein paar Eckdaten reichen.</p></li>
+        <li><span class="n">02</span><h3>Angebot erhalten</h3><p>Wir bewerten Ihre Maschine nach Marktlage und Zustand und nennen Ihnen einen konkreten Preis.</p></li>
+        <li><span class="n">03</span><h3>Abholung &amp; Zahlung</h3><p>Sie sind einverstanden? Dann holen wir die Maschine ab und kümmern uns um die Formalitäten.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- WAS WIR ANKAUFEN -->
+  <section class="section dark">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div><p class="eyebrow">Wir kaufen</p><h2>Was wir <em>ankaufen.</em></h2></div>
+        <p class="lead">Ob gepflegt, mit vielen Betriebsstunden oder defekt: Fragen Sie uns. Bei uns zählt die Maschine, nicht die Optik.</p>
+      </div>
+      <div class="buy-grid reveal">
+        <div class="buy-item"><svg><use href="assets/img/icons.svg#i-bagger"/></svg><h3>Kettenbagger</h3><p>Alle Gewichtsklassen</p></div>
+        <div class="buy-item"><svg><use href="assets/img/icons.svg#i-minibagger"/></svg><h3>Mini- &amp; Mobilbagger</h3><p>Auch mit Anbaugeräten</p></div>
+        <div class="buy-item"><svg><use href="assets/img/icons.svg#i-radlader"/></svg><h3>Radlader</h3><p>Kompakt bis groß</p></div>
+        <div class="buy-item"><svg><use href="assets/img/icons.svg#i-stapler"/></svg><h3>Stapler &amp; Teleskoplader</h3><p>Diesel, Gas, Elektro</p></div>
+        <div class="buy-item"><svg><use href="assets/img/icons.svg#i-lkw"/></svg><h3>LKW &amp; Kipper</h3><p>2- bis 4-Achser</p></div>
+        <div class="buy-item"><svg><use href="assets/img/icons.svg#i-transporter"/></svg><h3>Transporter</h3><p>Pritsche, Kasten, Kipper</p></div>
+        <div class="buy-item"><svg><use href="assets/img/icons.svg#i-anhaenger"/></svg><h3>Anhänger</h3><p>Tieflader, Kipp- &amp; Baumaschinenanhänger</p></div>
+        <div class="buy-item"><svg><use href="assets/img/icons.svg#i-sonstiges"/></svg><h3>Anbaugeräte &amp; mehr</h3><p>Löffel, Hammer, Sonstiges</p></div>
+      </div>
+      <div class="buy-note reveal">
+        <p>Sie lösen einen Fuhrpark auf oder haben mehrere Maschinen? Dann machen wir Ihnen gern ein Gesamtangebot.</p>
+        <a href="#anfrage" class="btn btn-gold">Jetzt anfragen <svg><use href="assets/img/icons.svg#i-arrow"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BESTAND -->
+  <section class="section on-light" id="bestand">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div><p class="eyebrow">Bestand</p><h2>Aktuell <em>verfügbar.</em></h2></div>
         <div class="filter" role="group" aria-label="Nach Kategorie filtern">
           <button class="chip is-active" data-filter="alle">Alle</button>
           <button class="chip" data-filter="Bagger">Bagger</button>
@@ -102,108 +157,91 @@
           <button class="chip" data-filter="Anhänger">Anhänger</button>
         </div>
       </div>
-
-      <p class="demo-note">Die Fahrzeuge unten sind <strong>Beispiele</strong>. Später tragen eure Mitarbeiter sie selbst über den Login ein.</p>
-
+      <p class="demo-note">Vorschau: Das sind Beispielfahrzeuge. Später tragen eure Mitarbeiter den Bestand über den Login ein.</p>
       <div class="vehicle-grid" id="vehicle-grid" aria-live="polite"></div>
-
-      <div class="more">
-        <a href="#" class="btn btn-dark" id="mobile-link" target="_blank" rel="noopener">Alle Angebote bei mobile.de <svg><use href="#i-arrow"/></svg></a>
-      </div>
+      <div class="more"><a href="#" class="btn btn-line-dark" id="mobile-link" target="_blank" rel="noopener">Alle Angebote auf mobile.de <svg><use href="assets/img/icons.svg#i-arrow"/></svg></a></div>
     </div>
   </section>
 
-  <!-- ANKAUF -->
-  <section class="section ankauf" id="ankauf">
-    <div class="wrap ankauf-grid">
-      <div>
-        <p class="eyebrow">Ankauf</p>
-        <h2>Sie wollen Ihre Maschine verkaufen?</h2>
-        <p class="lead-sm">Schicken Sie uns ein paar Eckdaten und Fotos. Sie bekommen schnell ein unverbindliches Angebot.</p>
-        <ol class="steps">
-          <li><span>1</span><div><strong>Daten senden</strong><p>Formular ausfüllen oder Fotos per WhatsApp schicken.</p></div></li>
-          <li><span>2</span><div><strong>Angebot erhalten</strong><p>Wir bewerten Ihre Maschine und melden uns mit einem Preis.</p></div></li>
-          <li><span>3</span><div><strong>Abholung &amp; Bezahlung</strong><p>Wir holen ab und kümmern uns um die Formalitäten.</p></div></li>
-        </ol>
+  <!-- WARUM SANISA -->
+  <section class="section ink">
+    <div class="wrap why">
+      <div class="reveal">
+        <p class="eyebrow">Warum Sanisa</p>
+        <h2>Handel mit <em>Handschlag&shy;qualität.</em></h2>
+        <p class="lead">Wir kennen uns mit Baumaschinen aus und sagen Ihnen offen, was Ihre Maschine wert ist.</p>
       </div>
-
-      <form class="ankauf-form" id="ankauf-form" novalidate>
-        <h3>Ankaufsanfrage</h3>
-        <div class="row">
-          <label>Art der Maschine
-            <select name="art" required>
-              <option value="">Bitte wählen</option>
-              <option>Bagger</option><option>Minibagger</option><option>Radlader</option>
-              <option>LKW</option><option>Transporter</option><option>Anhänger</option><option>Sonstiges</option>
-            </select>
-          </label>
-          <label>Hersteller / Modell<input name="modell" placeholder="z. B. Kettenbagger 14 t"></label>
-        </div>
-        <div class="row">
-          <label>Baujahr<input name="baujahr" inputmode="numeric" placeholder="z. B. 2016"></label>
-          <label>Betriebsstunden / km<input name="stunden" inputmode="numeric" placeholder="z. B. 6.500 h"></label>
-        </div>
-        <label>Fotos<input type="file" name="fotos" accept="image/*" multiple></label>
-        <div class="row">
-          <label>Name<input name="name" required autocomplete="name"></label>
-          <label>Telefon<input name="telefon" type="tel" required autocomplete="tel"></label>
-        </div>
-        <label>Nachricht<textarea name="nachricht" rows="3" placeholder="Zustand, Standort, Besonderheiten …"></textarea></label>
-        <label class="check"><input type="checkbox" required><span>Ich stimme der Verarbeitung meiner Daten zur Bearbeitung der Anfrage zu (<a href="datenschutz.html">Datenschutz</a>).</span></label>
-        <button class="btn btn-gold btn-block" type="submit">Anfrage senden</button>
-        <p class="form-msg" id="form-msg" role="status"></p>
-      </form>
-    </div>
-  </section>
-
-  <!-- LEISTUNGEN -->
-  <section class="section" id="leistungen">
-    <div class="wrap">
-      <p class="eyebrow dark">Leistungen</p>
-      <h2>Alles aus einer Hand</h2>
-      <div class="services">
-        <article><span class="num">01</span><h3>Verkauf</h3><p>Gebrauchte Baumaschinen und Nutzfahrzeuge mit transparenter Beschreibung. Besichtigung nach Absprache in Butzbach.</p></article>
-        <article><span class="num">02</span><h3>Ankauf</h3><p>Wir kaufen einzelne Maschinen und ganze Fuhrparks, auch mit Mängeln oder hohen Betriebsstunden.</p></article>
-        <article><span class="num">03</span><h3>Inzahlungnahme</h3><p>Sie geben Ihre alte Maschine in Zahlung und bekommen die neue zum Differenzbetrag.</p></article>
-        <article><span class="num">04</span><h3>Transport</h3><p>Abholung und Lieferung organisieren wir für Sie, auf Wunsch auch über größere Distanzen.</p></article>
+      <div class="why-list reveal">
+        <div><h3>Faire Bewertung</h3><p>Wir schauen uns Ihre Maschine an und nennen einen Preis, der zum Markt und zum Zustand passt.</p></div>
+        <div><h3>Schnelle Abwicklung</h3><p>Kein wochenlanges Inserieren. Sie bekommen ein Angebot und klare nächste Schritte.</p></div>
+        <div><h3>Sichere Zahlung</h3><p>Transparenter Kaufvertrag und sichere Bezahlung bei Übergabe.</p></div>
+        <div><h3>Abholung inklusive</h3><p>Den Transport organisieren wir, egal wo Ihre Maschine steht.</p></div>
       </div>
     </div>
   </section>
 
   <!-- ÜBER UNS -->
-  <section class="section about" id="ueber-uns">
+  <section class="section ivory on-light about" id="ueber-uns">
     <div class="wrap about-grid">
-      <div class="about-visual" aria-hidden="true">
+      <figure class="about-visual reveal" style="margin:0">
+        <span class="pill a1"></span><span class="pill a2"></span>
         <img src="assets/img/logo-hell.png" alt="">
-      </div>
-      <div>
+        <figcaption>Hier kommt ein Foto vom Hof oder Team hin</figcaption>
+      </figure>
+      <div class="reveal">
         <p class="eyebrow">Über uns</p>
-        <h2>Sanisa GmbH aus Butzbach</h2>
-        <p>Die Sanisa GmbH handelt mit gebrauchten Baumaschinen und Nutzfahrzeugen. Bauunternehmen, Handwerker, Garten- und Landschaftsbauer und Privatkunden bekommen bei uns ehrliche Beratung, faire Preise und eine unkomplizierte Abwicklung.</p>
-        <p class="ph-note">Platzhaltertext: Gründungsjahr, Inhaber und Besonderheiten bitte ergänzen.</p>
+        <h2>Sanisa GmbH <em>aus Butzbach.</em></h2>
+        <p>Die Sanisa GmbH handelt mit gebrauchten Baumaschinen und Nutzfahrzeugen. Unsere Kunden sind Bauunternehmen, Handwerksbetriebe, Garten- und Landschaftsbauer und Privatleute. Sie alle bekommen bei uns ehrliche Beratung, faire Preise und eine Abwicklung ohne Umwege.</p>
+        <p>Von Butzbach aus sind wir schnell im gesamten Rhein-Main-Gebiet und in Mittelhessen, und für den Ankauf auch darüber hinaus.</p>
+        <p class="ph-note">Platzhalter: Gründungsjahr, Inhaber und Besonderheiten ergänzen.</p>
+        <p class="signature"><span class="ph">[Name Geschäftsführer]</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section on-light" id="faq">
+    <div class="wrap">
+      <div class="section-head reveal"><div><p class="eyebrow">Häufige Fragen</p><h2>Gut zu <em>wissen.</em></h2></div></div>
+      <div class="faq reveal">
+        <details><summary>Kaufen Sie auch defekte Maschinen an?</summary><p>Ja. Auch Maschinen mit Mängeln, Motorschaden oder vielen Betriebsstunden haben einen Wert. Beschreiben Sie den Zustand möglichst ehrlich, dann wird das Angebot auch realistisch.</p></details>
+        <details><summary>Wie schnell bekomme ich ein Angebot?</summary><p>Meist melden wir uns kurzfristig. Mit Fotos und den wichtigsten Eckdaten wie Baujahr, Stunden und Zustand geht es am schnellsten.</p></details>
+        <details><summary>Wie wird bezahlt?</summary><p>Sie bekommen einen schriftlichen Kaufvertrag. Bezahlt wird per Überweisung oder nach Absprache bar bei Übergabe.</p></details>
+        <details><summary>Muss ich die Maschine selbst bringen?</summary><p>Nein. Wir organisieren die Abholung bei Ihnen auf der Baustelle oder auf dem Hof.</p></details>
+        <details><summary>Kaufen Sie auch ganze Fuhrparks?</summary><p>Ja. Bei Betriebsauflösung oder Erneuerung des Fuhrparks machen wir Ihnen gern ein Gesamtangebot.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band">
+    <div class="wrap cta-inner">
+      <h2>Was ist Ihre Maschine <em>wert?</em></h2>
+      <div class="cta-actions">
+        <a href="#anfrage" class="btn btn-dark">Angebot anfordern <svg><use href="assets/img/icons.svg#i-arrow"/></svg></a>
+        <a href="https://wa.me/490000000000" class="btn btn-line-dark" target="_blank" rel="noopener"><svg><use href="assets/img/icons.svg#i-whatsapp"/></svg>WhatsApp</a>
       </div>
     </div>
   </section>
 
   <!-- KONTAKT -->
-  <section class="section" id="kontakt">
+  <section class="section on-light" id="kontakt">
     <div class="wrap contact-grid">
-      <div>
-        <p class="eyebrow dark">Kontakt</p>
-        <h2>So erreichen Sie uns</h2>
+      <div class="reveal">
+        <p class="eyebrow">Kontakt</p>
+        <h2>Wir sind <em>für Sie da.</em></h2>
         <ul class="contact-list">
-          <li><svg><use href="#i-pin"/></svg><div><strong>Sanisa GmbH</strong><br><span class="ph">[Straße Hausnr.]</span><br>35510 Butzbach</div></li>
-          <li><svg><use href="#i-phone"/></svg><div><a href="tel:+490000000000" class="ph">[Telefonnummer]</a></div></li>
-          <li><svg><use href="#i-mail"/></svg><div><a href="mailto:info@example.de" class="ph">[info@sanisa-domain.de]</a></div></li>
-          <li><svg><use href="#i-clock"/></svg><div>Mo–Fr <span class="ph">[08:00–17:00]</span><br>Sa nach Vereinbarung</div></li>
+          <li><span class="k">Adresse</span><span>Sanisa GmbH<br><span class="ph">[Straße Hausnr.]</span><br>35510 Butzbach</span></li>
+          <li><span class="k">Telefon</span><a href="tel:+490000000000"><span class="ph">[Telefonnummer]</span></a></li>
+          <li><span class="k">E-Mail</span><a href="mailto:info@example.de"><span class="ph">[info@domain.de]</span></a></li>
+          <li><span class="k">Öffnungszeiten</span><span>Mo–Fr <span class="ph">[08:00–17:00]</span><br>Sa nach Vereinbarung</span></li>
         </ul>
-        <a href="https://wa.me/490000000000" class="btn btn-whatsapp" target="_blank" rel="noopener">Per WhatsApp schreiben</a>
       </div>
-      <div class="map" aria-label="Kartenplatzhalter">
+      <div class="map reveal">
         <div class="map-inner">
-          <svg><use href="#i-pin"/></svg>
-          <p><strong>Butzbach</strong><br>Die Karte wird erst nach Einwilligung geladen (DSGVO).</p>
-          <a class="btn btn-dark" href="https://www.openstreetmap.org/search?query=Butzbach" target="_blank" rel="noopener">Route planen</a>
+          <svg><use href="assets/img/icons.svg#i-pin"/></svg>
+          <p><strong style="color:var(--text)">Butzbach</strong><br>Die Karte wird erst nach Zustimmung geladen (DSGVO).</p>
+          <a class="link-arrow" href="https://www.openstreetmap.org/search?query=Butzbach" target="_blank" rel="noopener">Route planen <svg><use href="assets/img/icons.svg#i-arrow"/></svg></a>
         </div>
       </div>
     </div>
@@ -215,20 +253,13 @@
   <div class="wrap footer-grid">
     <div>
       <img src="assets/img/logo-hell.png" alt="Sanisa Baumaschinen Handel" class="footer-logo" width="317" height="82">
-      <p>An- und Verkauf von Baumaschinen und Nutzfahrzeugen in Butzbach.</p>
+      <p style="max-width:22rem">Ankauf und Verkauf von Baumaschinen und Nutzfahrzeugen aus Butzbach.</p>
     </div>
-    <nav aria-label="Footer">
-      <a href="#fahrzeuge">Fahrzeuge</a>
-      <a href="#ankauf">Ankauf</a>
-      <a href="#kontakt">Kontakt</a>
-      <a href="login.html">Mitarbeiter-Login</a>
-    </nav>
-    <nav aria-label="Rechtliches">
-      <a href="impressum.html">Impressum</a>
-      <a href="datenschutz.html">Datenschutz</a>
-    </nav>
+    <nav aria-label="Ankauf"><h4>Ankauf</h4><a href="#anfrage">Angebot anfordern</a><a href="#ankauf">Ablauf</a><a href="#faq">FAQ</a></nav>
+    <nav aria-label="Unternehmen"><h4>Unternehmen</h4><a href="#bestand">Bestand</a><a href="#ueber-uns">Über uns</a><a href="#kontakt">Kontakt</a></nav>
+    <nav aria-label="Rechtliches"><h4>Rechtliches</h4><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="login.html">Mitarbeiter-Login</a></nav>
   </div>
-  <div class="wrap footer-bottom">© <span id="year">2026</span> Sanisa GmbH · Butzbach</div>
+  <div class="wrap footer-bottom"><span>© <span class="js-year">2026</span> Sanisa GmbH</span><span>Butzbach · Hessen</span></div>
 </footer>
 
 <script src="assets/js/main.js"></script>
