@@ -3,6 +3,7 @@
 const SPRITE = "assets/img/icons.svg";
 
 const ICONS = {
+  Baumaschine: "i-bagger",
   Bagger: "i-bagger",
   Minibagger: "i-minibagger",
   Radlader: "i-radlader",
@@ -23,13 +24,7 @@ function esc(s) {
   return String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 }
 
-/* Header: transparent über dem Hero, dunkel beim Scrollen */
 const header = $(".site-header");
-if (header) {
-  const onScroll = () => header.classList.toggle("scrolled", window.scrollY > 40);
-  onScroll();
-  window.addEventListener("scroll", onScroll, { passive: true });
-}
 
 /* Mobile Navigation */
 const toggle = $(".nav-toggle");
@@ -38,12 +33,10 @@ if (toggle && nav) {
   toggle.addEventListener("click", () => {
     const open = nav.classList.toggle("open");
     toggle.setAttribute("aria-expanded", open);
-    header.classList.toggle("solid", open);
   });
   $$("a", nav).forEach((a) => a.addEventListener("click", () => {
     nav.classList.remove("open");
     toggle.setAttribute("aria-expanded", "false");
-    header.classList.remove("solid");
   }));
 }
 
@@ -62,24 +55,25 @@ let vehicles = [];
 
 function card(v) {
   const icon = ICONS[v.kategorie] || "i-lkw";
+  const title = v.titel || [v.hersteller, v.modell].filter(Boolean).join(" ");
   const media = v.bild
-    ? `<img src="${esc(v.bild)}" alt="${esc(v.hersteller + " " + v.modell)}" loading="lazy">`
+    ? `<img src="${esc(v.bild)}" alt="${esc(title)}" loading="lazy">`
     : `<svg aria-hidden="true"><use href="${SPRITE}#${icon}"/></svg>`;
-  const specs = [
-    v.baujahr && `Bj. ${v.baujahr}`,
-    v.betriebsstunden && `${fmt.format(v.betriebsstunden)} Bh`,
-    v.kilometer && `${fmt.format(v.kilometer)} km`,
+  const specs = v.daten || [
+    v.baujahr && `Baujahr: ${v.baujahr}`,
+    v.betriebsstunden && `Betriebsstunden: ${fmt.format(v.betriebsstunden)} h`,
+    v.kilometer && `Kilometer: ${fmt.format(v.kilometer)} km`,
     v.zustand,
   ].filter(Boolean);
   return `
-    <article class="vehicle reveal in">
-      <div class="vehicle-media">${media}<span class="vehicle-tag">${esc(v.kategorie)}</span></div>
+    <article class="card vehicle">
+      <div class="vehicle-media">${media}</div>
       <div class="vehicle-body">
-        <h3>${esc(v.modell)}</h3>
+        <h3>${esc(title)}</h3>
         <ul class="specs">${specs.map((s) => `<li>${esc(s)}</li>`).join("")}</ul>
         <div class="vehicle-foot">
-          <div class="price">${v.preis ? fmt.format(v.preis) + " €" : "Auf Anfrage"}<small>${esc(v.mwst || "")}</small></div>
-          <a class="link-arrow" href="#kontakt">Anfragen</a>
+          <div class="price">${v.preis ? fmt.format(v.preis) + " €" : "Preis auf Anfrage"}${v.preis ? `<small>${esc(v.mwst || "zzgl. MwSt.")}</small>` : ""}</div>
+          <a class="more-link" href="#kontakt">Anfragen »</a>
         </div>
       </div>
     </article>`;
@@ -107,19 +101,16 @@ if ($("#vehicle-grid")) {
 
 /* Team (Daten aus data/team.json, später über den Mitarbeiter-Bereich pflegbar) */
 function member(m) {
-  const initials = m.platzhalter ? "?" : m.name.split(" ").map((w) => w[0]).join("").slice(0, 2);
-  const photo = m.bild ? `<img src="${esc(m.bild)}" alt="${esc(m.name)}" loading="lazy">` : `<span class="initials">${esc(initials)}</span>`;
-  const tel = m.telefon ? `<a href="tel:${esc(m.telefon.replace(/\s/g, ""))}"><svg><use href="${SPRITE}#i-phone"/></svg>${esc(m.telefon)}</a>` : "";
-  const mail = m.email ? `<a href="mailto:${esc(m.email)}"><svg><use href="${SPRITE}#i-mail"/></svg>${esc(m.email)}</a>` : "";
+  const initials = m.name.split(" ").map((w) => w[0]).join("").slice(0, 2);
+  const photo = m.bild ? `<img src="${esc(m.bild)}" alt="${esc(m.name)}" loading="lazy">` : esc(initials);
+  const tel = m.telefon ? `<a href="tel:${esc(m.telefon.replace(/\s/g, ""))}">${esc(m.telefon)}</a>` : "";
+  const mail = m.email ? `<a href="mailto:${esc(m.email)}">${esc(m.email)}</a>` : "";
   return `
-    <article class="member reveal in${m.platzhalter ? " is-ph" : ""}">
-      <div class="member-photo">${photo}</div>
-      <div class="member-body">
-        <p class="role">${esc(m.rolle)}</p>
-        <h3>${esc(m.name)}</h3>
-        ${m.bereich ? `<p class="area">${esc(m.bereich)}</p>` : ""}
-        <div class="contact">${tel}${mail}</div>
-      </div>
+    <article class="card member">
+      <div class="avatar">${photo}</div>
+      <h3>${esc(m.name)}</h3>
+      <p class="role">${esc(m.rolle)}</p>
+      <div class="contact">${tel}${mail}</div>
     </article>`;
 }
 const teamGrid = $("#team-grid");

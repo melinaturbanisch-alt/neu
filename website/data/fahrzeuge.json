@@ -1,8 +1,26 @@
 [
-  { "id": "demo-1", "kategorie": "LKW", "modell": "3-Achs-Kipper 26 t", "baujahr": 2016, "kilometer": 386000, "preis": 54900, "mwst": "zzgl. MwSt.", "zustand": "Gebraucht", "bild": "", "demo": true },
-  { "id": "demo-2", "kategorie": "Sattelzug", "modell": "Sattelzugmaschine 4x2", "baujahr": 2018, "kilometer": 512000, "preis": 39800, "mwst": "zzgl. MwSt.", "zustand": "Gebraucht", "bild": "", "demo": true },
-  { "id": "demo-3", "kategorie": "Bagger", "modell": "Mobilbagger 16 t", "baujahr": 2015, "betriebsstunden": 9800, "preis": 62500, "mwst": "zzgl. MwSt.", "zustand": "Gebraucht", "bild": "", "demo": true },
-  { "id": "demo-4", "kategorie": "Minibagger", "modell": "Minibagger 2,7 t", "baujahr": 2020, "betriebsstunden": 1850, "preis": 24900, "mwst": "zzgl. MwSt.", "zustand": "Gebraucht", "bild": "", "demo": true },
-  { "id": "demo-5", "kategorie": "Dumper", "modell": "Raddumper 6 t", "baujahr": 2017, "betriebsstunden": 3200, "preis": 21500, "mwst": "zzgl. MwSt.", "zustand": "Gebraucht", "bild": "", "demo": true },
-  { "id": "demo-6", "kategorie": "LKW", "modell": "Abrollkipper 3-Achser", "baujahr": 2014, "kilometer": 455000, "preis": 47000, "mwst": "zzgl. MwSt.", "zustand": "Gebraucht", "bild": "", "demo": true }
+  {
+    "id": "husmann-hl2-1622",
+    "kategorie": "Industrie",
+    "titel": "Husmann HL2 1622/2 Wellenschredder",
+    "bild": "assets/img/fahrzeuge/alt-1.jpg",
+    "daten": ["Hersteller: Husmann", "Typ: HL2 1622", "Baujahr: 2011", "Getriebe defekt (keine Kraftübertragung zwischen rechter Welle und Getriebe)"],
+    "preis": null
+  },
+  {
+    "id": "actros-2551-bdf",
+    "kategorie": "LKW",
+    "titel": "Mercedes-Benz Actros 2551 BDF 6×2",
+    "bild": "assets/img/fahrzeuge/alt-2.jpg",
+    "daten": ["Kilometer: 523.598 km", "Erstzulassung: 11/2019", "Leistung: 375 kW / 509 PS", "Retarder, MirrorCam, Euro 6D"],
+    "preis": null
+  },
+  {
+    "id": "actros-2543-lbw",
+    "kategorie": "LKW",
+    "titel": "Mercedes-Benz Actros 2543 LBW, Getränke-Aufbau",
+    "bild": "assets/img/fahrzeuge/alt-3.jpg",
+    "daten": ["Kilometer: 390.238 km", "Erstzulassung: 07/2017", "Leistung: 315 kW / 428 PS", "Ladebordwand, mit Boese-Anhänger"],
+    "preis": null
+  }
 ]
