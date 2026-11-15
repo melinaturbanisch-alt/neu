@@ -117,7 +117,7 @@ function member(m) {
       <div class="member-body">
         <p class="role">${esc(m.rolle)}</p>
         <h3>${esc(m.name)}</h3>
-        <p class="area">${esc(m.bereich || "")}</p>
+        ${m.bereich ? `<p class="area">${esc(m.bereich)}</p>` : ""}
         <div class="contact">${tel}${mail}</div>
       </div>
     </article>`;
@@ -126,7 +126,13 @@ const teamGrid = $("#team-grid");
 if (teamGrid) {
   fetch("data/team.json", { cache: "no-store" })
     .then((r) => r.json())
-    .then((list) => { teamGrid.innerHTML = list.map(member).join(""); })
+    .then((list) => {
+      // nach Gruppen sortiert ausgeben (Reihenfolge wie in der Datei)
+      const groups = [...new Set(list.map((m) => m.gruppe || ""))];
+      teamGrid.innerHTML = groups.map((g) => `
+        ${g ? `<h3 class="team-group">${esc(g)}</h3>` : ""}
+        <div class="team-grid">${list.filter((m) => (m.gruppe || "") === g).map(member).join("")}</div>`).join("");
+    })
     .catch(() => {});
 }
 
