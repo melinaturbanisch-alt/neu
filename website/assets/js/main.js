@@ -1,6 +1,5 @@
 // Sanisa – gemeinsames Script für Startseite und Ankaufs-Landingpage
 
-const MOBILE_DE_URL = "#"; // TODO: Link zum Sanisa-Händlerprofil auf mobile.de
 const SPRITE = "assets/img/icons.svg";
 
 const ICONS = {
@@ -11,6 +10,9 @@ const ICONS = {
   Transporter: "i-transporter",
   "Anhänger": "i-anhaenger",
   Stapler: "i-stapler",
+  Sattelzug: "i-sattelzug",
+  Dumper: "i-dumper",
+  Industrie: "i-industrie",
 };
 
 const fmt = new Intl.NumberFormat("de-DE");
@@ -103,10 +105,29 @@ if ($("#vehicle-grid")) {
     .catch(() => render());
 }
 
-const ml = $("#mobile-link");
-if (ml) {
-  ml.href = MOBILE_DE_URL;
-  if (MOBILE_DE_URL === "#") ml.removeAttribute("target");
+/* Team (Daten aus data/team.json, später über den Mitarbeiter-Bereich pflegbar) */
+function member(m) {
+  const initials = m.platzhalter ? "?" : m.name.split(" ").map((w) => w[0]).join("").slice(0, 2);
+  const photo = m.bild ? `<img src="${esc(m.bild)}" alt="${esc(m.name)}" loading="lazy">` : `<span class="initials">${esc(initials)}</span>`;
+  const tel = m.telefon ? `<a href="tel:${esc(m.telefon.replace(/\s/g, ""))}"><svg><use href="${SPRITE}#i-phone"/></svg>${esc(m.telefon)}</a>` : "";
+  const mail = m.email ? `<a href="mailto:${esc(m.email)}"><svg><use href="${SPRITE}#i-mail"/></svg>${esc(m.email)}</a>` : "";
+  return `
+    <article class="member reveal in${m.platzhalter ? " is-ph" : ""}">
+      <div class="member-photo">${photo}</div>
+      <div class="member-body">
+        <p class="role">${esc(m.rolle)}</p>
+        <h3>${esc(m.name)}</h3>
+        <p class="area">${esc(m.bereich || "")}</p>
+        <div class="contact">${tel}${mail}</div>
+      </div>
+    </article>`;
+}
+const teamGrid = $("#team-grid");
+if (teamGrid) {
+  fetch("data/team.json", { cache: "no-store" })
+    .then((r) => r.json())
+    .then((list) => { teamGrid.innerHTML = list.map(member).join(""); })
+    .catch(() => {});
 }
 
 /* Mehrstufiges Ankaufsformular */

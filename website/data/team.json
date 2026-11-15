@@ -1,0 +1,6 @@
+[
+  { "name": "Siawash Hematyar", "rolle": "Geschäftsführer & Inhaber", "bereich": "Ankauf · Bewertung · Großkunden", "telefon": "+49 177 3214225", "email": "info@sanisa.de", "bild": "" },
+  { "name": "[Name]", "rolle": "Verkauf LKW & Sattelzug", "bereich": "Kipper, Abrollkipper, Zugmaschinen", "telefon": "", "email": "", "bild": "", "platzhalter": true },
+  { "name": "[Name]", "rolle": "Verkauf Baumaschinen", "bereich": "Bagger, Radlader, Dumper", "telefon": "", "email": "", "bild": "", "platzhalter": true },
+  { "name": "[Name]", "rolle": "Vermietung & Disposition", "bereich": "Mietgeräte, Verladung, Export", "telefon": "", "email": "", "bild": "", "platzhalter": true }
+]

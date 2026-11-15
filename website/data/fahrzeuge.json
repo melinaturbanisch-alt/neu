@@ -1,79 +1,8 @@
 [
-  {
-    "id": "demo-1",
-    "kategorie": "Bagger",
-    "hersteller": "Beispiel",
-    "modell": "Kettenbagger 21 t",
-    "baujahr": 2017,
-    "betriebsstunden": 7400,
-    "preis": 68500,
-    "mwst": "zzgl. MwSt.",
-    "zustand": "Gebraucht",
-    "bild": "",
-    "demo": true
-  },
-  {
-    "id": "demo-2",
-    "kategorie": "Minibagger",
-    "hersteller": "Beispiel",
-    "modell": "Minibagger 2,7 t",
-    "baujahr": 2020,
-    "betriebsstunden": 1850,
-    "preis": 24900,
-    "mwst": "zzgl. MwSt.",
-    "zustand": "Gebraucht",
-    "bild": "",
-    "demo": true
-  },
-  {
-    "id": "demo-3",
-    "kategorie": "Radlader",
-    "hersteller": "Beispiel",
-    "modell": "Radlader 1,2 m³",
-    "baujahr": 2016,
-    "betriebsstunden": 9100,
-    "preis": 41000,
-    "mwst": "zzgl. MwSt.",
-    "zustand": "Gebraucht",
-    "bild": "",
-    "demo": true
-  },
-  {
-    "id": "demo-4",
-    "kategorie": "LKW",
-    "hersteller": "Beispiel",
-    "modell": "3-Achs-Kipper 26 t",
-    "baujahr": 2015,
-    "kilometer": 412000,
-    "preis": 52000,
-    "mwst": "zzgl. MwSt.",
-    "zustand": "Gebraucht",
-    "bild": "",
-    "demo": true
-  },
-  {
-    "id": "demo-5",
-    "kategorie": "Transporter",
-    "hersteller": "Beispiel",
-    "modell": "Pritsche Doppelkabine 3,5 t",
-    "baujahr": 2019,
-    "kilometer": 138000,
-    "preis": 21500,
-    "mwst": "zzgl. MwSt.",
-    "zustand": "Gebraucht",
-    "bild": "",
-    "demo": true
-  },
-  {
-    "id": "demo-6",
-    "kategorie": "Anhänger",
-    "hersteller": "Beispiel",
-    "modell": "Tieflader 3-Achser",
-    "baujahr": 2018,
-    "preis": 14800,
-    "mwst": "zzgl. MwSt.",
-    "zustand": "Gebraucht",
-    "bild": "",
-    "demo": true
-  }
+  { "id": "demo-1", "kategorie": "LKW", "modell": "3-Achs-Kipper 26 t", "baujahr": 2016, "kilometer": 386000, "preis": 54900, "mwst": "zzgl. MwSt.", "zustand": "Gebraucht", "bild": "", "demo": true },
+  { "id": "demo-2", "kategorie": "Sattelzug", "modell": "Sattelzugmaschine 4x2", "baujahr": 2018, "kilometer": 512000, "preis": 39800, "mwst": "zzgl. MwSt.", "zustand": "Gebraucht", "bild": "", "demo": true },
+  { "id": "demo-3", "kategorie": "Bagger", "modell": "Mobilbagger 16 t", "baujahr": 2015, "betriebsstunden": 9800, "preis": 62500, "mwst": "zzgl. MwSt.", "zustand": "Gebraucht", "bild": "", "demo": true },
+  { "id": "demo-4", "kategorie": "Minibagger", "modell": "Minibagger 2,7 t", "baujahr": 2020, "betriebsstunden": 1850, "preis": 24900, "mwst": "zzgl. MwSt.", "zustand": "Gebraucht", "bild": "", "demo": true },
+  { "id": "demo-5", "kategorie": "Dumper", "modell": "Raddumper 6 t", "baujahr": 2017, "betriebsstunden": 3200, "preis": 21500, "mwst": "zzgl. MwSt.", "zustand": "Gebraucht", "bild": "", "demo": true },
+  { "id": "demo-6", "kategorie": "LKW", "modell": "Abrollkipper 3-Achser", "baujahr": 2014, "kilometer": 455000, "preis": 47000, "mwst": "zzgl. MwSt.", "zustand": "Gebraucht", "bild": "", "demo": true }
 ]
