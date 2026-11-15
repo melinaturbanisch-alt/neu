@@ -1,0 +1,79 @@
+[
+  {
+    "id": "demo-1",
+    "kategorie": "Bagger",
+    "hersteller": "Beispiel",
+    "modell": "Kettenbagger 21 t",
+    "baujahr": 2017,
+    "betriebsstunden": 7400,
+    "preis": 68500,
+    "mwst": "zzgl. MwSt.",
+    "zustand": "Gebraucht",
+    "bild": "",
+    "demo": true
+  },
+  {
+    "id": "demo-2",
+    "kategorie": "Minibagger",
+    "hersteller": "Beispiel",
+    "modell": "Minibagger 2,7 t",
+    "baujahr": 2020,
+    "betriebsstunden": 1850,
+    "preis": 24900,
+    "mwst": "zzgl. MwSt.",
+    "zustand": "Gebraucht",
+    "bild": "",
+    "demo": true
+  },
+  {
+    "id": "demo-3",
+    "kategorie": "Radlader",
+    "hersteller": "Beispiel",
+    "modell": "Radlader 1,2 m³",
+    "baujahr": 2016,
+    "betriebsstunden": 9100,
+    "preis": 41000,
+    "mwst": "zzgl. MwSt.",
+    "zustand": "Gebraucht",
+    "bild": "",
+    "demo": true
+  },
+  {
+    "id": "demo-4",
+    "kategorie": "LKW",
+    "hersteller": "Beispiel",
+    "modell": "3-Achs-Kipper 26 t",
+    "baujahr": 2015,
+    "kilometer": 412000,
+    "preis": 52000,
+    "mwst": "zzgl. MwSt.",
+    "zustand": "Gebraucht",
+    "bild": "",
+    "demo": true
+  },
+  {
+    "id": "demo-5",
+    "kategorie": "Transporter",
+    "hersteller": "Beispiel",
+    "modell": "Pritsche Doppelkabine 3,5 t",
+    "baujahr": 2019,
+    "kilometer": 138000,
+    "preis": 21500,
+    "mwst": "zzgl. MwSt.",
+    "zustand": "Gebraucht",
+    "bild": "",
+    "demo": true
+  },
+  {
+    "id": "demo-6",
+    "kategorie": "Anhänger",
+    "hersteller": "Beispiel",
+    "modell": "Tieflader 3-Achser",
+    "baujahr": 2018,
+    "preis": 14800,
+    "mwst": "zzgl. MwSt.",
+    "zustand": "Gebraucht",
+    "bild": "",
+    "demo": true
+  }
+]
