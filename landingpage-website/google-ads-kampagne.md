@@ -78,7 +78,7 @@ den Standort der suchenden Person, das passt genau zum 100-km-Umkreis.
 1. Webdesigner in Ihrer Nähe  ← an Position 1 fixieren
 2. Website erstellen lassen
 3. Agentur aus Mittelhessen
-4. Auch Termine vor Ort
+4. Termine bei Ihnen vor Ort
 5. Websites ab 854 €
 6. In 1–2 Wochen online
 7. Kostenloses Erstgespräch
@@ -89,7 +89,7 @@ den Standort der suchenden Person, das passt genau zum 100-km-Umkreis.
 12. Jetzt Erstgespräch sichern
 
 Beschreibungen (max. 90 Zeichen, alle geprüft):
-1. Ihre Webagentur aus der Region: persönlich, vor Ort oder per Video-Call. Ab 854 €.
+1. Ihre Webagentur aus der Region: persönlich bei Ihnen vor Ort oder per Video-Call.
 2. Basis-Website ab 854 €: Startseite, Leistungen, Kontakt, Impressum & Datenschutz.
 3. Kostenloses Erstgespräch in 15 Minuten. Danach festes Angebot, keine offene Rechnung.
 4. Schnell, mobil, individuell gestaltet. In 1–2 Wochen ist Ihre neue Website online.
@@ -166,7 +166,7 @@ Hinweis: „günstig“ bewusst **nicht** ausschließen. Wer „website erstelle
 1. Website erstellen lassen ab 854 € – mit Startseite, Leistungen, Kontakt und Impressum.
 2. Homepage erstellen lassen: kostenloses Erstgespräch, danach festes Angebot zum Festpreis.
 3. Webdesign Agentur mit persönlicher Betreuung. In 1–2 Wochen ist Ihre neue Website online.
-4. Website für Selbstständige & Unternehmen. Per Telefon, Video-Call oder vor Ort.
+4. Website für Selbstständige & Unternehmen. Per Telefon, Video-Call oder bei Ihnen vor Ort.
 
 Anzeigen-Pfad: `melvona.de/website/erstgespraech`
 
