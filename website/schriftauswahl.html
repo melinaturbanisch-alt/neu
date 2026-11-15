@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>SANISA Schriftauswahl</title>
+  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Inter:wght@400;600;800&family=DM+Sans:wght@400;600;800&family=Plus+Jakarta+Sans:wght@400;600;800&family=Archivo:wght@400;600;800&family=Barlow:wght@400;600;800&family=Oswald:wght@400;600;700&family=Rubik:wght@400;600;800&family=Montserrat:wght@400;600;800&family=Poppins:wght@400;600;800&family=Sora:wght@400;600;800&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root { --yellow: #facc38; --text: #1d1d1f; --muted: #666669; --line: #e4e4e4; --grey: #f4f4f4; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--grey); color: var(--text); font-family: Inter, system-ui, sans-serif; }
+    .wrap { max-width: 1200px; margin: 0 auto; padding: 40px 16px 64px; }
+    header { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-bottom: 12px; }
+    header img { height: 48px; }
+    h1 { font: 800 1.9rem/1.2 Inter, sans-serif; margin: 24px 0 6px; letter-spacing: -.02em; }
+    .hint { color: var(--muted); margin: 0 0 8px; max-width: 46rem; }
+    .group { font: 600 .8rem Inter, sans-serif; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin: 40px 0 14px; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+    @media (max-width: 860px) { .grid { grid-template-columns: 1fr; } }
+    .card { background: #fff; border-radius: 10px; box-shadow: 0 6px 30px rgba(0,0,0,.07); padding: 26px 28px 28px; position: relative; break-inside: avoid; }
+    .num { position: absolute; top: 20px; right: 22px; width: 44px; height: 44px; border-radius: 50%; background: var(--yellow); display: grid; place-items: center; font: 800 1.15rem Inter, sans-serif; }
+    .name { font: 600 .85rem Inter, sans-serif; color: var(--muted); margin: 0 0 16px; padding-right: 52px; }
+    .name b { color: var(--text); font-size: 1rem; }
+    .h { font-weight: 800; font-size: 2.15rem; line-height: 1.1; letter-spacing: -.02em; margin: 0 0 14px; padding-right: 48px; }
+    .h span { color: #e0aa00; }
+    .t { display: flex; align-items: center; gap: 14px; text-transform: uppercase; font-weight: 800; font-size: 1.15rem; letter-spacing: .02em; margin: 0 0 12px; }
+    .t::before, .t::after { content: ""; flex: 1; height: 1px; background: #cfcfcf; }
+    .p { font-weight: 400; font-size: 1rem; line-height: 1.6; color: var(--muted); margin: 0 0 18px; }
+    .row { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .stats { display: flex; gap: 22px; }
+    .stats div { text-align: center; }
+    .stats strong { display: block; font-weight: 800; font-size: 1.7rem; color: #f0bd16; line-height: 1; }
+    .stats small { font-size: .78rem; font-weight: 600; }
+    .btn { background: var(--yellow); border-radius: 999px; padding: .8rem 1.4rem; font-weight: 600; text-transform: uppercase; font-size: .88rem; letter-spacing: .03em; white-space: nowrap; }
+    /* Oswald ist schmal und läuft größer */
+    .oswald .h { font-weight: 700; font-size: 2.4rem; letter-spacing: 0; }
+    .oswald .t, .oswald .stats strong { font-weight: 700; }
+    footer { margin-top: 40px; color: var(--muted); font-size: .9rem; }
+    @media print {
+      @page { size: A4; margin: 12mm; }
+      body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .wrap { padding: 0; max-width: none; }
+      .grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .card { box-shadow: none; border: 1px solid var(--line); padding: 16px 18px; }
+      .h { font-size: 1.45rem; }
+      .p { font-size: .82rem; margin-bottom: 10px; }
+      .t { font-size: .9rem; }
+      .stats strong { font-size: 1.2rem; }
+      .btn { font-size: .72rem; padding: .55rem 1rem; }
+      .num { width: 32px; height: 32px; font-size: .95rem; top: 12px; right: 14px; }
+      .group { margin: 16px 0 8px; }
+      .group.page { break-before: page; }
+      h1 { font-size: 1.4rem; margin-top: 8px; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <header><img src="assets/img/logo.png" alt="SANISA Baumaschinen Handel"></header>
+  <h1>Schriftauswahl für die neue Website</h1>
+  <p class="hint">Bitte bis zu <strong>3 Favoriten</strong> aussuchen und einfach die Nummern nennen. Alle Muster zeigen dieselben Texte im Stil der neuen Seite. Das Logo bleibt in jedem Fall unverändert.</p>
+
+  <div id="list"></div>
+
+  <footer>Alle Schriften sind kostenlos nutzbar (Google Fonts) und werden für den Livegang lokal eingebunden.</footer>
+</div>
+
+<script>
+  const groups = [
+    ["Modern & ruhig", [
+      ["Manrope", "aktuell auf der Seite"],
+      ["Inter", "sehr neutral, gut lesbar"],
+      ["DM Sans", "freundlich, rund"],
+      ["Plus Jakarta Sans", "modern, leicht elegant"],
+    ]],
+    ["Kräftig & technisch", [
+      ["Archivo", "kräftig, sachlich"],
+      ["Barlow", "technisch, leicht schmal"],
+      ["Oswald", "schmal & hoch, sehr auffällig"],
+      ["Rubik", "kompakt, leicht abgerundet"],
+    ]],
+    ["Geometrisch & markant", [
+      ["Montserrat", "klassisch-modern, sehr verbreitet"],
+      ["Poppins", "rund, geometrisch"],
+      ["Sora", "modern, eigenständig"],
+      ["Outfit", "klar, zeitgemäß"],
+    ]],
+  ];
+  let n = 0;
+  const html = groups.map(([g, fonts], gi) => `
+    <h2 class="group${gi ? " page" : ""}">${g}</h2>
+    <div class="grid">${fonts.map(([f, desc]) => { n++; return `
+      <section class="card${f === "Oswald" ? " oswald" : ""}" style="font-family:'${f}', sans-serif">
+        <span class="num">${n}</span>
+        <p class="name"><b>${f}</b> · ${desc}</p>
+        <p class="h">Baumaschinen &amp; Nutzfahrzeuge. <span>Ankauf und Verkauf.</span></p>
+        <p class="t">Leistungen</p>
+        <p class="p">Wir kaufen Ihre Maschine zu einem fairen Preis an und verkaufen geprüfte Gebrauchte aus unserem Bestand. Seit 2016 in Butzbach, direkt an der A5.</p>
+        <div class="row">
+          <div class="stats"><div><strong>2016</strong><small>gegründet</small></div><div><strong>4,9 ★</strong><small>mobile.de</small></div><div><strong>180+</strong><small>Bewertungen</small></div></div>
+          <span class="btn">Maschine verkaufen</span>
+        </div>
+      </section>`; }).join("")}
+    </div>`).join("");
+  document.getElementById("list").innerHTML = html;
+</script>
+</body>
+</html>
