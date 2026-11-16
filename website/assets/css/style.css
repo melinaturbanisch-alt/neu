@@ -88,30 +88,59 @@ h3 { font-size: 1.1rem; font-weight: 700; text-transform: uppercase; letter-spac
   .header-phone { padding: .8rem; }
 }
 
-/* ===== Blickfang: Video bzw. Diashow randlos über den ganzen Bildschirm ===== */
-.stage { position: relative; height: calc(100svh - 100px); min-height: 520px; max-height: 920px; overflow: hidden; background: #2a2a2a; display: flex; align-items: flex-end; }
+/* ===== Blickfang wie miettrucks.de: Video bildschirmfüllend, Kopfzeile darüber ===== */
+.brand .logo-light { display: none; }
+.site-header.over { position: fixed; left: 0; right: 0; background: transparent; transition: background .3s, box-shadow .3s; }
+.site-header.over.scrolled { background: var(--bg); }
+.site-header.over:not(.scrolled) .logo-dark { display: none; }
+.site-header.over:not(.scrolled) .logo-light { display: block; }
+.site-header.over:not(.scrolled) .main-nav a { color: rgba(255,255,255,.82); }
+.site-header.over:not(.scrolled) .main-nav a:hover, .site-header.over:not(.scrolled) .main-nav a.active { color: #fff; }
+.site-header.over:not(.scrolled) .nav-toggle span { background: #fff; }
+.site-header.over:not(.scrolled) .main-nav.open a { color: var(--ink); }
+
+.stage { position: relative; height: 100svh; min-height: 600px; max-height: 1000px; overflow: hidden; background: #2a2a2a; display: flex; align-items: center; }
 .stage .slide { position: absolute; inset: 0; background-size: cover; background-position: center 55%; opacity: 0; transform: scale(1.08); transition: opacity 1.8s ease; }
 .stage .slide.on { opacity: 1; animation: kenburns 10s linear forwards; }
 @keyframes kenburns { from { transform: scale(1.08); } to { transform: scale(1); } }
 .stage-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.2s ease; }
 .stage.has-video .stage-video { opacity: 1; }
 .stage.has-video .slide, .stage.has-video .dots { display: none; }
-.stage::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.15) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,.25) 55%, rgba(0,0,0,.72) 100%); pointer-events: none; z-index: 1; }
-.stage-text { position: relative; z-index: 2; text-align: center; color: #fff; padding-bottom: clamp(48px, 8vh, 96px); }
-.stage-text .kicker { display: inline-flex; align-items: center; gap: 14px; font-size: .8rem; letter-spacing: .28em; text-transform: uppercase; color: rgba(255,255,255,.85); margin-bottom: 16px; }
-.stage-text .kicker::before, .stage-text .kicker::after { content: ""; width: 34px; height: 2px; background: var(--yellow); }
-.stage-text h1 { font-size: clamp(2rem, 5vw, 4.2rem); text-transform: uppercase; letter-spacing: .01em; margin: 0 auto .3em; text-shadow: 0 2px 24px rgba(0,0,0,.35); }
-.stage-text .sub { font-size: clamp(.9rem, 1.6vw, 1.1rem); color: rgba(255,255,255,.88); text-transform: uppercase; letter-spacing: .2em; margin-bottom: 28px; }
-.stage-text .actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-.stage-text .btn-note { color: rgba(255,255,255,.8); }
-.stage .dots { position: absolute; right: 24px; bottom: 22px; display: flex; gap: 8px; z-index: 3; }
+.stage::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,0) 22%), linear-gradient(90deg, rgba(0,0,0,.62) 0%, rgba(0,0,0,.38) 45%, rgba(0,0,0,.12) 100%); }
+.stage-text { position: relative; z-index: 2; color: #fff; padding-top: 100px; padding-bottom: 70px; }
+.stage-text .kicker { display: inline-flex; align-items: center; gap: 12px; font-size: .8rem; letter-spacing: .26em; text-transform: uppercase; color: rgba(255,255,255,.85); margin-bottom: 16px; }
+.stage-text .kicker::before { content: ""; width: 34px; height: 2px; background: var(--yellow); }
+.stage-text h1 { font-size: clamp(2.2rem, 5vw, 4.2rem); text-transform: uppercase; letter-spacing: .005em; margin: 0 0 .35em; text-shadow: 0 2px 24px rgba(0,0,0,.3); }
+.stage-text .lead { font-size: clamp(1rem, 1.5vw, 1.15rem); max-width: 40rem; color: rgba(255,255,255,.9); margin-bottom: 28px; }
+.stage-text .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn-ghost { background: transparent; color: #fff; box-shadow: inset 0 0 0 2px rgba(255,255,255,.8); }
+.btn-ghost:hover { background: #fff; color: var(--ink); }
+.hero-contact { list-style: none; margin: 28px 0 0; padding: 0; display: grid; gap: 6px; }
+.hero-contact li { display: flex; align-items: center; gap: 10px; }
+.hero-contact svg { width: 17px; height: 17px; color: var(--yellow); }
+.hero-contact a { text-decoration: none; color: #fff; }
+.hero-contact a:hover { color: var(--yellow); }
+.stage .dots { position: absolute; left: 50%; bottom: 22px; transform: translateX(-50%); display: flex; gap: 8px; z-index: 3; }
 .stage .dots button { width: 28px; height: 3px; border: 0; border-radius: 2px; background: rgba(255,255,255,.5); cursor: pointer; padding: 0; transition: background .3s, width .3s; }
 .stage .dots button.on { background: #fff; width: 44px; }
+
+/* Kasten "Sie erreichen uns", ragt über den unteren Videorand */
+.hours-wrap { position: relative; z-index: 5; display: flex; justify-content: flex-end; margin-top: -72px; }
+.hours-box { background: var(--ink); color: #fff; padding: 26px 30px; border-radius: 4px; box-shadow: 0 24px 50px -20px rgba(0,0,0,.45); min-width: min(100%, 440px); border-top: 4px solid var(--yellow); }
+.hours-box p { margin: 0; }
+.hb-title { font: 700 1.2rem var(--head); text-transform: uppercase; letter-spacing: .02em; }
+.hb-time { color: rgba(255,255,255,.85); margin: 6px 0 12px !important; }
+.hb-phone { display: inline-flex; align-items: center; gap: 10px; color: var(--yellow); text-decoration: none; font-weight: 500; font-size: 1.1rem; }
+.hb-phone svg { width: 18px; height: 18px; }
+
 @media (max-width: 600px) {
-  .stage { height: calc(100svh - 78px); min-height: 460px; }
-  .stage-text .kicker { letter-spacing: .16em; gap: 10px; font-size: .72rem; }
-  .stage-text .kicker::before, .stage-text .kicker::after { width: 18px; }
-  .stage .dots { left: 50%; right: auto; transform: translateX(-50%); bottom: 14px; }
+  .stage { min-height: 560px; align-items: flex-end; }
+  .stage-text { padding-top: 90px; padding-bottom: 56px; }
+  .stage-text .kicker { letter-spacing: .16em; font-size: .72rem; }
+  .stage-text .actions .btn { flex: 1 1 100%; }
+  .hours-wrap { margin-top: -28px; }
+  .hours-box { width: 100%; padding: 20px 22px; }
 }
 
 /* Abschnitte */
