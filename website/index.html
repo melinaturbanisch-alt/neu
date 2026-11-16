@@ -34,35 +34,29 @@
 
 <main>
 
-  <!-- BLICKFANG: eingerahmte Diashow mit Schatten -->
-  <section class="stage-wrap">
-    <div class="wrap">
-      <div class="stage" aria-label="Eindrücke vom SANISA-Gelände">
-        <div class="slide on" style="background-image:url('assets/img/hero-1.jpg')"></div>
-        <div class="slide" style="background-image:url('assets/img/hero-2.jpg')"></div>
-        <div class="slide" style="background-image:url('assets/img/hero-3.jpg')"></div>
-        <video class="stage-video" muted loop playsinline preload="auto" poster="assets/video/hero-poster.jpg" aria-hidden="true">
-          <source src="assets/video/hero.mp4" type="video/mp4">
-          <source src="assets/video/hero.webm" type="video/webm">
-        </video>
-        <div class="dots"><button class="on" aria-label="Bild 1"></button><button aria-label="Bild 2"></button><button aria-label="Bild 3"></button></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="claim">
-    <div class="wrap inner">
+  <!-- BLICKFANG: Video bzw. Diashow über den ganzen Bildschirm -->
+  <section class="stage" aria-label="Eindrücke vom SANISA-Gelände">
+    <div class="slide on" style="background-image:url('assets/img/hero-1.jpg')"></div>
+    <div class="slide" style="background-image:url('assets/img/hero-2.jpg')"></div>
+    <div class="slide" style="background-image:url('assets/img/hero-3.jpg')"></div>
+    <video class="stage-video" muted loop playsinline preload="auto" poster="assets/video/hero-poster.jpg" aria-hidden="true">
+      <source src="assets/video/hero.mp4" type="video/mp4">
+      <source src="assets/video/hero.webm" type="video/webm">
+    </video>
+    <div class="stage-text wrap">
       <p class="kicker">SANISA Baumaschinen · Butzbach</p>
       <h1>Baumaschinen &amp; Nutzfahrzeuge</h1>
       <p class="sub">Ankauf · Verkauf · Vermietung · Export</p>
       <div class="actions">
-        <div><a href="#ankauf" class="btn btn-dark">Jetzt Fahrzeug bewerten</a><span class="btn-note">Kostenlos und unverbindlich</span></div>
+        <div><a href="#ankauf" class="btn btn-yellow">Jetzt Fahrzeug bewerten</a><span class="btn-note">Kostenlos und unverbindlich</span></div>
       </div>
     </div>
+    <div class="dots"><button class="on" aria-label="Bild 1"></button><button aria-label="Bild 2"></button><button aria-label="Bild 3"></button></div>
   </section>
 
+
   <!-- LEISTUNGEN -->
-  <section class="section" id="leistungen" style="padding-top:0">
+  <section class="section" id="leistungen">
     <div class="wrap">
       <h2 class="title reveal">Leistungen</h2>
       <div class="cards4 reveal" style="margin-top:36px">
