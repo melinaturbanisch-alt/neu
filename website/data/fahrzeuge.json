@@ -1,26 +1,8 @@
 [
-  {
-    "id": "husmann-hl2-1622",
-    "kategorie": "Industrie",
-    "titel": "Husmann HL2 1622/2 Wellenschredder",
-    "bild": "assets/img/fahrzeuge/alt-1.jpg",
-    "daten": ["Hersteller: Husmann", "Typ: HL2 1622", "Baujahr: 2011", "Getriebe defekt (keine Kraftübertragung zwischen rechter Welle und Getriebe)"],
-    "preis": null
-  },
-  {
-    "id": "actros-2551-bdf",
-    "kategorie": "LKW",
-    "titel": "Mercedes-Benz Actros 2551 BDF 6×2",
-    "bild": "assets/img/fahrzeuge/alt-2.jpg",
-    "daten": ["Kilometer: 523.598 km", "Erstzulassung: 11/2019", "Leistung: 375 kW / 509 PS", "Retarder, MirrorCam, Euro 6D"],
-    "preis": null
-  },
-  {
-    "id": "actros-2543-lbw",
-    "kategorie": "LKW",
-    "titel": "Mercedes-Benz Actros 2543 LBW, Getränke-Aufbau",
-    "bild": "assets/img/fahrzeuge/alt-3.jpg",
-    "daten": ["Kilometer: 390.238 km", "Erstzulassung: 07/2017", "Leistung: 315 kW / 428 PS", "Ladebordwand, mit Boese-Anhänger"],
-    "preis": null
-  }
+  { "id": "scania-r", "kategorie": "LKW", "titel": "Scania R Sattelzugmaschine", "bild": "assets/img/fahrzeuge/scania-r.jpg", "text": "Gepflegte Sattelzugmaschine, sofort verfügbar.", "km": null, "ez": null, "leistung": null, "preis": null },
+  { "id": "arocs-2645", "kategorie": "LKW", "titel": "Mercedes-Benz Arocs 2645 Abrollkipper", "bild": "assets/img/fahrzeuge/arocs-2645.jpg", "text": "3-Achs-Abrollkipper mit Hakengerät.", "km": null, "ez": null, "leistung": null, "preis": null },
+  { "id": "liebherr-l526", "kategorie": "Baumaschine", "titel": "Liebherr L526 Radlader", "bild": "assets/img/fahrzeuge/liebherr-l526.jpg", "text": "Radlader mit Schaufel und Greifer.", "km": null, "ez": null, "leistung": null, "preis": null },
+  { "id": "doppstadt-sm620", "kategorie": "Industrie", "titel": "Doppstadt SM 620 Profi Siebanlage", "bild": "assets/img/fahrzeuge/doppstadt-sm620.jpg", "text": "Mobile Trommelsiebanlage auf Tandem-Fahrgestell.", "km": null, "ez": null, "leistung": null, "preis": null },
+  { "id": "man-koffer", "kategorie": "LKW", "titel": "MAN TGL Koffer mit Ladebordwand", "bild": "assets/img/fahrzeuge/man-koffer.jpg", "text": "Koffer-LKW für Möbel und Umzüge.", "km": null, "ez": null, "leistung": null, "preis": null },
+  { "id": "man-silo", "kategorie": "LKW", "titel": "MAN TGS Silo-LKW", "bild": "assets/img/fahrzeuge/man-silo.jpg", "text": "Zwei baugleiche Silofahrzeuge verfügbar.", "km": null, "ez": null, "leistung": null, "preis": null }
 ]

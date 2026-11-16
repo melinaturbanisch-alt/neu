@@ -8,7 +8,7 @@
   <link rel="icon" href="assets/img/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Inter:wght@400;600;800&family=DM+Sans:wght@400;600;800&family=Plus+Jakarta+Sans:wght@400;600;800&family=Archivo:wght@400;600;800&family=Barlow:wght@400;600;800&family=Oswald:wght@400;600;700&family=Rubik:wght@400;600;800&family=Montserrat:wght@400;600;800&family=Poppins:wght@400;600;800&family=Sora:wght@400;600;800&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Inter:wght@400;600;800&family=DM+Sans:wght@400;600;800&family=Plus+Jakarta+Sans:wght@400;600;800&family=Archivo:wght@400;600;800&family=Barlow:wght@400;600;800&family=Oswald:wght@400;600;700&family=Rubik:wght@400;600;800&family=Montserrat:wght@400;600;800&family=Poppins:wght@400;600;800&family=Sora:wght@400;600;800&family=Outfit:wght@400;600;800&family=Chonburi&display=swap" rel="stylesheet">
   <style>
     :root { --yellow: #facc38; --text: #1d1d1f; --muted: #666669; --line: #e4e4e4; --grey: #f4f4f4; }
     * { box-sizing: border-box; }
@@ -39,6 +39,7 @@
     /* Oswald ist schmal und läuft größer */
     .oswald .h { font-weight: 700; font-size: 2.4rem; letter-spacing: 0; }
     .oswald .t, .oswald .stats strong { font-weight: 700; }
+    .chon .h, .chon .t, .chon .stats strong { font-weight: 400; }
     footer { margin-top: 40px; color: var(--muted); font-size: .9rem; }
     @media print {
       @page { size: A4; margin: 12mm; }
@@ -89,12 +90,15 @@
       ["Sora", "modern, eigenständig"],
       ["Outfit", "klar, zeitgemäß"],
     ]],
+    ["Zum Vergleich: wie SANISA Immobilien", [
+      ["Chonburi", "Schrift der Immobilien-Seite (und der alten Baumaschinen-Seite)"],
+    ]],
   ];
   let n = 0;
   const html = groups.map(([g, fonts], gi) => `
     <h2 class="group${gi ? " page" : ""}">${g}</h2>
     <div class="grid">${fonts.map(([f, desc]) => { n++; return `
-      <section class="card${f === "Oswald" ? " oswald" : ""}" style="font-family:'${f}', sans-serif">
+      <section class="card${f === "Oswald" ? " oswald" : ""}${f === "Chonburi" ? " chon" : ""}" style="font-family:'${f}', sans-serif">
         <span class="num">${n}</span>
         <p class="name"><b>${f}</b> · ${desc}</p>
         <p class="h">Baumaschinen &amp; Nutzfahrzeuge. <span>Ankauf und Verkauf.</span></p>

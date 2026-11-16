@@ -9,7 +9,8 @@
   <!-- Vor dem Livegang Schriften lokal einbinden (DSGVO) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Archivo:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/img/hero-1.jpg">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -18,69 +19,103 @@
   <div class="wrap header-inner">
     <a href="#top" class="brand" aria-label="SANISA – zur Startseite"><img src="assets/img/logo.png" alt="SANISA Baumaschinen Handel" width="317" height="82"></a>
     <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation">
-      <a href="#ankauf">Ankauf</a>
-      <a href="#bestand">Fahrzeuge</a>
+      <a href="#top" class="active">Home</a>
+      <a href="#fahrzeuge">Fahrzeuge</a>
       <a href="#leistungen">Leistungen</a>
-      <a href="#team">Team</a>
+      <a href="#ankauf">Ankauf</a>
+      <a href="#ueber-uns">Über uns</a>
       <a href="#kontakt">Kontakt</a>
-      <a href="login.html" class="nav-login"><svg><use href="assets/img/icons.svg#i-lock"/></svg>Mitarbeiter</a>
+      <a href="login.html" class="nav-login"><svg><use href="assets/img/icons.svg#i-lock"/></svg>Login</a>
     </nav>
-    <a href="tel:+4960339285448" class="btn btn-yellow header-phone"><svg><use href="assets/img/icons.svg#i-phone"/></svg><span>+49 (0) 6033 9285448</span></a>
+    <a href="tel:+4960339285448" class="btn btn-yellow header-phone"><svg><use href="assets/img/icons.svg#i-phone"/></svg><span>+49 (0)6033 9285448</span></a>
     <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Menü"><span></span><span></span><span></span></button>
   </div>
 </header>
 
 <main>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="wrap hero-inner">
-      <h1>Baumaschinen &amp; Nutzfahrzeuge. <span>Ankauf und Verkauf.</span></h1>
-      <p class="lead">Wir kaufen Ihre Maschine zu einem fairen Preis an und verkaufen geprüfte Gebrauchte aus unserem Bestand. Seit 2016 in Butzbach, direkt an der A5.</p>
-      <div class="hero-actions">
-        <a href="#ankauf" class="btn btn-yellow">Maschine verkaufen</a>
-        <a href="#bestand" class="btn btn-white">Fahrzeuge ansehen</a>
+  <!-- BLICKFANG: Foto-Slideshow mit gelben Logo-Diagonalen -->
+  <section class="stage" aria-label="Eindrücke vom SANISA-Gelände">
+    <div class="slide on" style="background-image:url('assets/img/hero-1.jpg')"></div>
+    <div class="slide" style="background-image:url('assets/img/hero-2.jpg')"></div>
+    <div class="bars" aria-hidden="true"><span></span><span></span></div>
+    <div class="dots"><button class="on" aria-label="Bild 1"></button><button aria-label="Bild 2"></button></div>
+  </section>
+
+  <section class="claim">
+    <div class="mark" aria-hidden="true"><span>S</span><span>A</span><span>N</span><span>I</span><span>S</span><span>A</span></div>
+    <div class="wrap inner">
+      <h1>Baumaschinen &amp; <span>Nutzfahrzeuge</span></h1>
+      <p class="sub">Ankauf · Verkauf · Vermietung · Export</p>
+      <div class="actions">
+        <div><a href="#ankauf" class="btn btn-dark">Jetzt Fahrzeug bewerten</a><span class="btn-note">Kostenlos und unverbindlich</span></div>
       </div>
     </div>
   </section>
 
-  <!-- INTRO + FAKTEN -->
-  <section class="section">
+  <!-- LEISTUNGEN -->
+  <section class="section" id="leistungen" style="padding-top:0">
     <div class="wrap">
-      <h2 class="title reveal">SANISA Baumaschinen</h2>
-      <p class="intro reveal">Wir handeln mit gebrauchten LKW, Sattelzugmaschinen, Anhängern, Baumaschinen und Industrieanlagen. Wir kaufen an, verkaufen, vermieten und nehmen in Zahlung. Unsere Fahrzeuge kaufen wir überwiegend direkt in Deutschland ein, und vor dem Verkauf prüft sie unsere eigene Werkstatt.</p>
-      <div class="stats reveal">
-        <div><strong>2016</strong><span>gegründet</span></div>
-        <div><strong>4,9 ★</strong><span>auf mobile.de</span></div>
-        <div><strong>180+</strong><span>Kundenbewertungen</span></div>
-        <div><strong>A5</strong><span>direkt an der Autobahn</span></div>
+      <h2 class="title reveal">Leistungen</h2>
+      <div class="cards4 reveal" style="margin-top:36px">
+        <div class="svc"><span class="ic"><svg><use href="assets/img/icons.svg#i-euro"/></svg></span><h3>Ankauf</h3><p>Wir kaufen LKW, Baumaschinen und ganze Fuhrparks an, auch mit Mängeln.</p></div>
+        <div class="svc"><span class="ic"><svg><use href="assets/img/icons.svg#i-truck"/></svg></span><h3>Verkauf</h3><p>Geprüfte Gebrauchte, überwiegend direkt in Deutschland eingekauft.</p></div>
+        <div class="svc"><span class="ic"><svg><use href="assets/img/icons.svg#i-calendar"/></svg></span><h3>Vermietung</h3><p>LKW und Baumaschinen zur Miete, auch für kurze Einsätze.</p></div>
+        <div class="svc"><span class="ic"><svg><use href="assets/img/icons.svg#i-globe"/></svg></span><h3>Export</h3><p>Verladung, Transport, Zoll und Kennzeichen aus einer Hand.</p></div>
       </div>
-      <p class="center reveal"><a href="#ueber-uns" class="btn btn-yellow">Mehr über SANISA</a></p>
     </div>
   </section>
+
+  <!-- FAHRZEUGE -->
+  <section class="section white" id="fahrzeuge">
+    <div class="wrap">
+      <h2 class="title reveal">Aktuelle Fahrzeuge</h2>
+      <p class="intro reveal">Vorschau mit Beispielfahrzeugen aus der bisherigen Website. Später pflegen die Mitarbeiter den Bestand selbst über den Login.</p>
+      <div class="filter" role="group" aria-label="Nach Kategorie filtern">
+        <button class="chip is-active" data-filter="alle">Alle</button>
+        <button class="chip" data-filter="LKW">LKW</button>
+        <button class="chip" data-filter="Baumaschine">Baumaschinen</button>
+        <button class="chip" data-filter="Industrie">Industrieanlagen</button>
+      </div>
+      <div class="vehicle-grid" id="vehicle-grid" aria-live="polite"></div>
+      <div class="more"><a href="https://home.mobile.de/SANISAGMBH" class="btn btn-dark" target="_blank" rel="noopener">Alle Fahrzeuge anzeigen</a></div>
+    </div>
+  </section>
+
+  <!-- VORTEILE -->
+  <section class="section" style="padding-bottom:0">
+    <div class="wrap">
+      <h2 class="title reveal">Unsere Vorteile</h2>
+      <p class="intro reveal">Ob Sie kaufen, verkaufen oder mieten: Bei uns haben Sie einen festen Ansprechpartner und eine Abwicklung ohne Umwege, vom ersten Anruf bis zur Verladung.</p>
+    </div>
+    <div class="band reveal">
+      <div class="wrap band-grid">
+        <div><svg><use href="assets/img/icons.svg#i-calendar"/></svg>Seit 2016 inhabergeführt</div>
+        <div><svg><use href="assets/img/icons.svg#i-flag"/></svg>Fahrzeuge aus Deutschland</div>
+        <div><svg><use href="assets/img/icons.svg#i-wrench"/></svg>Eigene Werkstatt</div>
+        <div><svg><use href="assets/img/icons.svg#i-star"/></svg>4,9 Sterne auf mobile.de</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="photo-band" style="background-image:url('assets/img/hero-2.jpg')" role="img" aria-label="LKW-Reihe auf dem SANISA-Gelände"></div>
 
   <!-- ANKAUF -->
-  <section class="section grey" id="ankauf">
+  <section class="section" id="ankauf">
     <div class="wrap">
-      <h2 class="title reveal">Ankauf</h2>
-      <p class="intro reveal">Sie möchten Ihre Baumaschine oder Ihr Nutzfahrzeug verkaufen? Schicken Sie uns die Eckdaten, und Sie bekommen ein faires, unverbindliches Angebot.</p>
-      <div class="ankauf-grid">
-        <div class="ankauf-side reveal">
-          <h3 style="font-size:1.5rem">So einfach geht's</h3>
-          <p class="lead">Kein Inserat, keine Besichtigungstouristen. Sie haben einen festen Ansprechpartner.</p>
-          <ol class="steps">
-            <li><span class="n">1</span><div><h3>Anfrage senden</h3><p>Formular ausfüllen, anrufen oder Fotos per WhatsApp schicken.</p></div></li>
-            <li><span class="n">2</span><div><h3>Angebot erhalten</h3><p>Wir bewerten Ihr Fahrzeug nach Marktlage und Zustand und nennen Ihnen einen konkreten Preis.</p></div></li>
-            <li><span class="n">3</span><div><h3>Abholung &amp; Zahlung</h3><p>Wir kümmern uns um Abholung, Verladung und die Papiere.</p></div></li>
-          </ol>
-          <div class="contact-quick">
-            <a href="tel:+4960339285448" class="btn btn-outline"><svg><use href="assets/img/icons.svg#i-phone"/></svg>Anrufen</a>
-            <a href="https://wa.me/491773214225" class="btn btn-outline" target="_blank" rel="noopener"><svg><use href="assets/img/icons.svg#i-whatsapp"/></svg>WhatsApp</a>
-          </div>
-        </div>
+      <h2 class="title plain reveal">Wir kaufen Ihre Maschine an</h2>
+      <p class="intro reveal">So läuft der Verkauf an SANISA ab, vom ersten Kontakt bis zur Bezahlung.</p>
+      <div class="steps5 reveal">
+        <div><span class="ic"><svg><use href="assets/img/icons.svg#i-phone"/></svg></span>Anfrage</div>
+        <div><span class="ic"><svg><use href="assets/img/icons.svg#i-search"/></svg></span>Bewertung</div>
+        <div><span class="ic"><svg><use href="assets/img/icons.svg#i-doc"/></svg></span>Unverbindliches Angebot</div>
+        <div><span class="ic"><svg><use href="assets/img/icons.svg#i-truck"/></svg></span>Abholung &amp; Verladung</div>
+        <div><span class="ic"><svg><use href="assets/img/icons.svg#i-euro"/></svg></span>Sichere Bezahlung</div>
+      </div>
 
-        <div class="card quote-card reveal" id="anfrage">
-          <div class="qc-head"><h3>Angebot anfordern</h3><span class="qc-step">Schritt <b class="js-stepnum">1</b> von 3</span></div>
+      <div class="quote-wrap reveal">
+        <div class="quote-card" id="anfrage">
+          <div class="qc-head"><h3>Fahrzeug bewerten lassen</h3><span class="qc-step">Schritt <b class="js-stepnum">1</b> von 3</span></div>
           <p class="qc-sub">Kostenlos und unverbindlich, in zwei Minuten erledigt.</p>
           <div class="progress"><span class="js-progress"></span></div>
           <form class="form js-quote" novalidate>
@@ -94,13 +129,13 @@
                 <label><input type="radio" name="art" value="Radlader / Dumper"><span><svg><use href="assets/img/icons.svg#i-radlader"/></svg>Radlader</span></label>
                 <label><input type="radio" name="art" value="Sonstiges"><span><svg><use href="assets/img/icons.svg#i-sonstiges"/></svg>Sonstiges</span></label>
               </div>
-              <div class="fnav"><button type="button" class="btn btn-yellow js-next">Weiter</button></div>
+              <div class="fnav"><button type="button" class="btn btn-dark js-next">Weiter</button></div>
             </fieldset>
 
             <fieldset class="fstep">
               <div class="row">
                 <label>Hersteller<input name="hersteller" required placeholder="z. B. Mercedes-Benz"></label>
-                <label>Modell / Typ<input name="modell" placeholder="z. B. Actros 2551"></label>
+                <label>Modell / Typ<input name="modell" placeholder="z. B. Arocs 2645"></label>
               </div>
               <div class="row">
                 <label>Baujahr / EZ<input name="baujahr" inputmode="numeric" placeholder="z. B. 2017"></label>
@@ -117,7 +152,7 @@
                 <label>Preisvorstellung<input name="preis" inputmode="numeric" placeholder="optional"></label>
               </div>
               <label>Fotos (optional)<input type="file" name="fotos" accept="image/*" multiple></label>
-              <div class="fnav"><button type="button" class="btn btn-back js-prev" aria-label="Zurück">←</button><button type="button" class="btn btn-yellow js-next">Weiter</button></div>
+              <div class="fnav"><button type="button" class="btn btn-back js-prev" aria-label="Zurück">←</button><button type="button" class="btn btn-dark js-next">Weiter</button></div>
             </fieldset>
 
             <fieldset class="fstep">
@@ -127,100 +162,33 @@
                 <label>E-Mail<input name="email" type="email" autocomplete="email"></label>
               </div>
               <label class="check"><input type="checkbox" name="dsgvo" required><span>Ich stimme der Verarbeitung meiner Daten zur Bearbeitung der Anfrage zu (<a href="datenschutz.html">Datenschutz</a>).</span></label>
-              <div class="fnav"><button type="button" class="btn btn-back js-prev" aria-label="Zurück">←</button><button type="submit" class="btn btn-yellow">Senden</button></div>
+              <div class="fnav"><button type="button" class="btn btn-back js-prev" aria-label="Zurück">←</button><button type="submit" class="btn btn-yellow">Anfrage senden</button></div>
             </fieldset>
             <p class="form-msg" role="status"></p>
-            <div class="form-trust"><span><svg><use href="assets/img/icons.svg#i-check"/></svg>Kostenlos</span><span><svg><use href="assets/img/icons.svg#i-check"/></svg>Unverbindlich</span><span><svg><use href="assets/img/icons.svg#i-check"/></svg>Inzahlungnahme möglich</span></div>
+            <div class="form-trust"><span><svg><use href="assets/img/icons.svg#i-check"/></svg>Kostenlos</span><span><svg><use href="assets/img/icons.svg#i-check"/></svg>Unverbindlich</span><span><svg><use href="assets/img/icons.svg#i-check"/></svg>Auch defekte Fahrzeuge</span></div>
           </form>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- WAS WIR ANKAUFEN -->
-  <section class="section">
-    <div class="wrap">
-      <h2 class="title reveal">Was wir ankaufen</h2>
-      <p class="intro reveal">Gepflegt, mit hoher Laufleistung oder defekt: Fragen Sie uns. Auch ganze Fuhrparks kaufen wir an.</p>
-      <div class="buy-grid reveal">
-        <div class="card buy-item"><svg><use href="assets/img/icons.svg#i-lkw"/></svg><h3>LKW &amp; Kipper</h3><p>Kipper, Abrollkipper, Koffer</p></div>
-        <div class="card buy-item"><svg><use href="assets/img/icons.svg#i-sattelzug"/></svg><h3>Sattelzug&shy;maschinen</h3><p>Alle gängigen Hersteller</p></div>
-        <div class="card buy-item"><svg><use href="assets/img/icons.svg#i-anhaenger"/></svg><h3>Anhänger &amp; Auflieger</h3><p>Tieflader, Kipper, Plane</p></div>
-        <div class="card buy-item"><svg><use href="assets/img/icons.svg#i-bagger"/></svg><h3>Bagger</h3><p>Mobil-, Ketten- und Minibagger</p></div>
-        <div class="card buy-item"><svg><use href="assets/img/icons.svg#i-radlader"/></svg><h3>Radlader</h3><p>Kompakt bis groß</p></div>
-        <div class="card buy-item"><svg><use href="assets/img/icons.svg#i-dumper"/></svg><h3>Dumper</h3><p>Rad- und Kettendumper</p></div>
-        <div class="card buy-item"><svg><use href="assets/img/icons.svg#i-stapler"/></svg><h3>Stapler</h3><p>Diesel, Gas, Elektro</p></div>
-        <div class="card buy-item"><svg><use href="assets/img/icons.svg#i-industrie"/></svg><h3>Industrie&shy;anlagen</h3><p>Schredder, Siebanlagen u. a.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAHRZEUGE -->
-  <section class="section grey" id="bestand">
-    <div class="wrap">
-      <h2 class="title reveal">Aktuelle Fahrzeuge</h2>
-      <p class="intro reveal">Eine Auswahl aus unserem Bestand. Den kompletten Bestand finden Sie auch auf mobile.de.</p>
-      <div class="filter" role="group" aria-label="Nach Kategorie filtern">
-        <button class="chip is-active" data-filter="alle">Alle</button>
-        <button class="chip" data-filter="LKW">LKW</button>
-        <button class="chip" data-filter="Sattelzug">Sattelzug</button>
-        <button class="chip" data-filter="Baumaschine">Baumaschinen</button>
-        <button class="chip" data-filter="Industrie">Industrieanlagen</button>
-      </div>
-      <div class="vehicle-grid" id="vehicle-grid" aria-live="polite"></div>
-      <div class="more"><a href="https://home.mobile.de/SANISAGMBH" class="btn btn-yellow" target="_blank" rel="noopener">Gesamter Bestand auf mobile.de</a></div>
-    </div>
-  </section>
-
-  <!-- LEISTUNGEN -->
-  <section class="section" id="leistungen">
-    <div class="wrap">
-      <h2 class="title reveal">Leistungen</h2>
-      <p class="intro reveal">Kaufen, verkaufen, mieten oder tauschen, auch über Ländergrenzen hinweg.</p>
-      <div class="cols reveal">
-        <div><h3>Ankauf</h3><p>Wir machen Ihnen einen fairen Preis für Ihre Baumaschine oder Ihr Nutzfahrzeug, für einzelne Fahrzeuge oder den ganzen Fuhrpark.</p></div>
-        <div><h3>Verkauf</h3><p>Geprüfte Gebrauchte, überwiegend direkt in Deutschland eingekauft. Besichtigung nach Termin.</p></div>
-        <div><h3>Vermietung</h3><p>LKW und Baumaschinen zur Miete, wenn Sie nicht gleich kaufen möchten.</p></div>
-        <div><h3>Inzahlungnahme</h3><p>Geben Sie Ihr altes Fahrzeug in Zahlung und zahlen Sie nur die Differenz.</p></div>
-        <div><h3>Werkstatt</h3><p>Unsere eigene Werkstatt prüft und bereitet die Fahrzeuge auf, bevor sie in den Verkauf gehen.</p></div>
-        <div><h3>Export &amp; Transport</h3><p>Wir organisieren Verladung, Transport und Zollabwicklung, inklusive Export- und Überführungskennzeichen.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WARUM SANISA -->
-  <section class="section grey">
-    <div class="wrap">
-      <h2 class="title reveal">Warum SANISA</h2>
-      <div class="why-grid reveal">
-        <div class="card why-item"><span class="ic"><svg><use href="assets/img/icons.svg#i-calendar"/></svg></span><h3>Seit 2016 inhabergeführt</h3><p>Kurze Wege und schnelle Entscheidungen. Sie sprechen direkt mit den Leuten, die entscheiden.</p></div>
-        <div class="card why-item"><span class="ic"><svg><use href="assets/img/icons.svg#i-flag"/></svg></span><h3>Aus Deutschland</h3><p>Unsere Fahrzeuge kaufen wir überwiegend direkt in Deutschland ein, Re-Importe gibt es bei uns nicht.</p></div>
-        <div class="card why-item"><span class="ic"><svg><use href="assets/img/icons.svg#i-wrench"/></svg></span><h3>Eigene Werkstatt</h3><p>Jedes Fahrzeug wird bei uns geprüft und aufbereitet.</p></div>
-        <div class="card why-item"><span class="ic"><svg><use href="assets/img/icons.svg#i-globe"/></svg></span><h3>Export-Service</h3><p>Verladung, Transport und Zoll aus einer Hand.</p></div>
-      </div>
-      <a class="rating reveal" href="https://www.mobile.de/bewertungen/SANISAGMBH" target="_blank" rel="noopener">
-        <strong>4,9</strong>
-        <span class="stars"><svg><use href="assets/img/icons.svg#i-star"/></svg><svg><use href="assets/img/icons.svg#i-star"/></svg><svg><use href="assets/img/icons.svg#i-star"/></svg><svg><use href="assets/img/icons.svg#i-star"/></svg><svg><use href="assets/img/icons.svg#i-star"/></svg></span>
-        <span>aus über 180 Bewertungen auf mobile.de</span>
-      </a>
-    </div>
-  </section>
-
   <!-- ÜBER UNS -->
-  <section class="section" id="ueber-uns">
-    <div class="wrap about-grid">
-      <div class="about-img reveal"><img src="assets/img/hof.jpg" alt="Baumaschinen auf dem Hof der SANISA GmbH in Butzbach" loading="lazy"></div>
+  <section class="section white" id="ueber-uns">
+    <div class="wrap split">
       <div class="reveal">
-        <h2>Über uns</h2>
+        <h2>SANISA – Ihr Partner für Baumaschinen &amp; Nutzfahrzeuge</h2>
+        <a href="#team" class="btn btn-dark" style="margin-top:12px">Unser Team</a>
+      </div>
+      <div class="reveal">
         <p>Die SANISA GmbH wurde 2016 gegründet und sitzt seit 2018 in Butzbach, im Gewerbegebiet direkt an der A5. Wir handeln mit gebrauchten LKW, Sattelzugmaschinen, Anhängern, Baumaschinen und Industrieanlagen und vermieten sie auch.</p>
-        <p>Zu uns kommen Bauunternehmen, Speditionen, Handwerksbetriebe und Händler aus dem In- und Ausland. Wir sind ein eingespieltes Team aus Verkauf, Büro, Werkstatt und Fahrzeugaufbereitung.</p>
-        <p class="signature"><strong>Siawash Hematyar</strong>Geschäftsführer &amp; Inhaber</p>
+        <p>Unsere Fahrzeuge kaufen wir überwiegend direkt in Deutschland ein. Unsere eigene Werkstatt prüft und bereitet jedes Fahrzeug auf, bevor es in den Verkauf geht. Für Kunden aus dem Ausland organisieren wir Verladung, Transport und Zoll.</p>
+        <p>SANISA Baumaschinen gehört zur SANISA Group, zu der auch <a href="https://www.sanisa-immobilien.de/" target="_blank" rel="noopener">SANISA Immobilien</a> gehört.</p>
       </div>
     </div>
   </section>
 
   <!-- TEAM -->
-  <section class="section grey" id="team">
+  <section class="section" id="team">
     <div class="wrap">
       <h2 class="title reveal">Unser Team</h2>
       <p class="intro reveal">Ihre Ansprechpartner bei SANISA.</p>
@@ -229,10 +197,10 @@
   </section>
 
   <!-- FAQ -->
-  <section class="section" id="faq">
+  <section class="section white" id="faq">
     <div class="wrap">
       <h2 class="title reveal">Häufige Fragen</h2>
-      <div class="faq reveal" style="margin-top:40px">
+      <div class="faq reveal" style="margin-top:36px">
         <details><summary>Kaufen Sie auch defekte Fahrzeuge an?</summary><p>Ja. Auch Fahrzeuge mit Mängeln, Motorschaden oder hoher Laufleistung haben einen Wert. Beschreiben Sie den Zustand möglichst genau, dann wird das Angebot auch realistisch.</p></details>
         <details><summary>Kann ich mein Fahrzeug in Zahlung geben?</summary><p>Ja. Wir nehmen Ihr bisheriges Fahrzeug in Zahlung und verrechnen es mit dem Kauf aus unserem Bestand.</p></details>
         <details><summary>Wie schnell bekomme ich ein Angebot?</summary><p>Meist melden wir uns kurzfristig. Mit Fotos und den wichtigsten Eckdaten wie Baujahr, Laufleistung und Zustand geht es am schnellsten.</p></details>
@@ -243,32 +211,29 @@
     </div>
   </section>
 
-  <!-- KONTAKT -->
-  <section class="section grey" id="kontakt">
-    <div class="wrap">
-      <h2 class="title reveal">Kontakt</h2>
-      <p class="intro reveal">Rufen Sie uns an, schreiben Sie uns oder besuchen Sie uns nach Terminvereinbarung.</p>
-      <div class="contact-grid reveal">
-        <div class="card contact-card"><span class="ic"><svg><use href="assets/img/icons.svg#i-pin"/></svg></span><h3>Adresse</h3><p>SANISA GmbH<br>Otto-Hahn-Straße 13<br>35510 Butzbach</p><small><a class="more-link" href="https://www.openstreetmap.org/search?query=Otto-Hahn-Stra%C3%9Fe%2013%2C%2035510%20Butzbach" target="_blank" rel="noopener">Route planen »</a></small></div>
-        <div class="card contact-card"><span class="ic"><svg><use href="assets/img/icons.svg#i-phone"/></svg></span><h3>Telefon &amp; E-Mail</h3><p><a href="tel:+4960339285448">+49 (0) 6033 9285448</a><br>Mobil/WhatsApp: <a href="https://wa.me/491773214225" target="_blank" rel="noopener">+49 177 3214225</a><br><a href="mailto:info@sanisa.de">info@sanisa.de</a></p></div>
-        <div class="card contact-card"><span class="ic"><svg><use href="assets/img/icons.svg#i-calendar"/></svg></span><h3>Öffnungszeiten</h3><p>Mo–Fr 10:00–18:00 Uhr<br>Sa 10:00–15:00 Uhr</p><small>Besichtigung bitte nach Termin</small></div>
-      </div>
-    </div>
-  </section>
-
 </main>
 
-<footer class="site-footer">
+<footer class="site-footer" id="kontakt">
   <div class="wrap footer-grid">
-    <div>
-      <img src="assets/img/logo-hell.png" alt="SANISA Baumaschinen Handel" class="footer-logo" width="317" height="82">
-      <p style="max-width:24rem">Ankauf, Verkauf und Vermietung von Baumaschinen und Nutzfahrzeugen. Ein Unternehmen der SANISA Group.</p>
+    <div class="f-contact">
+      <h2>Kontakt<br>SANISA Baumaschinen</h2>
+      <ul class="f-list">
+        <li><svg><use href="assets/img/icons.svg#i-mail"/></svg><a href="mailto:info@sanisa.de">info@sanisa.de</a></li>
+        <li><svg><use href="assets/img/icons.svg#i-phone"/></svg><a href="tel:+4960339285448">+49 (0)6033 9285448</a></li>
+        <li><svg><use href="assets/img/icons.svg#i-whatsapp"/></svg><a href="https://wa.me/491773214225" target="_blank" rel="noopener">+49 177 3214225</a></li>
+        <li><svg><use href="assets/img/icons.svg#i-calendar"/></svg>Mo–Fr 10:00–18:00 Uhr<br>Sa 10:00–15:00 Uhr</li>
+        <li><svg><use href="assets/img/icons.svg#i-pin"/></svg>Otto-Hahn-Str. 13<br>35510 Butzbach</li>
+      </ul>
     </div>
-    <nav aria-label="Ankauf"><h4>Ankauf</h4><a href="#anfrage">Angebot anfordern</a><a href="#ankauf">Ablauf</a><a href="#faq">FAQ</a></nav>
-    <nav aria-label="Unternehmen"><h4>Unternehmen</h4><a href="#bestand">Fahrzeuge</a><a href="#leistungen">Leistungen</a><a href="#team">Team</a><a href="#kontakt">Kontakt</a></nav>
-    <nav aria-label="Rechtliches"><h4>Rechtliches</h4><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="login.html">Mitarbeiter-Login</a></nav>
+    <div class="f-cta">
+      <h2>Sie möchten ein Fahrzeug verkaufen oder suchen eine bestimmte Maschine?</h2>
+      <p>Rufen Sie uns an oder fordern Sie direkt ein unverbindliches Angebot an. Besichtigungen gern nach Termin.</p>
+      <a href="#anfrage" class="btn btn-yellow">Angebot anfordern</a>
+    </div>
   </div>
-  <div class="wrap footer-bottom"><span>© <span class="js-year">2026</span> SANISA GmbH · Otto-Hahn-Straße 13 · 35510 Butzbach</span><span><a href="tel:+4960339285448">06033 9285448</a> · <a href="mailto:info@sanisa.de">info@sanisa.de</a></span></div>
+  <div class="footer-bottom">
+    <div class="wrap"><span><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="login.html">Mitarbeiter-Login</a></span><span>© <span class="js-year">2026</span> SANISA GmbH</span></div>
+  </div>
 </footer>
 
 <script src="assets/js/main.js"></script>

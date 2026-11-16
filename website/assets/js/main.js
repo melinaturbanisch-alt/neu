@@ -25,6 +25,34 @@ function esc(s) {
 }
 
 const header = $(".site-header");
+if (header) {
+  const onScroll = () => header.classList.toggle("scrolled", window.scrollY > 10);
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
+}
+
+/* Blickfang: Foto-Slideshow (wechselt alle 7 Sekunden) */
+const stage = $(".stage");
+if (stage) {
+  const slides = $$(".slide", stage);
+  const dots = $$(".dots button", stage);
+  let cur = 0;
+  let timer;
+  const go = (n) => {
+    slides[cur].classList.remove("on");
+    if (dots[cur]) dots[cur].classList.remove("on");
+    cur = (n + slides.length) % slides.length;
+    void slides[cur].offsetWidth; // Zoom-Animation neu starten
+    slides[cur].classList.add("on");
+    if (dots[cur]) dots[cur].classList.add("on");
+  };
+  const start = () => {
+    clearInterval(timer);
+    if (!matchMedia("(prefers-reduced-motion: reduce)").matches) timer = setInterval(() => go(cur + 1), 7000);
+  };
+  dots.forEach((d, i) => d.addEventListener("click", () => { go(i); start(); }));
+  start();
+}
 
 /* Mobile Navigation */
 const toggle = $(".nav-toggle");
@@ -59,20 +87,22 @@ function card(v) {
   const media = v.bild
     ? `<img src="${esc(v.bild)}" alt="${esc(title)}" loading="lazy">`
     : `<svg aria-hidden="true"><use href="${SPRITE}#${icon}"/></svg>`;
-  const specs = v.daten || [
-    v.baujahr && `Baujahr: ${v.baujahr}`,
-    v.betriebsstunden && `Betriebsstunden: ${fmt.format(v.betriebsstunden)} h`,
-    v.kilometer && `Kilometer: ${fmt.format(v.kilometer)} km`,
-    v.zustand,
-  ].filter(Boolean);
+  const label = { LKW: "LKW", Baumaschine: "Baumaschine", Industrie: "Industrieanlage" }[v.kategorie] || v.kategorie;
+  const specs = [
+    v.km && `<span><svg><use href="${SPRITE}#i-gauge"/></svg>${esc(v.km)}</span>`,
+    v.ez && `<span><svg><use href="${SPRITE}#i-calendar"/></svg>${esc(v.ez)}</span>`,
+    v.leistung && `<span><svg><use href="${SPRITE}#i-truck"/></svg>${esc(v.leistung)}</span>`,
+  ].filter(Boolean).join("");
   return `
-    <article class="card vehicle">
-      <div class="vehicle-media">${media}</div>
+    <article class="vehicle">
+      <div class="vehicle-media">${media}<span class="tag">${esc(label)}</span></div>
       <div class="vehicle-body">
-        <h3>${esc(title)}</h3>
-        <ul class="specs">${specs.map((s) => `<li>${esc(s)}</li>`).join("")}</ul>
+        <h4>${esc(title)}</h4>
+        <div class="loc"><svg><use href="${SPRITE}#i-pin"/></svg>Butzbach</div>
+        ${v.text ? `<p>${esc(v.text)}</p>` : ""}
+        ${specs ? `<div class="specs">${specs}</div>` : ""}
         <div class="vehicle-foot">
-          <div class="price">${v.preis ? fmt.format(v.preis) + " €" : "Preis auf Anfrage"}${v.preis ? `<small>${esc(v.mwst || "zzgl. MwSt.")}</small>` : ""}</div>
+          <span class="price">${v.preis ? fmt.format(v.preis) + " €" : "Preis auf Anfrage"}</span>
           <a class="more-link" href="#kontakt">Anfragen »</a>
         </div>
       </div>
@@ -106,9 +136,9 @@ function member(m) {
   const tel = m.telefon ? `<a href="tel:${esc(m.telefon.replace(/\s/g, ""))}">${esc(m.telefon)}</a>` : "";
   const mail = m.email ? `<a href="mailto:${esc(m.email)}">${esc(m.email)}</a>` : "";
   return `
-    <article class="card member">
+    <article class="member">
       <div class="avatar">${photo}</div>
-      <h3>${esc(m.name)}</h3>
+      <h4>${esc(m.name)}</h4>
       <p class="role">${esc(m.rolle)}</p>
       <div class="contact">${tel}${mail}</div>
     </article>`;
