@@ -16,11 +16,27 @@
 </head>
 <body class="has-sticky">
 
-<header class="site-header">
+<div class="topbar">
+  <div class="wrap topbar-inner">
+    <div class="tb-left">
+      <a href="tel:+4960339285448"><svg><use href="assets/img/icons.svg#i-phone"/></svg>+49 (0)6033 9285448</a>
+      <a href="mailto:info@sanisa.de"><svg><use href="assets/img/icons.svg#i-mail"/></svg>info@sanisa.de</a>
+      <span><svg><use href="assets/img/icons.svg#i-calendar"/></svg>Mo–Fr 10–18 Uhr · Sa 10–15 Uhr</span>
+    </div>
+    <div class="tb-right">
+      <a href="login.html"><svg><use href="assets/img/icons.svg#i-lock"/></svg>Mitarbeiter-Login</a>
+      <div class="lang"><button type="button" class="lang-btn" aria-haspopup="true" aria-expanded="false" aria-label="Sprache wählen"><svg><use href="assets/img/icons.svg#i-globe"/></svg><span class="lang-code" data-no-i18n>DE</span></button><ul class="lang-menu" hidden></ul></div>
+    </div>
+  </div>
+</div>
+<header class="site-header" id="top">
   <div class="wrap header-inner">
     <a href="index.html" class="brand" aria-label="SANISA – zur Startseite"><img src="assets/img/logo.png" alt="SANISA Baumaschinen Handel" width="317" height="82"></a>
-    <div class="lang"><button type="button" class="lang-btn" aria-haspopup="true" aria-expanded="false" aria-label="Sprache wählen"><svg><use href="assets/img/icons.svg#i-globe"/></svg><span class="lang-code" data-no-i18n>DE</span></button><ul class="lang-menu" hidden></ul></div>
-    <a href="tel:+4960339285448" class="btn btn-yellow header-phone"><svg><use href="assets/img/icons.svg#i-phone"/></svg><span>+49 (0)6033 9285448</span></a>
+    <a href="#anfrage" class="btn btn-dark header-cta">Angebot anfordern</a>
+    <div class="m-tools">
+      <div class="lang"><button type="button" class="lang-btn" aria-haspopup="true" aria-expanded="false" aria-label="Sprache wählen"><svg><use href="assets/img/icons.svg#i-globe"/></svg><span class="lang-code" data-no-i18n>DE</span></button><ul class="lang-menu" hidden></ul></div>
+      <a href="tel:+4960339285448" class="m-call" aria-label="Anrufen"><svg><use href="assets/img/icons.svg#i-phone"/></svg></a>
+    </div>
   </div>
 </header>
 
@@ -39,21 +55,22 @@
   </section>
 
   <section class="entry">
-    <div class="wrap">
-      <div class="entry-card">
+    <div class="wrap entry-grid">
+      <div class="entry-head">
         <p class="kicker">SANISA Ankauf · Butzbach</p>
-        <h1>LKW &amp; Baumaschinen verkaufen</h1>
-        <p class="sub">Faires Angebot · Abholung · Sichere Bezahlung</p>
-        <div class="choices">
-          <a class="choice-big sell" href="#anfrage"><span class="ic"><svg><use href="assets/img/icons.svg#i-euro"/></svg></span><span class="txt"><strong>Fahrzeug bewerten lassen</strong><small>Kostenlos und unverbindlich</small></span><svg class="arr"><use href="assets/img/icons.svg#i-arrow"/></svg></a>
-          <a class="choice-big buy" href="tel:+4960339285448"><span class="ic"><svg><use href="assets/img/icons.svg#i-phone"/></svg></span><span class="txt"><strong>Direkt anrufen</strong><small>06033 9285448</small></span><svg class="arr"><use href="assets/img/icons.svg#i-arrow"/></svg></a>
-        </div>
-        <div class="quick">
-          <a href="tel:+4960339285448"><svg><use href="assets/img/icons.svg#i-phone"/></svg><span class="long">06033 9285448</span><span class="short">Anrufen</span></a>
-          <a href="https://wa.me/491773214225" target="_blank" rel="noopener"><svg><use href="assets/img/icons.svg#i-whatsapp"/></svg><span>WhatsApp</span></a>
-          <a href="mailto:info@sanisa.de"><svg><use href="assets/img/icons.svg#i-mail"/></svg><span class="long">info@sanisa.de</span><span class="short">E-Mail</span></a>
-          <p class="hours"><svg><use href="assets/img/icons.svg#i-calendar"/></svg>Mo–Fr 10–18 Uhr · Sa 10–15 Uhr</p>
-        </div>
+        <h1>LKW &amp; Baumaschinen verkaufen.<br><span>Fair, schnell, unkompliziert.</span></h1>
+      </div>
+      <div class="paths">
+        <a class="path sell" href="#anfrage"><span class="no">01</span><span class="t"><strong>Fahrzeug bewerten lassen</strong><small>Kostenlos und unverbindlich</small></span><span class="go"><svg><use href="assets/img/icons.svg#i-arrow"/></svg></span></a>
+        <a class="path buy" href="tel:+4960339285448"><span class="no">02</span><span class="t"><strong>Direkt anrufen</strong><small>06033 9285448</small></span><span class="go"><svg><use href="assets/img/icons.svg#i-arrow"/></svg></span></a>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="cstrip">
+        <a href="tel:+4960339285448"><small>Telefon</small><strong>06033 9285448</strong></a>
+        <a href="https://wa.me/491773214225" target="_blank" rel="noopener"><small>WhatsApp</small><strong>0177 3214225</strong></a>
+        <a href="mailto:info@sanisa.de"><small>E-Mail</small><strong>info@sanisa.de</strong></a>
+        <div><small>Öffnungszeiten</small><strong>Mo–Fr 10–18 · Sa 10–15 Uhr</strong></div>
       </div>
     </div>
   </section>

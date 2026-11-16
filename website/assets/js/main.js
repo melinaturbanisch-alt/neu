@@ -142,14 +142,18 @@ if ($("#vehicle-grid")) {
 }
 
 /* Team (Daten aus data/team.json, später über den Mitarbeiter-Bereich pflegbar) */
+let memberNo = 0;
 function member(m) {
   const initials = m.name.split(" ").map((w) => w[0]).join("").slice(0, 2);
-  const photo = m.bild ? `<img src="${esc(m.bild)}" alt="${esc(m.name)}" loading="lazy">` : esc(initials);
-  const tel = m.telefon ? `<a href="tel:${esc(m.telefon.replace(/\s/g, ""))}">${esc(m.telefon)}</a>` : "";
-  const mail = m.email ? `<a href="mailto:${esc(m.email)}">${esc(m.email)}</a>` : "";
+  const pos = ["20% 50%", "50% 50%", "80% 50%", "35% 60%", "65% 40%"][memberNo++ % 5];
+  const photo = m.bild
+    ? `<div class="member-photo"><img src="${esc(m.bild)}" alt="${esc(m.name)}" loading="lazy"></div>`
+    : `<div class="member-photo ph" style="--bgpos:${pos}"><span class="ini">${esc(initials)}</span><span class="soon">Foto folgt</span></div>`;
+  const tel = m.telefon ? `<a href="tel:${esc(m.telefon.replace(/[^+\d]/g, ""))}"><svg><use href="${SPRITE}#i-phone"/></svg>${esc(m.telefon)}</a>` : "";
+  const mail = m.email ? `<a href="mailto:${esc(m.email)}"><svg><use href="${SPRITE}#i-mail"/></svg>${esc(m.email)}</a>` : "";
   return `
     <article class="member">
-      <div class="avatar">${photo}</div>
+      ${photo}
       <h4>${esc(m.name)}</h4>
       <p class="role">${esc(m.rolle)}</p>
       <div class="contact">${tel}${mail}</div>
