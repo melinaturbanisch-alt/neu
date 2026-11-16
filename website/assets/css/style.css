@@ -88,53 +88,27 @@ h3 { font-size: 1.1rem; font-weight: 700; text-transform: uppercase; letter-spac
   .header-phone { padding: .8rem; }
 }
 
-/* ===== Blickfang: Foto-Slideshow + großes SANISA + gelbe Diagonalen ===== */
-.stage { position: relative; height: clamp(320px, 52vw, 640px); overflow: hidden; background: #2a2a2a; }
-.stage .slide { position: absolute; inset: 0; background-size: cover; background-position: center 60%; opacity: 0; transform: scale(1.12); transition: opacity 1.6s ease; }
-.stage .slide.on { opacity: 1; animation: kenburns 9s linear forwards; }
-@keyframes kenburns { from { transform: scale(1.12); } to { transform: scale(1); } }
-.stage::after { content: ""; position: absolute; inset: auto 0 0; height: 40%; background: linear-gradient(180deg, transparent, rgba(0,0,0,.35)); pointer-events: none; }
-/* gelbe Diagonalen aus dem Logo, fahren beim Laden ins Bild */
-.stage .bars { position: absolute; left: 0; bottom: 0; width: 100%; height: 100%; pointer-events: none; z-index: 2; }
-.stage .bars span { position: absolute; bottom: -40px; height: 120%; background: var(--yellow); transform: skewX(-32deg) translateX(-140%); animation: barIn 1.1s var(--ease) forwards; }
-.stage .bars span:nth-child(1) { left: -2%; width: 7%; animation-delay: .3s; }
-.stage .bars span:nth-child(2) { left: 6.5%; width: 2.2%; animation-delay: .45s; opacity: .9; }
-@keyframes barIn { to { transform: skewX(-32deg) translateX(0); } }
-.stage .dots { position: absolute; right: 24px; bottom: 20px; display: flex; gap: 8px; z-index: 3; }
-.stage .dots button { width: 34px; height: 4px; border: 0; border-radius: 2px; background: rgba(255,255,255,.45); cursor: pointer; padding: 0; }
-.stage .dots button.on { background: var(--yellow); }
-@media (max-width: 700px) { .stage .bars span:nth-child(1) { width: 12%; left: -6%; } .stage .bars span:nth-child(2) { left: 7%; width: 3.5%; } }
+/* ===== Blickfang: eingerahmte Diashow mit weichem Schatten ===== */
+.stage-wrap { padding: 8px 0 0; }
+.stage { position: relative; height: clamp(260px, 44vw, 580px); overflow: hidden; border-radius: 14px; background: #2a2a2a;
+  box-shadow: 0 40px 80px -30px rgba(0,0,0,.45), 0 18px 36px -18px rgba(0,0,0,.25); }
+.stage .slide { position: absolute; inset: 0; background-size: cover; background-position: center 55%; opacity: 0; transform: scale(1.08); transition: opacity 1.8s ease; }
+.stage .slide.on { opacity: 1; animation: kenburns 10s linear forwards; }
+@keyframes kenburns { from { transform: scale(1.08); } to { transform: scale(1); } }
+.stage::after { content: ""; position: absolute; inset: 0; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(255,255,255,.08); background: linear-gradient(180deg, transparent 70%, rgba(0,0,0,.28)); pointer-events: none; }
+.stage .dots { position: absolute; left: 50%; bottom: 18px; transform: translateX(-50%); display: flex; gap: 8px; z-index: 3; }
+.stage .dots button { width: 28px; height: 3px; border: 0; border-radius: 2px; background: rgba(255,255,255,.5); cursor: pointer; padding: 0; transition: background .3s, width .3s; }
+.stage .dots button.on { background: #fff; width: 44px; }
+@media (max-width: 600px) { .stage { border-radius: 10px; } }
 
-.claim { position: relative; text-align: center; padding: clamp(44px, 6vw, 72px) 0 clamp(56px, 7vw, 88px); }
-.claim .inner { position: relative; }
-.claim h1 { font-size: clamp(2rem, 5vw, 3.9rem); text-transform: uppercase; letter-spacing: -.01em; margin: 0 auto .3em; }
-.claim h1 span { background: linear-gradient(transparent 62%, var(--yellow) 62%, var(--yellow) 92%, transparent 92%); padding: 0 .1em; }
-.claim .sub { font-size: clamp(1rem, 1.8vw, 1.2rem); color: var(--muted); text-transform: uppercase; letter-spacing: .18em; margin-bottom: 28px; }
+.claim { text-align: center; padding: clamp(48px, 6vw, 80px) 0 clamp(56px, 7vw, 90px); }
+.claim .kicker { display: inline-flex; align-items: center; gap: 14px; font-size: .8rem; letter-spacing: .28em; text-transform: uppercase; color: var(--muted); margin-bottom: 18px; }
+.claim .kicker::before, .claim .kicker::after { content: ""; width: 34px; height: 2px; background: var(--yellow); }
+.claim h1 { font-size: clamp(1.9rem, 4.4vw, 3.4rem); text-transform: uppercase; letter-spacing: .01em; margin: 0 auto .35em; }
+.claim .sub { font-size: clamp(.95rem, 1.6vw, 1.1rem); color: var(--muted); text-transform: uppercase; letter-spacing: .2em; margin-bottom: 30px; }
 .claim .actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 .claim .btn-note { color: var(--muted); }
-
-/* Strichzeichnungen neben der Überschrift (zeichnen sich beim Laden) */
-.claim { overflow: hidden; }
-.claim-art { position: absolute; top: 54%; width: clamp(220px, 22vw, 330px); height: auto; transform: translateY(-50%); stroke: #b9b9be; stroke-width: 1; pointer-events: none; }
-.claim-art.left { left: max(8px, calc(50% - 690px)); }
-.claim-art.right { right: max(8px, calc(50% - 690px)); }
-.claim-art g > * { stroke-dasharray: 300; stroke-dashoffset: 300; animation: draw 2.4s var(--ease) forwards; }
-.claim-art.right g > * { animation-delay: .5s; }
-.claim-art .y { stroke: var(--yellow-h); stroke-width: 1.4; animation-delay: 1.4s; }
-.claim-art.right .y { animation-delay: 1.9s; }
-@keyframes draw { to { stroke-dashoffset: 0; } }
-.claim-row { display: none; }
-@media (max-width: 1260px) { .claim-art { width: 180px; opacity: .75; } }
-@media (max-width: 980px) {
-  .claim-art { display: none; }
-  .claim-row { display: flex; justify-content: center; gap: 14px; margin-bottom: 18px; color: #a9a9ae; }
-  .claim-row svg { width: 40px; height: 27px; opacity: 0; animation: fadeIn .5s var(--ease) forwards; }
-  .claim-row svg:nth-child(2) { animation-delay: .1s; } .claim-row svg:nth-child(3) { animation-delay: .2s; }
-  .claim-row svg:nth-child(4) { animation-delay: .3s; } .claim-row svg:nth-child(5) { animation-delay: .4s; } .claim-row svg:nth-child(6) { animation-delay: .5s; }
-  @keyframes fadeIn { to { opacity: 1; } }
-}
-@media (max-width: 380px) { .claim-row { gap: 8px; } .claim-row svg { width: 34px; } }
-@media (prefers-reduced-motion: reduce) { .claim-art g > *, .claim-row svg { animation: none; stroke-dashoffset: 0; opacity: 1; } }
+@media (max-width: 480px) { .claim .kicker { letter-spacing: .18em; gap: 10px; } .claim .kicker::before, .claim .kicker::after { width: 20px; } }
 
 /* Abschnitte */
 .section { padding: clamp(64px, 8vw, 100px) 0; }
@@ -307,5 +281,5 @@ h3 { font-size: 1.1rem; font-weight: 700; text-transform: uppercase; letter-spac
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
   .stage .slide.on { animation: none; transform: none; }
-  .stage .bars span,     html { scroll-behavior: auto; }
+  html { scroll-behavior: auto; }
 }
