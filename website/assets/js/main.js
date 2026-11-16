@@ -51,6 +51,18 @@ if (stage) {
     if (!matchMedia("(prefers-reduced-motion: reduce)").matches) timer = setInterval(() => go(cur + 1), 7000);
   };
   dots.forEach((d, i) => d.addEventListener("click", () => { go(i); start(); }));
+
+  // Video hat Vorrang: läuft es, wird die Diashow ausgeblendet. Ohne Video bleibt die Diashow.
+  const video = $(".stage-video", stage);
+  const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (video && !reduced) {
+    video.addEventListener("playing", () => { stage.classList.add("has-video"); clearInterval(timer); }, { once: true });
+    video.addEventListener("error", () => video.remove(), true);
+    const p = video.play();
+    if (p && p.catch) p.catch(() => video.remove()); // z. B. Energiesparmodus am Handy
+  } else if (video) {
+    video.remove();
+  }
   start();
 }
 
