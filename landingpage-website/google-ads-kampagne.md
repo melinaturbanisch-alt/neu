@@ -178,7 +178,7 @@ Anzeigen-Pfad: `melvona.de/website/erstgespraech`
   - „Über uns“ → / · „Feste Ansprechpartner“ / „Persönlich statt Callcenter“
   - „Kontakt“ → /kontakt · „Schreiben Sie uns“ / „Antwort in 24 Stunden“
   - „Gratis Auftritt-Check“ → /werbung · „15 Minuten, kostenlos“ / „Ehrliche Einschätzung“
-- **Zusatzinfos (Callouts):** Endpreis ohne MwSt. · Persönlich betreut · Antwort in 24 Stunden · Kein Baukasten
+- **Zusatzinfos (Callouts):** Kein MwSt.-Aufschlag · Persönlich betreut · Antwort in 24 Stunden · Kein Baukasten
 - **Snippets** (Überschrift „Dienstleistungen“): Webdesign, Logo-Design, Visitenkarten, Google-Profil, Fotos & Video
 - **Bilder:** Logo + Porträt (aus /images)
 
