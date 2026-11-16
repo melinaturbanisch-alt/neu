@@ -79,7 +79,7 @@ den Standort der suchenden Person, das passt genau zum 100-km-Umkreis.
 2. Website erstellen lassen
 3. Agentur aus Mittelhessen
 4. Termine bei Ihnen vor Ort
-5. Websites ab 854 €
+5. Websites ab 890 €
 6. In 1–2 Wochen online
 7. Kostenloses Erstgespräch
 8. Festpreis-Angebot vorab
@@ -90,7 +90,7 @@ den Standort der suchenden Person, das passt genau zum 100-km-Umkreis.
 
 Beschreibungen (max. 90 Zeichen, alle geprüft):
 1. Ihre Webagentur aus der Region: persönlich bei Ihnen vor Ort oder per Video-Call.
-2. Basis-Website ab 854 €: Startseite, Leistungen, Kontakt, Impressum & Datenschutz.
+2. Basis-Website ab 890 €: Startseite, Leistungen, Kontakt, Impressum & Datenschutz.
 3. Kostenloses Erstgespräch in 15 Minuten. Danach festes Angebot, keine offene Rechnung.
 4. Schnell, mobil, individuell gestaltet. In 1–2 Wochen ist Ihre neue Website online.
 
@@ -142,7 +142,7 @@ webflow
 domain kaufen
 hosting
 ```
-Hinweis: „günstig“ bewusst **nicht** ausschließen. Wer „website erstellen lassen günstig“ sucht, passt zu ab 854 €.
+Hinweis: „günstig“ bewusst **nicht** ausschließen. Wer „website erstellen lassen günstig“ sucht, passt zu ab 890 €.
 
 ## Responsive Suchanzeige (Anzeigengruppe 1)
 **Überschriften (max. 30 Zeichen, alle geprüft, nichts fixieren – Pinnen verschlechtert die Anzeigeneffektivität):**
@@ -152,7 +152,7 @@ Hinweis: „günstig“ bewusst **nicht** ausschließen. Wer „website erstelle
 4. Webdesign Agentur
 5. Website für Selbstständige
 6. Website für kleine Unternehmen
-7. Websites ab 854 €
+7. Websites ab 890 €
 8. In 1–2 Wochen online
 9. Festpreis-Angebot vorab
 10. Kostenloses Erstgespräch
@@ -163,7 +163,7 @@ Hinweis: „günstig“ bewusst **nicht** ausschließen. Wer „website erstelle
 15. Jetzt Erstgespräch sichern
 
 **Beschreibungen (max. 90 Zeichen, alle geprüft, mit Keywords):**
-1. Website erstellen lassen ab 854 € – mit Startseite, Leistungen, Kontakt und Impressum.
+1. Website erstellen lassen ab 890 € – mit Startseite, Leistungen, Kontakt und Impressum.
 2. Homepage erstellen lassen: kostenloses Erstgespräch, danach festes Angebot zum Festpreis.
 3. Webdesign Agentur mit persönlicher Betreuung. In 1–2 Wochen ist Ihre neue Website online.
 4. Website für Selbstständige & Unternehmen. Per Telefon, Video-Call oder bei Ihnen vor Ort.
