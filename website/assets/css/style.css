@@ -105,12 +105,7 @@ h3 { font-size: 1.1rem; font-weight: 700; text-transform: uppercase; letter-spac
 .stage .dots button.on { background: var(--yellow); }
 @media (max-width: 700px) { .stage .bars span:nth-child(1) { width: 12%; left: -6%; } .stage .bars span:nth-child(2) { left: 7%; width: 3.5%; } }
 
-.claim { position: relative; text-align: center; padding: clamp(36px, 6vw, 70px) 0 clamp(56px, 7vw, 90px); overflow: hidden; }
-.claim .mark { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -58%); font: 900 clamp(7rem, 26vw, 22rem)/1 var(--head); color: #fff; letter-spacing: -.02em; white-space: nowrap; pointer-events: none; user-select: none; }
-.claim .mark span { display: inline-block; opacity: 0; transform: translateY(40px); animation: up .9s var(--ease) forwards; }
-.claim .mark span:nth-child(2) { animation-delay: .08s; } .claim .mark span:nth-child(3) { animation-delay: .16s; }
-.claim .mark span:nth-child(4) { animation-delay: .24s; } .claim .mark span:nth-child(5) { animation-delay: .32s; } .claim .mark span:nth-child(6) { animation-delay: .4s; }
-@keyframes up { to { opacity: 1; transform: none; } }
+.claim { position: relative; text-align: center; padding: clamp(44px, 6vw, 72px) 0 clamp(56px, 7vw, 88px); }
 .claim .inner { position: relative; }
 .claim h1 { font-size: clamp(2rem, 5vw, 3.8rem); text-transform: uppercase; letter-spacing: -.01em; margin: 0 0 .25em; }
 .claim h1 span { background: linear-gradient(transparent 62%, var(--yellow) 62%, var(--yellow) 92%, transparent 92%); padding: 0 .1em; }
@@ -289,7 +284,5 @@ h3 { font-size: 1.1rem; font-weight: 700; text-transform: uppercase; letter-spac
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
   .stage .slide.on { animation: none; transform: none; }
-  .stage .bars span, .claim .mark span { animation: none; opacity: 1; transform: skewX(-32deg); }
-  .claim .mark span { transform: none; }
-  html { scroll-behavior: auto; }
+  .stage .bars span,     html { scroll-behavior: auto; }
 }
