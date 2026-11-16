@@ -15,9 +15,9 @@
 </head>
 <body>
 
-<header class="site-header over" id="top">
+<header class="site-header" id="top">
   <div class="wrap header-inner">
-    <a href="#top" class="brand" aria-label="SANISA – zur Startseite"><img class="logo-dark" src="assets/img/logo.png" alt="SANISA Baumaschinen Handel" width="317" height="82"><img class="logo-light" src="assets/img/logo-hell.png" alt="" width="317" height="82"></a>
+    <a href="#top" class="brand" aria-label="SANISA – zur Startseite"><img src="assets/img/logo.png" alt="SANISA Baumaschinen Handel" width="317" height="82"></a>
     <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation">
       <a href="#top" class="active">Home</a>
       <a href="#fahrzeuge">Fahrzeuge</a>
@@ -27,6 +27,7 @@
       <a href="#kontakt">Kontakt</a>
       <a href="login.html" class="nav-login"><svg><use href="assets/img/icons.svg#i-lock"/></svg>Login</a>
     </nav>
+    <div class="lang"><button type="button" class="lang-btn" aria-haspopup="true" aria-expanded="false" aria-label="Sprache wählen"><svg><use href="assets/img/icons.svg#i-globe"/></svg><span class="lang-code" data-no-i18n>DE</span></button><ul class="lang-menu" hidden></ul></div>
     <a href="tel:+4960339285448" class="btn btn-yellow header-phone"><svg><use href="assets/img/icons.svg#i-phone"/></svg><span>+49 (0)6033 9285448</span></a>
     <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Menü"><span></span><span></span><span></span></button>
   </div>
@@ -43,32 +44,31 @@
       <source src="assets/video/hero.mp4" type="video/mp4">
       <source src="assets/video/hero.webm" type="video/webm">
     </video>
-    <div class="stage-text wrap">
-      <p class="kicker">SANISA Baumaschinen · Butzbach</p>
-      <h1>Baumaschinen &amp;<br>Nutzfahrzeuge</h1>
-      <p class="lead">Ankauf, Verkauf, Vermietung und Export von LKW, Sattelzugmaschinen, Anhängern und Baumaschinen. Inhabergeführt seit 2016, direkt an der A5.</p>
-      <div class="actions">
-        <a href="#ankauf" class="btn btn-yellow">Jetzt Fahrzeug bewerten</a>
-        <a href="#fahrzeuge" class="btn btn-ghost">Fahrzeuge ansehen</a>
-      </div>
-      <ul class="hero-contact">
-        <li><svg><use href="assets/img/icons.svg#i-phone"/></svg><a href="tel:+4960339285448">06033 9285448</a></li>
-        <li><svg><use href="assets/img/icons.svg#i-mail"/></svg><a href="mailto:info@sanisa.de">info@sanisa.de</a></li>
-      </ul>
-    </div>
     <div class="dots"><button class="on" aria-label="Bild 1"></button><button aria-label="Bild 2"></button><button aria-label="Bild 3"></button></div>
   </section>
 
-  <div class="wrap hours-wrap">
-    <div class="hours-box">
-      <p class="hb-title">Sie erreichen uns:</p>
-      <p class="hb-time">Mo–Fr 10:00–18:00 Uhr · Sa 10:00–15:00 Uhr</p>
-      <a class="hb-phone" href="tel:+4960339285448"><svg><use href="assets/img/icons.svg#i-phone"/></svg>+49 (0)6033 9285448</a>
+  <section class="entry">
+    <div class="wrap">
+      <div class="entry-card">
+        <p class="kicker">SANISA Baumaschinen · Butzbach</p>
+        <h1>Baumaschinen &amp; Nutzfahrzeuge</h1>
+        <p class="sub">Ankauf · Verkauf · Vermietung · Export</p>
+        <div class="choices">
+          <a class="choice-big sell" href="#ankauf"><span class="ic"><svg><use href="assets/img/icons.svg#i-euro"/></svg></span><span class="txt"><strong>Ich möchte verkaufen</strong><small>Kostenloses Angebot für Ihr Fahrzeug</small></span><svg class="arr"><use href="assets/img/icons.svg#i-arrow"/></svg></a>
+          <a class="choice-big buy" href="#fahrzeuge"><span class="ic"><svg><use href="assets/img/icons.svg#i-truck"/></svg></span><span class="txt"><strong>Ich möchte kaufen</strong><small>Aktuelle Fahrzeuge ansehen</small></span><svg class="arr"><use href="assets/img/icons.svg#i-arrow"/></svg></a>
+        </div>
+        <div class="quick">
+          <a href="tel:+4960339285448"><svg><use href="assets/img/icons.svg#i-phone"/></svg><span class="long">06033 9285448</span><span class="short">Anrufen</span></a>
+          <a href="https://wa.me/491773214225" target="_blank" rel="noopener"><svg><use href="assets/img/icons.svg#i-whatsapp"/></svg><span>WhatsApp</span></a>
+          <a href="mailto:info@sanisa.de"><svg><use href="assets/img/icons.svg#i-mail"/></svg><span class="long">info@sanisa.de</span><span class="short">E-Mail</span></a>
+          <p class="hours"><svg><use href="assets/img/icons.svg#i-calendar"/></svg>Mo–Fr 10–18 Uhr · Sa 10–15 Uhr</p>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
 
   <!-- LEISTUNGEN -->
-  <section class="section" id="leistungen">
+  <section class="section" id="leistungen" style="padding-top:24px">
     <div class="wrap">
       <h2 class="title reveal">Leistungen</h2>
       <div class="cards4 reveal" style="margin-top:36px">
@@ -250,6 +250,7 @@
   </div>
 </footer>
 
+<script src="assets/js/i18n.js"></script>
 <script src="assets/js/main.js"></script>
 </body>
 </html>
