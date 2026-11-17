@@ -135,9 +135,6 @@
  "Kaufen Sie auch defekte Fahrzeuge an?": "Do you also buy defective vehicles?",
  "Ja. Auch Fahrzeuge mit Mängeln, Motorschaden oder hoher Laufleistung haben einen Wert. Beschreiben Sie den Zustand möglichst genau, dann wird das Angebot auch realistisch.": "Yes. Vehicles with defects, engine damage or high mileage still have value. Describe the condition as precisely as possible so the offer can be realistic.",
  "Kann ich mein Fahrzeug in Zahlung geben?": "Can I trade in my vehicle?",
- "Ja. Wir nehmen Ihr bisheriges Fahrzeug in Zahlung und verrechnen es mit dem Kauf aus unserem Bestand.": "Yes. We take your current vehicle as a trade-in and offset it against a purchase from our stock.",
- "Wie schnell bekomme ich ein Angebot?": "How quickly will I get an offer?",
- "Meist melden wir uns kurzfristig. Mit Fotos und den wichtigsten Eckdaten wie Baujahr, Laufleistung und Zustand geht es am schnellsten.": "We usually get back to you at short notice. It is fastest with photos and the key data such as year, mileage and condition.",
  "Kann ich Fahrzeuge auch mieten?": "Can I also rent vehicles?",
  "Ja. Wir vermieten LKW und Baumaschinen. Rufen Sie uns an und nennen Sie uns Zeitraum und Einsatzzweck.": "Yes. We rent out trucks and construction machinery. Call us and tell us the period and the intended use.",
  "Unterstützen Sie beim Export?": "Do you help with export?",
@@ -245,7 +242,6 @@
  "WhatsApp": "WhatsApp",
  "Ich stimme der Verarbeitung meiner Daten zur Bearbeitung der Anfrage zu. Mehr dazu in der": "I agree to my data being processed to handle this request. More in our",
  "Datenschutzerklärung": "privacy policy",
- "Wir melden uns in der Regel innerhalb von 24 Stunden mit einer ersten Einschätzung.": "We usually get back to you within 24 hours with an initial assessment.",
  "Warum Kunden zu uns kommen": "Why customers choose us",
  "Inhabergeführt seit 2016": "Owner-managed since 2016",
  "Entscheidungen direkt vor Ort, ohne lange Wege.": "Decisions made on site, no detours.",
@@ -285,6 +281,10 @@
  "Ihre Frage ist nicht dabei?": "Can't find your question?",
  "Wir beraten Sie gern persönlich.": "We are happy to advise you personally.",
  "Oder per WhatsApp schreiben": "Or message us on WhatsApp",
- "Ja. Auch Fahrzeuge mit Mängeln, Motorschaden oder hoher Laufleistung haben einen Wert. Je genauer Sie den Zustand beschreiben, desto verlässlicher ist unser Angebot.": "Yes. Vehicles with defects, engine damage or high mileage still have value. The more precisely you describe the condition, the more reliable our offer.",
- "Ja. Wir vermieten LKW und Baumaschinen. Nennen Sie uns Zeitraum und Einsatzzweck, wir stellen Ihnen ein passendes Angebot zusammen.": "Yes. We rent out trucks and construction machinery. Tell us the period and purpose, and we will put together a suitable offer."
+ "Ja. Wir vermieten LKW und Baumaschinen. Nennen Sie uns Zeitraum und Einsatzzweck, wir stellen Ihnen ein passendes Angebot zusammen.": "Yes. We rent out trucks and construction machinery. Tell us the period and purpose, and we will put together a suitable offer.",
+ "In vielen Fällen ja. Auch Fahrzeuge mit Mängeln oder hoher Laufleistung haben einen Wert. Je genauer Sie den Zustand beschreiben, desto verlässlicher ist unser Angebot.": "In many cases, yes. Vehicles with defects or high mileage still have value. The more precisely you describe the condition, the more reliable our offer.",
+ "Sprechen Sie uns einfach an. Ob eine Inzahlungnahme möglich ist, hängt vom Fahrzeug ab. Wir prüfen jeden Fall individuell und machen Ihnen ein passendes Angebot.": "Just get in touch. Whether a trade-in is possible depends on the vehicle. We assess every case individually and make you a suitable offer.",
+ "Wie schnell bekomme ich ein Angebot für mein Fahrzeug?": "How quickly will I get an offer for my vehicle?",
+ "Wenn Sie uns Ihr Fahrzeug anbieten, bearbeiten wir Ihre Anfrage in der Regel innerhalb von ein bis zwei Werktagen. Mit Fotos und den wichtigsten Eckdaten wie Baujahr, Laufleistung und Zustand geht es am schnellsten.": "When you offer us your vehicle, we usually process your request within one to two working days. Photos and the key details such as year, mileage and condition speed things up.",
+ "Wir melden uns in der Regel innerhalb von ein bis zwei Werktagen mit einer ersten Einschätzung.": "We usually get back to you within one to two working days with an initial assessment."
 }
