@@ -277,18 +277,19 @@ $$(".js-year").forEach((el) => (el.textContent = new Date().getFullYear()));
   fetch("data/bewertungen.json").then((r) => r.json()).then((d) => {
     const fmt = (n) => String(n).replace(".", ",");
     const sec = document.getElementById("bewertungen");
-    sec.querySelector(".js-g-rating").textContent = fmt(d.bewertung);
-    sec.querySelector(".stars").style.setProperty("--r", d.bewertung);
-    sec.querySelector(".js-g-count").textContent = d.anzahl || "–";
+    if (d.bewertung) {
+      sec.querySelector(".js-g-rating").textContent = fmt(d.bewertung);
+      sec.querySelector(".g-score .stars").style.setProperty("--r", d.bewertung);
+    } else sec.classList.add("no-score");
+    sec.querySelector(".js-g-count").textContent = d.anzahl || "";
     if (d.link) sec.querySelector(".js-g-link").href = d.link;
     if (d.schreiben) sec.querySelector(".js-g-write").href = d.schreiben;
-    if (d.platzhalter) sec.classList.add("is-demo");
     const esc = (t) => String(t).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
     list.innerHTML = (d.eintraege || []).slice(0, 3).map((e) => `
       <figure class="g-review">
         <span class="stars" style="--r:${e.sterne}">★★★★★</span>
         <blockquote>„${esc(e.text)}“</blockquote>
-        <figcaption><i>${esc(e.name).charAt(0)}</i><span><b>${esc(e.name)}</b><small>${esc(e.datum)} · Google</small></span></figcaption>
+        <figcaption><i>${esc(e.name).charAt(0)}</i><span><b>${esc(e.name)}</b><small>${[e.zusatz, e.datum, e.quelle].filter(Boolean).map(esc).join(" · ")}</small></span></figcaption>
       </figure>`).join("");
   }).catch(() => {});
 })();

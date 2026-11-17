@@ -1,13 +1,12 @@
 {
-  "platzhalter": true,
-  "hinweis": "Platzhalter! Echte Werte aus dem Google-Unternehmensprofil eintragen und platzhalter auf false setzen.",
-  "bewertung": 4.9,
-  "anzahl": 0,
+  "hinweis": "Note und Anzahl aus dem Google-Profil eintragen (bewertung z. B. 4.8, anzahl z. B. 23). Solange null, wird ein Hinweis angezeigt.",
+  "bewertung": null,
+  "anzahl": null,
   "link": "https://www.google.com/maps/search/?api=1&query=SANISA+GmbH+Butzbach",
   "schreiben": "https://www.google.com/maps/search/?api=1&query=SANISA+GmbH+Butzbach",
   "eintraege": [
-    { "name": "Kundenname", "sterne": 5, "datum": "vor 2 Monaten", "text": "Hier steht später eine echte Google-Bewertung eines Kunden. Der Text wird aus dem Google-Profil übernommen." },
-    { "name": "Kundenname", "sterne": 5, "datum": "vor 4 Monaten", "text": "Platz für die zweite Bewertung, zum Beispiel zu Ankauf, Abwicklung oder Beratung." },
-    { "name": "Kundenname", "sterne": 5, "datum": "vor 6 Monaten", "text": "Platz für die dritte Bewertung, zum Beispiel von einem Kunden aus dem Ausland zu Export und Verladung." }
+    { "name": "Robert G.", "zusatz": "Tiefbau Grunwald", "sterne": 5, "datum": "vor einem Jahr", "quelle": "Google", "text": "Wir haben kürzlich eine Maschine gekauft und waren mit dem Service top-zufrieden! Vom ersten Kontakt bis zur Anlieferung alles perfekt gelaufen. Schon 2 Tage nach Besichtigung stand die Maschine bei uns einsatzbereit auf dem Hof. Vielen Dank! Wir kommen sicher wieder ins Geschäft und können eine klare Weiterempfehlung aussprechen." },
+    { "name": "Martin A.", "sterne": 5, "datum": "vor 5 Jahren", "quelle": "Google", "text": "Sehr korrekter Händler, habe dort einen Anhängerkran gekauft, der Kran war wie beschrieben und funktioniert einwandfrei. 150 € in bar zu viel bezahlt, es war mir nicht aufgefallen. Ich wurde angerufen und das Geld ist zurück überwiesen worden." },
+    { "name": "mobile.de Nutzer", "zusatz": "Fahrzeug gekauft", "sterne": 5, "datum": "", "quelle": "mobile.de", "text": "Kompetente Handhabung sowie professionelle Abwicklung." }
   ]
 }
