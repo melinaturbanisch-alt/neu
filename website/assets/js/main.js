@@ -31,6 +31,14 @@ if (header) {
   window.addEventListener("scroll", onScroll, { passive: true });
 }
 
+/* Kasten "Sie erreichen uns" erscheint erst, wenn man nach unten scrollt */
+const hoursBox = $(".hours-box");
+if (hoursBox) {
+  const showBox = () => { if (window.scrollY > 40) { hoursBox.classList.add("show"); window.removeEventListener("scroll", showBox); } };
+  window.addEventListener("scroll", showBox, { passive: true });
+  showBox();
+}
+
 /* Blickfang: Foto-Slideshow (wechselt alle 7 Sekunden) */
 const stage = $(".stage");
 if (stage) {
