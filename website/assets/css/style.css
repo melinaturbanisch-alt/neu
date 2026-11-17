@@ -245,7 +245,10 @@ h3 { font-size: 1.1rem; font-weight: 700; text-transform: uppercase; letter-spac
 .specs { display: flex; flex-wrap: wrap; gap: 14px; padding: 12px 0; border-top: 1px solid #eee; margin-top: auto; font-size: .86rem; }
 .specs span { display: inline-flex; align-items: center; gap: 6px; }
 .specs svg { width: 16px; height: 16px; color: #888; }
-.vehicle-foot { display: flex; justify-content: space-between; align-items: center; padding-top: 10px; border-top: 1px solid #eee; font-size: .9rem; }
+.vehicle-foot { display: flex; justify-content: space-between; align-items: center; padding-top: 12px; gap: 8px; border-top: 1px solid #eee; font-size: .9rem; }
+.vehicle-foot .price { font-size: .95rem; white-space: nowrap; }
+.vehicle-foot .more-link { flex: none; padding: .4rem .8rem; border: 1.5px solid var(--yellow); border-radius: 999px; font-size: .74rem; white-space: nowrap; color: var(--ink); transition: background .2s; }
+.vehicle-foot .more-link:hover { background: var(--yellow); color: var(--ink); }
 .price { font: 800 1.05rem var(--head); }
 .filter { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: -20px 0 36px; }
 .chip { border: 1px solid #c9c9c9; background: transparent; border-radius: 999px; padding: 8px 18px; font: 400 .9rem var(--sans); text-transform: uppercase; cursor: pointer; color: var(--ink); }
