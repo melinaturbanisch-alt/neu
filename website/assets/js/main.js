@@ -142,7 +142,9 @@ function card(v) {
 function render(filter = "alle") {
   const grid = $("#vehicle-grid");
   if (!grid) return;
-  const list = filter === "alle" ? vehicles : vehicles.filter((v) => v.kategorie === filter);
+  let list = filter === "alle" ? vehicles : vehicles.filter((v) => v.kategorie === filter);
+  const limit = +grid.dataset.limit || 0; // Startseite: höchstens 8, Fahrzeugseite: alle
+  if (limit) list = list.slice(0, limit);
   grid.innerHTML = list.length
     ? list.map(card).join("")
     : `<p class="empty">Aktuell nichts in dieser Kategorie. Rufen Sie uns an, wir finden etwas für Sie.</p>`;
