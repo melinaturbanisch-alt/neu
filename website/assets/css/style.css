@@ -132,8 +132,8 @@ h3 { font-size: 1.1rem; font-weight: 700; text-transform: uppercase; letter-spac
 .stage.no-video .dots { display: flex; }
 .stage::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
   background: linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.15) 40%, rgba(0,0,0,0) 60%), linear-gradient(90deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.25) 45%, rgba(0,0,0,0) 75%); }
-.stage-text { position: relative; z-index: 2; color: #fff; padding-top: calc(100px + clamp(4px, 1.5vh, 20px)); }
-.stage-text .kicker { display: inline-flex; align-items: center; gap: 12px; font-size: clamp(.95rem, 1.3vw, 1.1rem); letter-spacing: .12em; font-weight: 500; text-transform: uppercase; color: rgba(255,255,255,.88); margin: 0 0 14px; }
+.stage-text { position: relative; z-index: 2; color: #fff; padding-top: calc(100px + clamp(4px, 1.5vh, 20px) + 12px); }
+.stage-text .kicker { display: inline-flex; align-items: center; gap: 12px; font-size: clamp(1rem, 1.4vw, 1.2rem); letter-spacing: .12em; font-weight: 500; text-transform: uppercase; color: rgba(255,255,255,.88); margin: 0 0 14px; }
 .stage-text .kicker::before { content: ""; width: 34px; height: 2px; background: var(--yellow); }
 .stage-text h1 { font-size: clamp(2.1rem, 4.4vw, 3.8rem); text-transform: uppercase; line-height: 1.05; max-width: 16ch; margin: 0 0 .35em; text-shadow: 0 2px 24px rgba(0,0,0,.3); }
 .stage-text .lead { font-size: clamp(1rem, 1.4vw, 1.12rem); max-width: 34rem; color: rgba(255,255,255,.92); margin-bottom: 24px; }
@@ -150,7 +150,7 @@ h3 { font-size: 1.1rem; font-weight: 700; text-transform: uppercase; letter-spac
 .stage .dots button.on { background: #fff; width: 38px; }
 
 /* Überschrift edel, kursiv, zweizeilig versetzt */
-.stage-text h1.script { font-family: "Rubik", system-ui, sans-serif; font-style: italic; font-weight: 700; text-transform: uppercase; letter-spacing: -.01em; line-height: 1.24; font-size: clamp(1.9rem, 3.55vw, 3.15rem); max-width: none; margin: 30px 0 22px; }
+.stage-text h1.script { font-family: "Rubik", system-ui, sans-serif; font-style: italic; font-weight: 700; text-transform: uppercase; letter-spacing: -.01em; line-height: 1.24; font-size: clamp(2rem, 3.85vw, 3.45rem); max-width: none; margin: 14px 0 22px; }
 .stage-text h1.script span { display: block; }
 .stage-text h1.script span + span { margin-top: -.18em; }
 .stage-text .facts { display: grid; justify-items: start; gap: 4px; margin: 0 0 24px; font-size: clamp(1rem, 1.35vw, 1.15rem); color: rgba(255,255,255,.9); }
