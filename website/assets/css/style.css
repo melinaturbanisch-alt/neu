@@ -636,3 +636,5 @@ details[open] .faq-a { animation: faqIn .35s var(--ease); }
 .team-group span::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--yellow); }
 .team-block .team-grid { margin-top: 0; }
 @media (max-width: 720px) { .team-block + .team-block { margin-top: 44px; } .team-group { font-size: .7rem; gap: 10px; } }
+.f-call { display: inline-flex; align-items: center; gap: 10px; }
+.f-call svg { width: 18px; height: 18px; }
