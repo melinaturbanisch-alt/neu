@@ -541,3 +541,17 @@ h3 { font-size: 1.1rem; font-weight: 700; text-transform: uppercase; letter-spac
 .g-review .src-mde { font-weight: 700; letter-spacing: -.01em; }
 @media (max-width: 1000px) { .reviews { grid-template-columns: 1fr; } .g-card { max-width: 420px; width: 100%; margin: 0 auto; } }
 @media (max-width: 700px) { .g-list { grid-template-columns: 1fr; } .g-review.is-big blockquote { font-size: 1rem; max-width: none; } }
+/* Bewertungs-Karte: zwei Noten */
+.g-card { align-items: stretch; text-align: left; }
+.g-kicker { position: relative; margin: 0 0 18px; font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: var(--yellow); text-align: center; }
+.g-rows { position: relative; display: grid; gap: 12px; }
+.g-row { display: grid; grid-template-columns: auto 1fr; align-items: center; column-gap: 14px; row-gap: 6px; padding: 16px 18px; border-radius: 10px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.08); color: #fff; text-decoration: none; transition: background .2s, border-color .2s; }
+.g-row:hover { background: rgba(255,255,255,.1); border-color: rgba(250,204,56,.5); }
+.g-src { grid-column: 1 / -1; display: inline-flex; align-items: center; gap: 8px; font-size: .86rem; font-weight: 500; color: rgba(255,255,255,.85); }
+.g-src svg { width: 22px; height: 22px; padding: 3px; background: #fff; border-radius: 50%; }
+.g-src-mde::before { content: "m"; display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: #fff; color: #1f1f24; font: 800 .8rem/1 var(--sans); }
+.g-row b { font: 700 2.4rem/1 var(--head); }
+.g-row .stars { font-size: 1.15rem; }
+.g-row small { grid-column: 1 / -1; font-size: .78rem; color: rgba(255,255,255,.55); }
+.g-card .btn { margin-top: 22px; }
+.g-write { align-self: center; }

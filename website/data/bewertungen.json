@@ -1,7 +1,19 @@
 {
-  "hinweis": "Note und Anzahl aus dem Google-Profil eintragen (bewertung z. B. 4.8, anzahl z. B. 23). Solange null, wird ein Hinweis angezeigt.",
-  "bewertung": 4.2,
-  "anzahl": null,
+  "hinweis": "Noten pflegen: note = Durchschnitt, anzahl = Anzahl Bewertungen (optional), link = Profil-Link.",
+  "noten": [
+    {
+      "quelle": "Google",
+      "note": 4.2,
+      "anzahl": null,
+      "link": "https://www.google.com/maps/search/?api=1&query=SANISA+GmbH+Butzbach"
+    },
+    {
+      "quelle": "mobile.de",
+      "note": 4.9,
+      "anzahl": null,
+      "link": "https://home.mobile.de/SANISAGMBH"
+    }
+  ],
   "link": "https://www.google.com/maps/search/?api=1&query=SANISA+GmbH+Butzbach",
   "schreiben": "https://www.google.com/maps/search/?api=1&query=SANISA+GmbH+Butzbach",
   "eintraege": [
