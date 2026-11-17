@@ -293,7 +293,7 @@ $$(".js-year").forEach((el) => (el.textContent = new Date().getFullYear()));
         <span class="q" aria-hidden="true">“</span>
         <span class="stars" style="--r:${e.sterne}">★★★★★</span>
         <blockquote>${esc(e.text)}</blockquote>
-        <figcaption><span class="buy"><svg><use href="assets/img/icons.svg#i-check"/></svg>${esc(e.kauf || "Kunde")}${e.datum ? " · " + esc(e.datum) : ""}</span>${src(e.quelle)}</figcaption>
+        <figcaption><span class="buy"><svg><use href="assets/img/icons.svg#i-check"/></svg><span>${esc(e.kauf || "Kunde")}</span>${e.datum ? `<span class="sep"> · </span><span>${esc(e.datum)}</span>` : ""}</span>${src(e.quelle)}</figcaption>
       </figure>`).join("");
   }).catch(() => {});
 })();
