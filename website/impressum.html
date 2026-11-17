@@ -9,31 +9,107 @@
   <!-- Vor dem Livegang Schriften lokal einbinden (DSGVO) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=Rubik:ital,wght@1,700&family=Chonburi&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-<header class="site-header">
+
+<header class="site-header" id="top">
   <div class="wrap header-inner">
-    <a href="index.html" class="brand" aria-label="SANISA – zur Startseite"><img src="assets/img/logo.png" alt="SANISA Baumaschinen Handel" width="317" height="82"></a>
-    <div class="lang"><button type="button" class="lang-btn" aria-haspopup="true" aria-expanded="false" aria-label="Sprache wählen"><svg><use href="assets/img/icons.svg#i-globe"/></svg><span class="lang-code" data-no-i18n><svg viewBox="0 0 5 3"><rect width="5" height="1" fill="#000"/><rect y="1" width="5" height="1" fill="#D00"/><rect y="2" width="5" height="1" fill="#FFCE00"/></svg></span></button><ul class="lang-menu" hidden></ul></div>
+    <a href="index.html" class="brand" aria-label="SANISA – zur Startseite"><img class="logo-dark" src="assets/img/logo.png" alt="SANISA Baumaschinen Handel" width="317" height="82"></a>
+    <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation">
+      <a href="fahrzeuge.html">Fahrzeuge</a>
+      <a href="index.html#leistungen">Leistungen</a>
+      <a href="index.html#ankauf">Ankauf</a>
+      <a href="index.html#ueber-uns">Über uns</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <div class="lang"><button type="button" class="lang-btn" aria-haspopup="true" aria-expanded="false" aria-label="Sprache wählen"><span class="lang-code" data-no-i18n><svg viewBox="0 0 5 3"><rect width="5" height="1" fill="#000"/><rect y="1" width="5" height="1" fill="#D00"/><rect y="2" width="5" height="1" fill="#FFCE00"/></svg></span><svg class="chev" viewBox="0 0 12 12"><path d="M3 4.5 6 7.5 9 4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button><ul class="lang-menu" hidden></ul></div>
     <a href="tel:+4960339285448" class="btn btn-yellow header-phone"><svg><use href="assets/img/icons.svg#i-phone"/></svg><span>+49 (0)6033 9285448</span></a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Menü"><span></span><span></span><span></span></button>
   </div>
 </header>
-<main class="legal"><div class="wrap">
-<h1>Impressum</h1>
-<h2>Angaben gemäß § 5 DDG</h2>
-<p>SANISA GmbH<br>Otto-Hahn-Straße 13<br>35510 Butzbach</p>
-<p>Handelsregister: HRB 8739<br>Registergericht: Amtsgericht Friedberg</p>
-<p>Vertreten durch den Geschäftsführer:<br>Siawash Hematyar</p>
-<h2>Kontakt</h2>
-<p>Telefon: +49 6033 9285448<br>Mobil: +49 177 3214225<br>E-Mail: info@sanisa.de</p>
-<h2>Umsatzsteuer-ID</h2>
-<p>Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG:<br><span class="ph">[DE … bitte ergänzen]</span></p>
-<h2>Verbraucherstreitbeilegung</h2>
-<p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
-<p class="ph" style="display:inline-block;margin-top:2em">Bitte vor dem Livegang rechtlich prüfen lassen.</p>
-</div></main>
+
+<main class="legal-page">
+  <section class="legal-head">
+    <div class="wrap">
+      <p class="about-kicker">Rechtliches</p>
+      <h1 class="title serif about-title">Impressum</h1>
+    </div>
+  </section>
+  <div class="wrap legal-body">
+    <div class="legal-cards">
+      <div class="lc"><h2>Anbieter</h2><p>SANISA GmbH<br>Otto-Hahn-Straße 13<br>35510 Butzbach</p></div>
+      <div class="lc"><h2>Kontakt</h2><p>Telefon: <a href="tel:+4960339285448">+49 (0)6033 9285448</a><br>Mobil / WhatsApp: <a href="tel:+491773214225">+49 177 3214225</a><br>E-Mail: <a href="mailto:info@sanisa.de">info@sanisa.de</a></p></div>
+      <div class="lc"><h2>Vertreten durch</h2><p>Siawash Hematyar<br>Geschäftsführer</p></div>
+      <div class="lc"><h2>Registereintrag</h2><p>Handelsregister: HRB 8739<br>Registergericht: Amtsgericht Friedberg</p></div>
+      <div class="lc"><h2>Umsatzsteuer-ID</h2><p>Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG:<br><span class="ph">DE … bitte ergänzen</span></p></div>
+      <div class="lc"><h2>Verantwortlich für den Inhalt</h2><p>nach § 18 Abs. 2 MStV:<br>Siawash Hematyar<br>Anschrift wie oben</p></div>
+    </div>
+
+    <div class="legal-text">
+      <h2>Verbraucherstreitbeilegung</h2>
+      <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+      <h2>Haftung für Inhalte</h2>
+      <p>Die Inhalte dieser Website wurden mit großer Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte, insbesondere der Fahrzeugangaben, übernehmen wir jedoch keine Gewähr. Irrtümer und Zwischenverkauf vorbehalten.</p>
+      <h2>Haftung für Links</h2>
+      <p>Unsere Website enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Für diese Inhalte ist stets der jeweilige Anbieter oder Betreiber verantwortlich. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.</p>
+      <h2>Urheberrecht</h2>
+      <p>Die Texte, Fotos und Grafiken auf dieser Website unterliegen dem deutschen Urheberrecht. Eine Verwendung außerhalb dieser Website bedarf unserer schriftlichen Zustimmung.</p>
+      <p class="ph legal-note">Hinweis für uns: Vor dem Livegang rechtlich prüfen lassen.</p>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer" id="kontakt">
+  <div class="wrap">
+    <div class="f-cta">
+      <div>
+        <p class="f-kicker">Kontakt</p>
+        <h2 class="f-title">Fahrzeug verkaufen oder Maschine gesucht?</h2>
+        <p>Rufen Sie uns an oder fordern Sie ein unverbindliches Angebot an.</p>
+      </div>
+      <div class="f-cta-actions">
+        <a href="tel:+4960339285448" class="btn btn-yellow f-call"><svg><use href="assets/img/icons.svg#i-phone"/></svg>Jetzt anrufen</a>
+        <a href="index.html#anfrage" class="btn btn-ghost">Angebot anfordern</a>
+      </div>
+    </div>
+
+    <div class="f-cols">
+      <div class="f-brand">
+        <img src="assets/img/logo-hell.png" alt="SANISA Baumaschinen Handel" class="f-logo">
+        <p>Handel mit Nutzfahrzeugen und Baumaschinen.</p>
+      </div>
+      <div>
+        <h3>Kontakt</h3>
+        <ul class="f-list">
+          <li><svg><use href="assets/img/icons.svg#i-phone"/></svg><a href="tel:+4960339285448">+49 (0)6033 9285448</a></li>
+          <li><svg><use href="assets/img/icons.svg#i-whatsapp"/></svg><a href="https://wa.me/491773214225" target="_blank" rel="noopener">+49 177 3214225</a></li>
+          <li><svg><use href="assets/img/icons.svg#i-mail"/></svg><a href="mailto:info@sanisa.de">info@sanisa.de</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Öffnungszeiten</h3>
+        <ul class="f-hours">
+          <li><span>Mo – Fr</span><span>10:00 – 18:00</span></li>
+          <li><span>Sa</span><span>10:00 – 15:00</span></li>
+          <li><span>So</span><span>geschlossen</span></li>
+        </ul>
+        <p class="f-note">Besichtigung nach Termin.</p>
+      </div>
+      <div>
+        <h3>Standort</h3>
+        <p class="f-addr">SANISA GmbH<br>Otto-Hahn-Straße 13<br>35510 Butzbach</p>
+        <a class="f-route" href="https://www.google.com/maps/dir/?api=1&amp;destination=SANISA+GmbH+Otto-Hahn-Stra%C3%9Fe+13+35510+Butzbach" target="_blank" rel="noopener"><svg><use href="assets/img/icons.svg#i-pin"/></svg>Route planen</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="wrap"><span>© <span class="js-year">2026</span> SANISA GmbH</span><span class="f-legal"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="login.html">Mitarbeiter-Login</a></span></div>
+  </div>
+</footer>
+
 <script src="assets/js/i18n.js"></script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>

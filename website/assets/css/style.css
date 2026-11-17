@@ -638,3 +638,20 @@ details[open] .faq-a { animation: faqIn .35s var(--ease); }
 @media (max-width: 720px) { .team-block + .team-block { margin-top: 44px; } .team-group { font-size: .7rem; gap: 10px; } }
 .f-call { display: inline-flex; align-items: center; gap: 10px; }
 .f-call svg { width: 18px; height: 18px; }
+
+/* Rechtliche Seiten */
+.legal-head { padding: 64px 0 36px; }
+.legal-head .about-title { margin: 0; }
+.legal-body { padding-bottom: 96px; }
+.legal-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.lc { background: #fff; border-radius: 12px; padding: 26px 26px 24px; box-shadow: 0 10px 30px rgba(0,0,0,.05); border-top: 3px solid var(--yellow); }
+.lc h2, .legal-text h2 { font: 500 .78rem var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--muted); margin: 0 0 12px; }
+.lc p { margin: 0; color: var(--ink); line-height: 1.7; }
+.lc a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--yellow); }
+.legal-text { background: #fff; border-radius: 12px; padding: clamp(26px, 4vw, 44px); margin-top: 18px; box-shadow: 0 10px 30px rgba(0,0,0,.05); max-width: none; }
+.legal-text h2 { margin-top: 30px; }
+.legal-text h2:first-child { margin-top: 0; }
+.legal-text p { color: var(--muted); margin: 0; max-width: 820px; }
+.legal-note { display: inline-block; margin-top: 30px !important; }
+@media (max-width: 900px) { .legal-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .legal-cards { grid-template-columns: 1fr; } }
