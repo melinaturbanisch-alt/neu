@@ -5,7 +5,7 @@
       "quelle": "Google",
       "note": 4.2,
       "anzahl": null,
-      "link": "https://www.google.com/maps/search/?api=1&query=SANISA+GmbH+Butzbach"
+      "link": "https://www.google.com/maps/search/?api=1&query=SANISA+GmbH+Otto-Hahn-Stra%C3%9Fe+13+35510+Butzbach"
     },
     {
       "quelle": "mobile.de",
@@ -14,8 +14,8 @@
       "link": "https://home.mobile.de/SANISAGMBH"
     }
   ],
-  "link": "https://www.google.com/maps/search/?api=1&query=SANISA+GmbH+Butzbach",
-  "schreiben": "https://www.google.com/maps/search/?api=1&query=SANISA+GmbH+Butzbach",
+  "link": "https://www.google.com/maps/search/?api=1&query=SANISA+GmbH+Otto-Hahn-Stra%C3%9Fe+13+35510+Butzbach",
+  "schreiben": "https://www.google.com/maps/search/?api=1&query=SANISA+GmbH+Otto-Hahn-Stra%C3%9Fe+13+35510+Butzbach",
   "eintraege": [
     {
       "sterne": 5,
