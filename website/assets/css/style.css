@@ -132,13 +132,13 @@ h3 { font-size: 1.1rem; font-weight: 700; text-transform: uppercase; letter-spac
 .stage.no-video .dots { display: flex; }
 .stage::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
   background: linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.15) 40%, rgba(0,0,0,0) 60%), linear-gradient(90deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.25) 45%, rgba(0,0,0,0) 75%); }
-.stage-text { position: relative; z-index: 2; color: #fff; padding-top: calc(100px + clamp(4px, 1.5vh, 20px) + 22px); }
-.stage-text .kicker { display: inline-flex; align-items: center; gap: 12px; font-size: clamp(.97rem, 1.358vw, 1.164rem); letter-spacing: .12em; font-weight: 500; text-transform: uppercase; color: rgba(255,255,255,.88); margin: 0 0 14px; }
+.stage-text { position: relative; z-index: 2; color: #fff; padding-top: calc(100px + clamp(4px, 1.5vh, 20px) + 69px); }
+.stage-text .kicker { display: inline-flex; align-items: center; gap: 12px; font-size: clamp(.92rem, 1.29vw, 1.106rem); letter-spacing: .12em; font-weight: 500; text-transform: uppercase; color: rgba(255,255,255,.88); margin: 0 0 14px; }
 .stage-text .kicker::before { content: ""; width: 34px; height: 2px; background: var(--yellow); }
 .stage-text h1 { font-size: clamp(2.1rem, 4.4vw, 3.8rem); text-transform: uppercase; line-height: 1.05; max-width: 16ch; margin: 0 0 .35em; text-shadow: 0 2px 24px rgba(0,0,0,.3); }
 .stage-text .lead { font-size: clamp(1rem, 1.4vw, 1.12rem); max-width: 34rem; color: rgba(255,255,255,.92); margin-bottom: 24px; }
 .stage-text .actions { display: flex; gap: 12px; flex-wrap: wrap; }
-.stage-text .actions .btn { font-size: 1.2rem; padding: 1.2rem 1.92rem; }
+.stage-text .actions .btn { font-size: 1.38rem; padding: 1.38rem 2.21rem; }
 .btn-ghost { background: transparent; color: #fff; box-shadow: inset 0 0 0 1.5px rgba(255,255,255,.9); }
 .btn-ghost:hover { background: #fff; color: var(--ink); }
 .hero-contact { list-style: none; margin: 28px 0 0; padding: 0; display: grid; gap: 6px; }
@@ -151,13 +151,13 @@ h3 { font-size: 1.1rem; font-weight: 700; text-transform: uppercase; letter-spac
 .stage .dots button.on { background: #fff; width: 38px; }
 
 /* Überschrift edel, kursiv, zweizeilig versetzt */
-.stage-text h1.script { font-family: "Rubik", system-ui, sans-serif; font-style: italic; font-weight: 700; text-transform: uppercase; letter-spacing: -.01em; line-height: 1.24; font-size: clamp(2rem, 3.85vw, 3.45rem); max-width: none; margin: -2px 0 -4px; }
+.stage-text h1.script { font-family: "Rubik", system-ui, sans-serif; font-style: italic; font-weight: 700; text-transform: uppercase; letter-spacing: -.01em; line-height: 1.24; font-size: clamp(2rem, 3.85vw, 3.45rem); max-width: none; margin: -4px 0 2px; }
 .stage-text h1.script span { display: block; }
 .stage-text h1.script span:first-child { font-size: 1.23em; }
-.stage-text h1.script span + span { font-size: 1.17em; margin-top: calc(-.154em - 5px); }
-.stage-text .facts { display: grid; justify-items: start; gap: 4px; margin: 0 0 34px; font-size: clamp(1rem, 1.35vw, 1.15rem); color: rgba(255,255,255,.9); }
+.stage-text h1.script span + span { font-size: 1.17em; margin-top: calc(-.154em - 7px); }
+.stage-text .facts { display: grid; justify-items: start; gap: 4px; margin: 0 0 20px; font-size: clamp(1rem, 1.35vw, 1.15rem); color: rgba(255,255,255,.9); }
 .stage-text .facts .strong { font-size: .87em; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: #fff; white-space: nowrap; }
-.stage-text .facts .since { display: inline-flex; align-items: center; gap: 10px; margin-top: 9px; font-weight: 500; color: #fff; }
+.stage-text .facts .since { display: inline-flex; align-items: center; gap: 10px; margin-top: 8px; font-weight: 500; color: #fff; }
 .stage-text .facts .since::before { content: ""; width: 22px; height: 2px; background: var(--yellow); }
 
 /* Kasten "Sie erreichen uns": liegt im Bild unten rechts, erscheint beim Scrollen */
@@ -168,6 +168,9 @@ h3 { font-size: 1.1rem; font-weight: 700; text-transform: uppercase; letter-spac
 .hours-box p { margin: 0; }
 .hb-title { font: 700 1.15rem var(--head); text-transform: uppercase; letter-spacing: .02em; }
 .hb-time { color: rgba(255,255,255,.85); margin: 6px 0 12px !important; }
+.hb-mail { display: flex; align-items: center; gap: 10px; color: #fff; text-decoration: none; margin-top: 8px; }
+.hb-mail svg { width: 18px; height: 18px; color: var(--yellow); }
+.hb-mail:hover { color: var(--yellow); }
 .hb-phone { display: inline-flex; align-items: center; gap: 10px; color: var(--yellow); text-decoration: none; font-weight: 500; font-size: 1.08rem; }
 .hb-phone svg { width: 18px; height: 18px; }
 
