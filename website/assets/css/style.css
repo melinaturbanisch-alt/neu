@@ -456,3 +456,22 @@ h3 { font-size: 1.1rem; font-weight: 700; text-transform: uppercase; letter-spac
 .choice label:hover span svg { transform: translateY(-3px) translateX(2px); }
 @media (max-width: 980px) { .ank-stack .choice { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 @media (max-width: 480px) { .ank-stack .choice { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* Foto-Upload im Ankaufsformular */
+.upload { display: grid; gap: 8px; }
+.up-label { font-size: .92rem; }
+.form .dropzone, .dropzone { position: relative; display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 22px 16px; border: 2px dashed #d3cfc3; border-radius: 10px; background: #faf9f6; text-align: center; cursor: pointer; transition: border-color .2s, background .2s; }
+.dropzone input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+.dropzone svg { width: 44px; height: 44px; margin-bottom: 4px; transition: transform .3s var(--ease); }
+.dropzone strong { font-weight: 500; font-size: .95rem; }
+.dropzone strong u { text-decoration-color: var(--yellow); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+.dropzone small { color: var(--muted); font-size: .8rem; }
+.dropzone:hover, .dropzone.drag { border-color: var(--yellow); background: #fffbea; }
+.dropzone:hover svg, .dropzone.drag svg { transform: scale(1.08) rotate(-4deg); }
+.dropzone:focus-within { outline: 2px solid var(--ink); outline-offset: 2px; }
+.thumbs { display: flex; flex-wrap: wrap; gap: 8px; }
+.thumbs:empty { display: none; }
+.thumb { position: relative; width: 72px; height: 72px; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,.12); }
+.thumb img { width: 100%; height: 100%; object-fit: cover; }
+.thumb button { position: absolute; top: 3px; right: 3px; width: 22px; height: 22px; border: 0; border-radius: 50%; background: rgba(24,23,29,.8); color: #fff; font: 600 14px/22px var(--sans); cursor: pointer; padding: 0; }
+.thumb button:hover { background: #000; }

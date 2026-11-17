@@ -137,7 +137,17 @@
                 </label>
                 <label>Preisvorstellung<input name="preis" inputmode="numeric" placeholder="optional"></label>
               </div>
-              <label>Fotos (optional)<input type="file" name="fotos" accept="image/*" multiple></label>
+              <label>Standort des Fahrzeugs<input name="standort" placeholder="PLZ oder Ort, z. B. 35510 Butzbach"></label>
+              <div class="upload">
+                <span class="up-label">Fotos (optional)</span>
+                <label class="dropzone">
+                  <input type="file" name="fotos" accept="image/*" multiple>
+                  <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="5" y="13" width="38" height="27" rx="5" fill="#ece8de"/><path d="M17 13l3-5h8l3 5" fill="#ece8de"/><circle cx="24" cy="26" r="9" fill="#facc38"/><circle cx="24" cy="26" r="4.5" fill="#1f1f24"/><circle cx="36" cy="19" r="2" fill="#1f1f24"/></svg>
+                  <strong>Fotos hier ablegen oder <u>auswählen</u></strong>
+                  <small>Bis zu 10 Bilder · am Handy direkt mit der Kamera</small>
+                </label>
+                <div class="thumbs" aria-live="polite"></div>
+              </div>
               <div class="fnav"><button type="button" class="btn btn-back js-prev" aria-label="Zurück">←</button><button type="button" class="btn btn-dark js-next">Weiter</button></div>
             </fieldset>
 

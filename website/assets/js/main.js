@@ -193,6 +193,31 @@ if (teamGrid) {
     .catch(() => {});
 }
 
+/* Foto-Upload: Ziehen & Ablegen, Vorschaubilder, einzeln entfernen (max. 10) */
+$$(".upload").forEach((up) => {
+  const zone = $(".dropzone", up), input = $("input[type=file]", up), thumbs = $(".thumbs", up);
+  let files = [];
+  const sync = () => {
+    const dt = new DataTransfer();
+    files.forEach((f) => dt.items.add(f));
+    input.files = dt.files;
+    thumbs.innerHTML = "";
+    files.forEach((f, i) => {
+      const t = document.createElement("div");
+      t.className = "thumb";
+      t.innerHTML = `<img alt=""><button type="button" aria-label="Foto entfernen">×</button>`;
+      $("img", t).src = URL.createObjectURL(f);
+      $("button", t).addEventListener("click", () => { files.splice(i, 1); sync(); });
+      thumbs.appendChild(t);
+    });
+  };
+  const add = (list) => { files = files.concat([...list].filter((f) => f.type.startsWith("image/"))).slice(0, 10); sync(); };
+  input.addEventListener("change", () => add(input.files));
+  ["dragenter", "dragover"].forEach((ev) => zone.addEventListener(ev, (e) => { e.preventDefault(); zone.classList.add("drag"); }));
+  ["dragleave", "drop"].forEach((ev) => zone.addEventListener(ev, () => zone.classList.remove("drag")));
+  zone.addEventListener("drop", (e) => { e.preventDefault(); add(e.dataTransfer.files); });
+});
+
 /* Mehrstufiges Ankaufsformular */
 $$(".js-quote").forEach((form) => {
   const steps = $$(".fstep", form);
@@ -236,6 +261,7 @@ $$(".js-quote").forEach((form) => {
     msg.className = "form-msg ok";
     msg.textContent = "Vielen Dank! Wir melden uns schnellstmöglich. (Vorschau, die Anfrage wird noch nicht versendet.)";
     form.reset();
+    $$(".thumbs", form).forEach((t) => (t.innerHTML = ""));
     setTimeout(() => show(0), 3500);
   });
 
