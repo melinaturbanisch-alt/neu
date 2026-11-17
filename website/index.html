@@ -15,9 +15,9 @@
 </head>
 <body>
 
-<header class="site-header" id="top">
+<header class="site-header over" id="top">
   <div class="wrap header-inner">
-    <a href="#top" class="brand" aria-label="SANISA – zur Startseite"><img src="assets/img/logo.png" alt="SANISA Baumaschinen Handel" width="317" height="82"></a>
+    <a href="#top" class="brand" aria-label="SANISA – zur Startseite"><img class="logo-dark" src="assets/img/logo.png" alt="SANISA Baumaschinen Handel" width="317" height="82"><img class="logo-light" src="assets/img/logo-hell.png" alt="" width="317" height="82"></a>
     <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation">
       <a href="#fahrzeuge">Fahrzeuge</a>
       <a href="#leistungen">Leistungen</a>
@@ -35,26 +35,39 @@
 
   <!-- BLICKFANG: Video bzw. Diashow über den ganzen Bildschirm -->
   <section class="stage" aria-label="Eindrücke vom SANISA-Gelände">
-    <div class="slide on" style="background-image:url('assets/img/hero-1.jpg')"></div>
+    <div class="slide" style="background-image:url('assets/img/hero-1.jpg')"></div>
     <div class="slide" style="background-image:url('assets/img/hero-2.jpg')"></div>
     <div class="slide" style="background-image:url('assets/img/hero-3.jpg')"></div>
-    <video class="stage-video" muted playsinline preload="auto" poster="assets/video/hero-poster.jpg" aria-hidden="true">
+    <video class="stage-video" muted playsinline preload="auto" poster="assets/video/hero-start.jpg" aria-hidden="true">
       <source src="assets/video/hero.mp4" type="video/mp4">
       <source src="assets/video/hero.webm" type="video/webm">
     </video>
     <div class="stage-text wrap">
+      <p class="kicker">SANISA Baumaschinen · Butzbach</p>
       <h1>Ihr Partner für Nutzfahrzeuge</h1>
-      <p class="sub">LKW &amp; Baumaschinen · Ankauf &amp; Verkauf</p>
+      <p class="lead">LKW &amp; Baumaschinen: Ankauf, Verkauf, Vermietung und Export. Seit 2016 in Butzbach.</p>
       <div class="actions">
         <a href="#ankauf" class="btn btn-yellow">Fahrzeug verkaufen</a>
         <a href="#fahrzeuge" class="btn btn-ghost">Fahrzeuge kaufen</a>
       </div>
+      <ul class="hero-contact">
+        <li><svg><use href="assets/img/icons.svg#i-phone"/></svg><a href="tel:+4960339285448">06033 9285448</a></li>
+        <li><svg><use href="assets/img/icons.svg#i-mail"/></svg><a href="mailto:info@sanisa.de">info@sanisa.de</a></li>
+      </ul>
     </div>
     <div class="dots"><button class="on" aria-label="Bild 1"></button><button aria-label="Bild 2"></button><button aria-label="Bild 3"></button></div>
   </section>
 
+  <div class="wrap hours-wrap">
+    <div class="hours-box">
+      <p class="hb-title">Sie erreichen uns:</p>
+      <p class="hb-time">Mo–Fr 10:00–18:00 Uhr · Sa 10:00–15:00 Uhr</p>
+      <a class="hb-phone" href="tel:+4960339285448"><svg><use href="assets/img/icons.svg#i-phone"/></svg>+49 (0)6033 9285448</a>
+    </div>
+  </div>
+
   <!-- LEISTUNGEN -->
-  <section class="section" id="leistungen">
+  <section class="section" id="leistungen" style="padding-top:clamp(28px, 4vw, 48px)">
     <div class="wrap">
       <h2 class="title reveal">Leistungen</h2>
       <div class="cards4 reveal" style="margin-top:36px">

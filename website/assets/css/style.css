@@ -109,28 +109,62 @@ h3 { font-size: 1.1rem; font-weight: 700; text-transform: uppercase; letter-spac
 .lang-menu button[aria-current="true"] { font-weight: 500; }
 [dir="rtl"] .lang-menu { right: auto; left: 0; }
 
-/* ===== Großes Bild/Video über die volle Breite, wenig Text ===== */
-.stage { position: relative; height: clamp(360px, 55vh, 560px); overflow: hidden; background: #2a2a2a; display: flex; align-items: flex-start; }
+/* ===== Abschnitt 1: Video mit Kopfzeile darüber (miettrucks-Stil) ===== */
+.brand .logo-light { display: none; }
+.site-header.over { position: fixed; left: 0; right: 0; background: transparent; transition: background .3s, box-shadow .3s; }
+.site-header.over.scrolled { background: var(--bg); box-shadow: 0 6px 24px rgba(0,0,0,.08); }
+.site-header.over:not(.scrolled) .logo-dark { display: none; }
+.site-header.over:not(.scrolled) .logo-light { display: block; }
+.site-header.over:not(.scrolled) .main-nav a { color: rgba(255,255,255,.85); }
+.site-header.over:not(.scrolled) .main-nav a:hover { color: #fff; }
+.site-header.over:not(.scrolled) .lang-btn { color: rgba(255,255,255,.85); }
+.site-header.over:not(.scrolled) .nav-toggle span { background: #fff; }
+.site-header.over:not(.scrolled) .main-nav.open a { color: var(--ink); }
+
+/* etwas niedriger als der volle Bildschirm, damit darunter schon der nächste Abschnitt zu sehen ist */
+.stage { position: relative; height: 78svh; min-height: 560px; max-height: 820px; overflow: hidden; background: #2a2a2a; display: flex; align-items: flex-start; }
 .stage .slide { position: absolute; inset: 0; background-size: cover; background-position: center 55%; opacity: 0; transform: scale(1.06); transition: opacity 1.8s ease; }
 .stage .slide.on { opacity: 1; animation: kenburns 12s linear forwards; }
 @keyframes kenburns { from { transform: scale(1.06); } to { transform: scale(1); } }
-.stage-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 0%; opacity: 0; transition: opacity 1.2s ease; }
-.stage.has-video .stage-video { opacity: 1; }
-.stage.has-video .slide, .stage.has-video .dots { display: none; }
-.stage::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(180deg, rgba(0,0,0,.42) 0%, rgba(0,0,0,.18) 45%, rgba(0,0,0,0) 70%); }
-.stage-text { position: relative; z-index: 2; text-align: center; color: #fff; padding-top: clamp(22px, 4vh, 44px); }
-.stage-text .sub { font-size: clamp(.85rem, 1.4vw, 1.05rem); letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.92); margin: -12px 0 22px; text-shadow: 0 1px 12px rgba(0,0,0,.35); }
-.stage-text h1 { font-size: clamp(1.8rem, 3.5vw, 3rem); text-transform: uppercase; line-height: 1.08; margin: 0 0 24px; text-shadow: 0 2px 20px rgba(0,0,0,.3); }
-.stage-text .actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+/* Video ist sofort da (mit seinem ersten Bild als Poster), kein Zwischenbild */
+.stage-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 0%; }
+.stage .dots { display: none; }
+.stage.no-video .dots { display: flex; }
+.stage::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.15) 40%, rgba(0,0,0,0) 60%), linear-gradient(90deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.25) 45%, rgba(0,0,0,0) 75%); }
+.stage-text { position: relative; z-index: 2; color: #fff; padding-top: calc(100px + clamp(16px, 4vh, 48px)); }
+.stage-text .kicker { display: inline-flex; align-items: center; gap: 12px; font-size: .78rem; letter-spacing: .26em; text-transform: uppercase; color: rgba(255,255,255,.88); margin: 0 0 14px; }
+.stage-text .kicker::before { content: ""; width: 34px; height: 2px; background: var(--yellow); }
+.stage-text h1 { font-size: clamp(2.1rem, 4.4vw, 3.8rem); text-transform: uppercase; line-height: 1.05; max-width: 16ch; margin: 0 0 .35em; text-shadow: 0 2px 24px rgba(0,0,0,.3); }
+.stage-text .lead { font-size: clamp(1rem, 1.4vw, 1.12rem); max-width: 34rem; color: rgba(255,255,255,.92); margin-bottom: 24px; }
+.stage-text .actions { display: flex; gap: 12px; flex-wrap: wrap; }
 .btn-ghost { background: transparent; color: #fff; box-shadow: inset 0 0 0 1.5px rgba(255,255,255,.9); }
 .btn-ghost:hover { background: #fff; color: var(--ink); }
-.stage .dots { position: absolute; right: 24px; bottom: 20px; display: flex; gap: 8px; z-index: 3; }
+.hero-contact { list-style: none; margin: 22px 0 0; padding: 0; display: grid; gap: 6px; }
+.hero-contact li { display: flex; align-items: center; gap: 10px; }
+.hero-contact svg { width: 17px; height: 17px; color: var(--yellow); }
+.hero-contact a { text-decoration: none; color: #fff; }
+.hero-contact a:hover { color: var(--yellow); }
+.stage .dots { position: absolute; right: 24px; bottom: 20px; gap: 8px; z-index: 3; }
 .stage .dots button { width: 24px; height: 2px; border: 0; background: rgba(255,255,255,.55); cursor: pointer; padding: 0; }
 .stage .dots button.on { background: #fff; width: 38px; }
+
+/* Kasten "Sie erreichen uns", ragt über den unteren Videorand */
+.hours-wrap { position: relative; z-index: 5; display: flex; justify-content: flex-end; margin-top: -64px; }
+.hours-box { background: var(--ink); color: #fff; padding: 24px 30px; border-radius: 4px; box-shadow: 0 24px 50px -20px rgba(0,0,0,.45); min-width: min(100%, 440px); border-top: 4px solid var(--yellow); }
+.hours-box p { margin: 0; }
+.hb-title { font: 700 1.15rem var(--head); text-transform: uppercase; letter-spacing: .02em; }
+.hb-time { color: rgba(255,255,255,.85); margin: 6px 0 12px !important; }
+.hb-phone { display: inline-flex; align-items: center; gap: 10px; color: var(--yellow); text-decoration: none; font-weight: 500; font-size: 1.08rem; }
+.hb-phone svg { width: 18px; height: 18px; }
+
 @media (max-width: 600px) {
-  .stage { height: clamp(360px, 58vh, 520px); }
-  .stage-text .actions { flex-direction: column; align-items: stretch; max-width: 320px; margin: 0 auto; }
-  .stage-text .sub { letter-spacing: .06em; font-size: .78rem; margin: -14px 0 18px; }
+  .stage { height: 82svh; min-height: 540px; }
+  .stage-text { padding-top: calc(76px + 22px); }
+  .stage-text .kicker { letter-spacing: .14em; font-size: .7rem; }
+  .stage-text .actions .btn { flex: 1 1 100%; }
+  .hours-wrap { margin-top: -28px; }
+  .hours-box { width: 100%; padding: 20px 22px; }
 }
 
 /* Abschnitte */

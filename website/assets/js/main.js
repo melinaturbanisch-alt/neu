@@ -55,15 +55,25 @@ if (stage) {
   // Video hat Vorrang: läuft es, wird die Diashow ausgeblendet. Ohne Video bleibt die Diashow.
   const video = $(".stage-video", stage);
   const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  // Ohne Video (oder wenn es nicht abspielt) übernimmt die Diashow
+  const fallback = () => {
+    if (stage.classList.contains("no-video")) return;
+    stage.classList.add("no-video");
+    if (video) video.remove();
+    slides[0].classList.add("on");
+    if (dots[0]) dots[0].classList.add("on");
+    start();
+  };
   if (video && !reduced) {
-    video.addEventListener("playing", () => { stage.classList.add("has-video"); clearInterval(timer); }, { once: true });
-    video.addEventListener("error", () => video.remove(), true);
+    video.addEventListener("error", fallback, true);
     const p = video.play();
-    if (p && p.catch) p.catch(() => video.remove()); // z. B. Energiesparmodus am Handy
-  } else if (video) {
-    video.remove();
+    if (p && p.catch) p.catch(() => { /* Autoplay blockiert: Startbild des Videos bleibt stehen */ });
+  } else if (video && reduced) {
+    // Animationen reduziert: Video nicht abspielen, sein Endbild zeigen
+    video.poster = "assets/video/hero-poster.jpg";
+  } else {
+    fallback();
   }
-  start();
 }
 
 /* Mobile Navigation */
