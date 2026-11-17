@@ -373,21 +373,39 @@ details[open] .faq-a { animation: faqIn .35s var(--ease); }
 @media (max-width: 560px) { .faq summary { font-size: .98rem; gap: 12px; padding: 20px 0; } .faq-a p { padding: 0 0 20px 34px; } }
 
 /* Footer (wie Immobilien: dunkel, Kontakt links, Aufruf rechts) */
-.site-footer { background: var(--ink); color: #fff; padding: 64px 0 0; }
-.footer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
-.footer-grid h2 { font-size: 1.5rem; text-transform: uppercase; line-height: 1.25; }
-.f-contact { display: grid; grid-template-columns: auto 1fr; gap: 28px; }
-.f-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; color: #d5d5d8; }
-.f-list li { display: flex; gap: 10px; align-items: flex-start; }
-.f-list svg { width: 18px; height: 18px; color: var(--yellow); flex: none; margin-top: 3px; }
-.f-list a { text-decoration: none; }
+.site-footer { background: var(--ink); color: #fff; padding: 72px 0 0; position: relative; overflow: hidden; }
+.site-footer::before { content: ""; position: absolute; width: 520px; height: 520px; border-radius: 50%; background: radial-gradient(circle, rgba(250,204,56,.12), transparent 70%); top: -260px; right: -160px; pointer-events: none; }
+.site-footer .wrap { position: relative; }
+.f-cta { display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,.12); }
+.f-kicker { display: flex; align-items: center; gap: 12px; margin: 0 0 12px; font-size: .78rem; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: var(--yellow); }
+.f-kicker::before { content: ""; width: 34px; height: 2px; background: var(--yellow); }
+.f-title { font-family: "Chonburi", Georgia, serif; font-weight: 400; font-size: clamp(1.5rem, 2.6vw, 2.1rem); line-height: 1.25; letter-spacing: .02em; text-transform: uppercase; max-width: 640px; margin: 0 0 12px; }
+.f-cta p { color: rgba(255,255,255,.7); margin: 0; }
+.f-cta-actions { display: flex; gap: 12px; flex-wrap: wrap; flex: none; }
+.f-cols { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 40px; padding: 48px 0 56px; }
+.f-cols h3 { font: 500 .78rem var(--sans); letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,.55); margin: 0 0 18px; }
+.f-logo { height: 46px; width: auto; display: block; margin-bottom: 18px; }
+.f-brand p { color: rgba(255,255,255,.7); font-size: .92rem; max-width: 300px; margin: 0; }
+.f-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.f-list li { display: flex; gap: 12px; align-items: center; }
+.f-list svg { width: 18px; height: 18px; color: var(--yellow); flex: none; }
+.f-list a { text-decoration: none; color: #fff; }
 .f-list a:hover { color: var(--yellow); }
-.f-cta p { color: #d5d5d8; }
-.footer-bottom { margin-top: 56px; background: #0f0f12; padding: 16px 0; font-size: .85rem; color: #a5a5aa; }
+.f-hours { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; max-width: 230px; }
+.f-hours li { display: flex; justify-content: space-between; gap: 16px; padding-bottom: 8px; border-bottom: 1px dashed rgba(255,255,255,.14); font-size: .95rem; }
+.f-hours li span:first-child { color: rgba(255,255,255,.65); }
+.f-note { color: rgba(255,255,255,.55); font-size: .85rem; margin: 12px 0 0; }
+.f-addr { margin: 0 0 16px; line-height: 1.7; }
+.f-route { display: inline-flex; align-items: center; gap: 8px; color: var(--yellow); text-decoration: none; font-weight: 500; font-size: .92rem; }
+.f-route svg { width: 18px; height: 18px; }
+.f-route:hover { text-decoration: underline; text-underline-offset: 4px; }
+.footer-bottom { background: rgba(0,0,0,.35); padding: 18px 0; font-size: .85rem; color: rgba(255,255,255,.55); position: relative; }
 .footer-bottom .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
-.footer-bottom a { text-decoration: none; margin-right: 18px; }
+.f-legal { display: flex; gap: 22px; flex-wrap: wrap; }
+.footer-bottom a { text-decoration: none; }
 .footer-bottom a:hover { color: var(--yellow); }
-@media (max-width: 860px) { .footer-grid, .f-contact { grid-template-columns: 1fr; } }
+@media (max-width: 980px) { .f-cta { flex-direction: column; align-items: flex-start; } .f-cols { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .f-cols { grid-template-columns: 1fr; gap: 32px; } .f-cta-actions { width: 100%; } .f-cta-actions .btn { flex: 1; text-align: center; } }
 
 /* Mobile Aktionsleiste (Landingpage) */
 .sticky-bar { display: none; }
