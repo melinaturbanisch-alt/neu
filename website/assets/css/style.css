@@ -341,13 +341,36 @@ h3 { font-size: 1.1rem; font-weight: 700; text-transform: uppercase; letter-spac
 @media (max-width: 720px) { .team-grid { gap: 32px 16px; } .member { width: calc((100% - 16px) / 2); } .member h4 { font-size: 1.02rem; } .member .role { font-size: .84rem; } .member .contact { font-size: .76rem; } .member .contact svg { display: none; } }
 
 /* FAQ */
-.faq { max-width: 880px; margin: 0 auto; display: grid; gap: 10px; }
-.faq details { background: #fff; border-radius: var(--radius); }
-.faq summary { list-style: none; cursor: pointer; padding: 18px 56px 18px 22px; position: relative; font-weight: 500; }
+.faq-wrap { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.4fr); gap: clamp(36px, 6vw, 90px); align-items: start; }
+.faq-side { position: sticky; top: 120px; }
+.faq-side > p:not(.about-kicker) { color: var(--muted); margin: 0 0 28px; }
+.faq-help { background: var(--ink); color: #fff; border-radius: 12px; padding: 26px 24px; display: flex; flex-direction: column; gap: 6px; position: relative; overflow: hidden; }
+.faq-help::before { content: ""; position: absolute; width: 200px; height: 200px; border-radius: 50%; background: radial-gradient(circle, rgba(250,204,56,.22), transparent 70%); top: -90px; right: -80px; }
+.faq-help strong { font-size: 1.1rem; position: relative; }
+.faq-help span { color: rgba(255,255,255,.7); font-size: .92rem; margin-bottom: 14px; position: relative; }
+.faq-help .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; position: relative; }
+.faq-help .btn svg { width: 18px; height: 18px; }
+.faq-wa { display: inline-flex; align-items: center; justify-content: center; gap: 8px; margin-top: 10px; color: rgba(255,255,255,.85); text-decoration: none; font-size: .9rem; position: relative; }
+.faq-wa svg { width: 18px; height: 18px; color: #25d366; }
+.faq-wa:hover { color: var(--yellow); }
+.faq { display: grid; border-top: 1px solid var(--line); }
+.faq details { border-bottom: 1px solid var(--line); }
+.faq summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 18px; padding: 24px 4px; font-weight: 500; font-size: 1.06rem; color: var(--ink); }
 .faq summary::-webkit-details-marker { display: none; }
-.faq summary::after { content: "+"; position: absolute; right: 18px; top: 50%; transform: translateY(-50%); font-size: 1.4rem; line-height: 1; }
-.faq details[open] summary::after { content: "–"; }
-.faq details p { color: var(--muted); padding: 0 22px 20px; margin: 0; }
+.faq-no { font: 700 .82rem var(--head); color: #b7b3aa; min-width: 22px; transition: color .2s; }
+.faq-q { flex: 1; }
+.faq summary i { flex: none; width: 34px; height: 34px; border-radius: 50%; border: 1.5px solid var(--line); position: relative; transition: background .25s, border-color .25s, transform .3s var(--ease); }
+.faq summary i::before, .faq summary i::after { content: ""; position: absolute; left: 50%; top: 50%; width: 12px; height: 2px; background: var(--ink); transform: translate(-50%, -50%); }
+.faq summary i::after { transform: translate(-50%, -50%) rotate(90deg); transition: transform .3s var(--ease); }
+.faq summary:hover i { border-color: var(--ink); }
+.faq details[open] summary i { background: var(--yellow); border-color: var(--yellow); }
+.faq details[open] summary i::after { transform: translate(-50%, -50%) rotate(0deg); }
+.faq details[open] .faq-no { color: var(--ink); }
+.faq-a p { color: var(--muted); margin: 0; padding: 0 56px 24px 44px; line-height: 1.7; }
+details[open] .faq-a { animation: faqIn .35s var(--ease); }
+@keyframes faqIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+@media (max-width: 900px) { .faq-wrap { grid-template-columns: 1fr; } .faq-side { position: static; } }
+@media (max-width: 560px) { .faq summary { font-size: .98rem; gap: 12px; padding: 20px 0; } .faq-a p { padding: 0 0 20px 34px; } }
 
 /* Footer (wie Immobilien: dunkel, Kontakt links, Aufruf rechts) */
 .site-footer { background: var(--ink); color: #fff; padding: 64px 0 0; }
