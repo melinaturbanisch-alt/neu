@@ -162,13 +162,10 @@ if ($("#vehicle-grid")) {
 }
 
 /* Team (Daten aus data/team.json, später über den Mitarbeiter-Bereich pflegbar) */
-let memberNo = 0;
 function member(m) {
-  const bgs = [["hero-3.jpg", "20% 40%"], ["about.jpg", "50% 35%"], ["hero-1.jpg", "45% 60%"], ["hero-3.jpg", "75% 40%"], ["hero-2.jpg", "30% 55%"], ["hero-1.jpg", "75% 60%"]];
-  const [bgImg, pos] = bgs[memberNo++ % bgs.length];
   const photo = m.bild
     ? `<div class="member-photo"><img src="${esc(m.bild)}" alt="${esc(m.name)}" loading="lazy"></div>`
-    : `<div class="member-photo ph" style="background-image:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.2)),url(assets/img/${bgImg});background-position:center,${pos}"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="37" r="16"/><path d="M18 100c2-21 15-33 32-33s30 12 32 33z"/></svg><span class="soon">Foto folgt</span></div>`;
+    : `<div class="member-photo ph"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="38" r="15"/><path d="M20 100c2-20 14-31 30-31s28 11 30 31z"/></svg></div>`;
   const tel = m.telefon ? `<a href="tel:${esc(m.telefon.replace(/[^+\d]/g, ""))}"><svg><use href="${SPRITE}#i-phone"/></svg>${esc(m.telefon)}</a>` : "";
   const mail = m.email ? `<a href="mailto:${esc(m.email)}"><svg><use href="${SPRITE}#i-mail"/></svg>${esc(m.email)}</a>` : "";
   return `

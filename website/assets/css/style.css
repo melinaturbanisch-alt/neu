@@ -323,21 +323,22 @@ h3 { font-size: 1.1rem; font-weight: 700; text-transform: uppercase; letter-spac
 @media (max-width: 860px) { .split { grid-template-columns: 1fr; gap: 20px; } }
 
 /* Team: große Fotos, Name, Funktion, Telefon, Mail */
-.team-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 56px 44px; margin-top: 12px; }
-.member-photo { aspect-ratio: 4 / 3; overflow: hidden; border-radius: 10px; background: #ddd; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,.08); }
+.team-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 48px 28px; margin-top: 12px; }
+.member { width: calc((100% - 3 * 28px) / 4); }
+.member-photo { aspect-ratio: 4 / 3; overflow: hidden; border-radius: 10px; background: #ddd; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,.06); }
 .member-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s var(--ease); }
 .member:hover .member-photo img { transform: scale(1.04); }
-.member-photo.ph { background-color: #ccc; background-size: cover; display: flex; align-items: flex-end; justify-content: center; }
-.member-photo.ph svg { width: 58%; fill: #2a2a30; filter: drop-shadow(0 8px 20px rgba(0,0,0,.3)); }
-.member-photo.ph .soon { position: absolute; left: 14px; top: 12px; font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; background: rgba(31,31,36,.75); color: #fff; padding: 4px 10px; border-radius: 999px; }
-.member h4 { font-size: clamp(1.3rem, 1.9vw, 1.6rem); font-weight: 700; text-transform: none; letter-spacing: -.01em; margin: 20px 0 4px; color: var(--ink); }
-.member .role { color: var(--muted); margin: 0 0 14px; font-size: 1.05rem; }
-.member .contact { display: grid; gap: 6px; font-size: 1rem; overflow-wrap: anywhere; }
-.member .contact a { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: #4a4a50; width: fit-content; }
+.member-photo.ph { background: linear-gradient(160deg, #ffffff 0%, #e4e1da 100%); display: flex; align-items: flex-end; justify-content: center; }
+.member-photo.ph::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 4px; background: var(--yellow); }
+.member-photo.ph svg { width: 56%; fill: #cdc8bd; }
+.member h4 { font-size: 1.22rem; font-weight: 700; text-transform: none; letter-spacing: -.01em; margin: 18px 0 2px; color: var(--ink); }
+.member .role { color: var(--muted); margin: 0 0 12px; font-size: .95rem; line-height: 1.45; }
+.member .contact { display: grid; gap: 4px; font-size: .92rem; overflow-wrap: anywhere; }
+.member .contact a { display: inline-flex; align-items: center; gap: 9px; text-decoration: none; color: #4a4a50; width: fit-content; }
 .member .contact a:hover { color: var(--ink); text-decoration: underline; text-decoration-color: var(--yellow); text-decoration-thickness: 2px; text-underline-offset: 4px; }
-.member .contact svg { width: 17px; height: 17px; flex: none; color: #8a8a90; }
-@media (max-width: 980px) { .team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 24px; } }
-@media (max-width: 560px) { .team-grid { grid-template-columns: 1fr; gap: 36px; } }
+.member .contact svg { width: 16px; height: 16px; flex: none; color: #8a8a90; }
+@media (max-width: 1000px) { .member { width: calc((100% - 2 * 28px) / 3); } }
+@media (max-width: 720px) { .team-grid { gap: 32px 16px; } .member { width: calc((100% - 16px) / 2); } .member h4 { font-size: 1.02rem; } .member .role { font-size: .84rem; } .member .contact { font-size: .76rem; } .member .contact svg { display: none; } }
 
 /* FAQ */
 .faq { max-width: 880px; margin: 0 auto; display: grid; gap: 10px; }
