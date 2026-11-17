@@ -281,7 +281,7 @@ $$(".js-year").forEach((el) => (el.textContent = new Date().getFullYear()));
       sec.querySelector(".js-g-rating").textContent = fmt(d.bewertung);
       sec.querySelector(".g-score .stars").style.setProperty("--r", d.bewertung);
     } else sec.classList.add("no-score");
-    sec.querySelector(".js-g-count").textContent = d.anzahl || "";
+    if (d.anzahl) sec.querySelector(".js-g-count").textContent = d.anzahl; else sec.querySelector(".g-count").style.display = "none";
     if (d.link) sec.querySelector(".js-g-link").href = d.link;
     if (d.schreiben) sec.querySelector(".js-g-write").href = d.schreiben;
     const esc = (t) => String(t).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));

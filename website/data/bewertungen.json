@@ -1,6 +1,6 @@
 {
   "hinweis": "Note und Anzahl aus dem Google-Profil eintragen (bewertung z. B. 4.8, anzahl z. B. 23). Solange null, wird ein Hinweis angezeigt.",
-  "bewertung": null,
+  "bewertung": 4.2,
   "anzahl": null,
   "link": "https://www.google.com/maps/search/?api=1&query=SANISA+GmbH+Butzbach",
   "schreiben": "https://www.google.com/maps/search/?api=1&query=SANISA+GmbH+Butzbach",

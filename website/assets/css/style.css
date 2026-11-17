@@ -518,8 +518,8 @@ h3 { font-size: 1.1rem; font-weight: 700; text-transform: uppercase; letter-spac
 .g-score b { font: 700 3.6rem/1 var(--head); color: #fff; }
 .stars { --r: 5; font-size: 1.25rem; letter-spacing: 3px; line-height: 1; background: linear-gradient(90deg, var(--yellow) calc(var(--r) / 5 * 100%), rgba(160,160,160,.45) 0); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .g-card .stars { font-size: 1.5rem; }
-.g-count { color: rgba(255,255,255,.65); font-size: .9rem; margin: 6px 0 22px; }
-.g-card .btn { width: 100%; background: var(--yellow); color: var(--ink); position: relative; }
+.g-count { color: rgba(255,255,255,.65); font-size: .9rem; margin: 8px 0 0; }
+.g-card .btn { margin-top: 26px; width: 100%; background: var(--yellow); color: var(--ink); position: relative; }
 .g-card .btn:hover { background: var(--yellow-h); }
 .g-write { margin-top: 14px; font-size: .88rem; color: rgba(255,255,255,.85); text-decoration: none; font-weight: 500; position: relative; }
 .g-write:hover { color: var(--yellow); }
