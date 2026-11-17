@@ -4,13 +4,7 @@
 (function () {
   const isLive = /(^|\.)sanisa(-baumaschinen)?\.de$/.test(location.hostname);
   if (!/[?&]edit\b/.test(location.search)) {
-    // In der Vorschau (nicht auf der echten Domain) einen Knopf zum Einschalten anbieten
-    if (isLive) return;
-    const btn = document.createElement("button");
-    btn.textContent = "✎ Bearbeiten";
-    Object.assign(btn.style, { position: "fixed", left: "16px", bottom: "16px", zIndex: 9999, padding: "10px 16px", border: "0", borderRadius: "6px", background: "#18171d", color: "#facc38", font: "600 14px system-ui, sans-serif", cursor: "pointer", boxShadow: "0 10px 30px rgba(0,0,0,.35)" });
-    btn.addEventListener("click", () => { btn.remove(); start(); });
-    document.body.appendChild(btn);
+    // Nur mit ?edit in der Adresse aktiv (für Präsentationen ausgeblendet)
     return;
   }
   start();
