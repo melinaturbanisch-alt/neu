@@ -52,7 +52,7 @@
   const panel = document.createElement("div");
   panel.className = "ed-panel";
   panel.innerHTML = `<h4>Bearbeiten-Modus</h4>
-    <p>Text anklicken und mit der Maus verschieben. Größe mit dem Regler einstellen.</p>
+    <p>Text anklicken und mit der Maus verschieben – bündig rastet er ein (gelbe Linie). Feinschliff mit den Pfeiltasten. Größe mit dem Regler.</p>
     <div>Ausgewählt: <span class="ed-sel">–</span></div>
     <label>Größe <span class="ed-pct">100 %</span></label><input type="range" class="ed-size" min="60" max="160" value="100">
     <button class="ed-copy">Werte kopieren</button>
@@ -62,9 +62,29 @@
   const selLbl = panel.querySelector(".ed-sel"), size = panel.querySelector(".ed-size"), pct = panel.querySelector(".ed-pct"), out = panel.querySelector(".ed-out");
 
   let active = null;
+  // Größe über "zoom": skaliert Text, Abstände und Buttons gleichmäßig, egal welche Schriftgröße das Element hat.
+  // Verschiebung wird in Bildschirm-Pixeln gespeichert und gegen den Zoom verrechnet.
   const apply = (el, s) => {
-    el.style.transform = `translate(${s.x}px, ${s.y}px)`;
-    el.style.fontSize = s.scale === 100 ? "" : `calc(1em * ${s.scale / 100})`;
+    const z = s.scale / 100;
+    el.style.zoom = z === 1 ? "" : z;
+    el.style.transform = `translate(${s.x / z}px, ${s.y / z}px)`;
+  };
+
+  // Hilfslinie fürs Einrasten
+  const guide = document.createElement("div");
+  Object.assign(guide.style, { position: "fixed", top: 0, bottom: 0, width: "0", borderLeft: "1px solid #facc38", zIndex: 9998, pointerEvents: "none", display: "none", boxShadow: "0 0 6px #facc38" });
+  document.body.appendChild(guide);
+  const SNAP = 8; // Pixel
+  const snapX = (it, s) => {
+    const myLeft = it.el.getBoundingClientRect().left;
+    let best = null;
+    items.forEach((o) => {
+      if (o === it || !o.el) return;
+      const d = o.el.getBoundingClientRect().left - myLeft;
+      if (Math.abs(d) <= SNAP && (best === null || Math.abs(d) < Math.abs(best.d))) best = { d, x: myLeft + d };
+    });
+    if (best) { s.x = Math.round(s.x + best.d); apply(it.el, s); guide.style.left = best.x + "px"; guide.style.display = "block"; }
+    else guide.style.display = "none";
   };
   const select = (it) => {
     document.querySelectorAll(".ed-active").forEach((e) => e.classList.remove("ed-active"));
@@ -83,8 +103,8 @@
     el.addEventListener("pointerdown", (e) => {
       e.preventDefault(); select(it);
       const s = state[it.name], sx = e.clientX - s.x, sy = e.clientY - s.y;
-      const move = (ev) => { s.x = Math.round(ev.clientX - sx); s.y = Math.round(ev.clientY - sy); apply(el, s); };
-      const up = () => { removeEventListener("pointermove", move); removeEventListener("pointerup", up); };
+      const move = (ev) => { s.x = Math.round(ev.clientX - sx); s.y = Math.round(ev.clientY - sy); apply(el, s); snapX(it, s); };
+      const up = () => { guide.style.display = "none"; removeEventListener("pointermove", move); removeEventListener("pointerup", up); };
       addEventListener("pointermove", move); addEventListener("pointerup", up);
     });
   });
@@ -92,6 +112,15 @@
   size.addEventListener("input", () => {
     if (!active) return;
     state[active.name].scale = +size.value; pct.textContent = size.value + " %"; apply(active.el, state[active.name]);
+  });
+  // Pfeiltasten: ausgewählte Zeile pixelgenau verschieben (mit Shift 10 px)
+  addEventListener("keydown", (e) => {
+    if (!active || !e.key.startsWith("Arrow") || e.target === size) return;
+    e.preventDefault();
+    const st = e.shiftKey ? 10 : 1, s = state[active.name];
+    if (e.key === "ArrowLeft") s.x -= st; if (e.key === "ArrowRight") s.x += st;
+    if (e.key === "ArrowUp") s.y -= st; if (e.key === "ArrowDown") s.y += st;
+    apply(active.el, s);
   });
 
   panel.querySelector(".ed-reset").addEventListener("click", () => {
