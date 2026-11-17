@@ -203,6 +203,23 @@ h3 { font-size: 1.1rem; font-weight: 700; text-transform: uppercase; letter-spac
 .svc .ic svg { width: 56px; height: 56px; }
 .svc h3 { font-size: 1.15rem; letter-spacing: .06em; margin-bottom: .55em; }
 .svc p { color: var(--muted); font-size: .95rem; margin: 0 0 18px; flex: 1; }
+/* Icon-Animationen Leistungen (beim Darüberfahren) */
+.svc .ic svg g { transform-box: fill-box; }
+.svc:hover .a-coin { animation: coinDrop .9s var(--ease) both; }
+@keyframes coinDrop { 0% { transform: translateY(0); } 35% { transform: translateY(-7px); } 70% { transform: translate(-3px, 8px); } 100% { transform: translate(-2px, 6px); } }
+.svc:hover .a-hand { animation: handUp .9s var(--ease) both; }
+@keyframes handUp { 0%, 55% { transform: none; } 75% { transform: translateY(2px); } 100% { transform: translateY(1px); } }
+.svc-verkauf:hover .a-truck { animation: truckDrive 1s var(--ease) both; }
+@keyframes truckDrive { 0% { transform: translateX(0); } 40% { transform: translateX(-3px); } 100% { transform: translateX(4px); } }
+.svc:hover .a-tag { transform-origin: 85% 10%; animation: tagSwing 1.1s ease-in-out both; }
+@keyframes tagSwing { 0% { transform: rotate(0); } 25% { transform: rotate(14deg); } 50% { transform: rotate(-9deg); } 75% { transform: rotate(5deg); } 100% { transform: rotate(0); } }
+.svc:hover .a-key { transform-origin: 50% 50%; animation: keyTurn 1s var(--ease) both; }
+@keyframes keyTurn { 0% { transform: rotate(0); } 60% { transform: rotate(-100deg); } 100% { transform: rotate(-90deg); } }
+.svc:hover .a-globe { transform-origin: 50% 50%; animation: globeSpin 1.2s var(--ease) both; }
+@keyframes globeSpin { from { transform: rotate(0); } to { transform: rotate(360deg); } }
+.svc-export:hover .a-truck { animation: truckAround 1.2s var(--ease) both; }
+@keyframes truckAround { 0% { transform: translateX(0); } 45% { transform: translateX(6px); opacity: 1; } 55% { transform: translateX(6px); opacity: 0; } 56% { transform: translateX(-10px); opacity: 0; } 100% { transform: translateX(0); opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .svc .ic svg g { animation: none !important; } }
 .svc-more { display: inline-flex; align-items: center; gap: 6px; font-size: .82rem; font-weight: 500; text-transform: uppercase; letter-spacing: .08em; color: #a37c00; }
 .svc-more svg { width: 14px; height: 14px; transition: transform .25s var(--ease); }
 .svc:hover .svc-more svg { transform: translateX(4px); }
