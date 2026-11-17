@@ -133,21 +133,31 @@ function card(v) {
         ${specs ? `<div class="specs">${specs}</div>` : ""}
         <div class="vehicle-foot">
           <span class="price">${v.preis ? fmt.format(v.preis) + " €" : "Preis auf Anfrage"}</span>
-          <a class="more-link" href="#kontakt">Anfragen »</a>
+          <a class="more-link" href="${$("#kontakt") ? "#kontakt" : "kontakt.html"}">Anfragen »</a>
         </div>
       </div>
     </article>`;
 }
 
-function render(filter = "alle") {
+let curFilter = "alle";
+function render(filter = curFilter) {
+  curFilter = filter;
   const grid = $("#vehicle-grid");
   if (!grid) return;
+  const q = ($("#vehicle-search")?.value || "").trim().toLowerCase();
+  const title = (v) => (v.titel || [v.hersteller, v.modell].filter(Boolean).join(" ")) + " " + (v.text || "");
   let list = filter === "alle" ? vehicles : vehicles.filter((v) => v.kategorie === filter);
+  if (q) list = list.filter((v) => title(v).toLowerCase().includes(q));
   const limit = +grid.dataset.limit || 0; // Startseite: höchstens 8, Fahrzeugseite: alle
   if (limit) list = list.slice(0, limit);
+  const cnt = $("#vehicle-count"); if (cnt) cnt.textContent = list.length;
+  $$("[data-cnt]").forEach((el) => {
+    const k = el.dataset.cnt;
+    el.textContent = k === "alle" ? vehicles.length : vehicles.filter((v) => v.kategorie === k).length;
+  });
   grid.innerHTML = list.length
     ? list.map(card).join("")
-    : `<p class="empty">Aktuell nichts in dieser Kategorie. Rufen Sie uns an, wir finden etwas für Sie.</p>`;
+    : `<p class="empty">Aktuell nichts gefunden. Rufen Sie uns an, wir finden etwas für Sie.</p>`;
 }
 
 if ($("#vehicle-grid")) {
@@ -155,6 +165,7 @@ if ($("#vehicle-grid")) {
     $$(".chip").forEach((x) => x.classList.toggle("is-active", x === c));
     render(c.dataset.filter);
   }));
+  $("#vehicle-search")?.addEventListener("input", () => render());
   fetch("data/fahrzeuge.json", { cache: "no-store" })
     .then((r) => r.json())
     .then((d) => { vehicles = d; render(); })

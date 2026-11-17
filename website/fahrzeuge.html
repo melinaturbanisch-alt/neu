@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Fahrzeuge | SANISA Baumaschinen</title>
+  <title>Alle Fahrzeuge | SANISA</title>
   <meta name="description" content="Aktueller Bestand der SANISA GmbH in Butzbach: gebrauchte LKW, Sattelzugmaschinen, Anhänger, Baumaschinen und Industrieanlagen.">
   <link rel="icon" href="assets/img/favicon.png">
   <!-- Vor dem Livegang Schriften lokal einbinden (DSGVO) -->
@@ -30,43 +30,101 @@
   </div>
 </header>
 
-<main class="page-top">
-  <section class="section white" id="fahrzeuge">
+<main>
+  <section class="page-hero" style="background-image:url('assets/img/hero-2.jpg')">
     <div class="wrap">
-      <h1 class="title serif">Alle Fahrzeuge</h1>
-      <p class="intro">Unser aktueller Bestand an LKW, Baumaschinen und Industrieanlagen. Alle Fahrzeuge stehen in Butzbach, Besichtigung gern nach Termin.</p>
-      <div class="filter" role="group" aria-label="Nach Kategorie filtern">
-        <button class="chip is-active" data-filter="alle">Alle</button>
-        <button class="chip" data-filter="LKW">LKW</button>
-        <button class="chip" data-filter="Baumaschine">Baumaschinen</button>
-        <button class="chip" data-filter="Industrie">Industrieanlagen</button>
+      <p class="about-kicker">Bestand</p>
+      <h1 class="title serif about-title">Alle Fahrzeuge</h1>
+      <p class="page-hero-sub">LKW, Baumaschinen und Industrieanlagen aus unserem aktuellen Bestand. Alle Fahrzeuge stehen bei uns in Butzbach.</p>
+      <ul class="page-hero-facts">
+        <li><svg><use href="assets/img/icons.svg#i-pin"/></svg>Standort Butzbach</li>
+        <li><svg><use href="assets/img/icons.svg#i-calendar"/></svg>Besichtigung nach Termin</li>
+        <li><svg><use href="assets/img/icons.svg#i-globe"/></svg>Export möglich</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section stock" id="fahrzeuge">
+    <div class="wrap">
+      <div class="stock-bar">
+        <div class="filter" role="group" aria-label="Nach Kategorie filtern">
+          <button class="chip is-active" data-filter="alle">Alle <span class="cnt" data-cnt="alle"></span></button>
+          <button class="chip" data-filter="LKW">LKW <span class="cnt" data-cnt="LKW"></span></button>
+          <button class="chip" data-filter="Baumaschine">Baumaschinen <span class="cnt" data-cnt="Baumaschine"></span></button>
+          <button class="chip" data-filter="Industrie">Industrieanlagen <span class="cnt" data-cnt="Industrie"></span></button>
+        </div>
+        <label class="stock-search"><svg><use href="assets/img/icons.svg#i-search"/></svg><input type="search" id="vehicle-search" placeholder="Hersteller oder Modell suchen" aria-label="Fahrzeuge durchsuchen"></label>
       </div>
+      <p class="stock-count" aria-live="polite"><b id="vehicle-count">0</b> <span>Fahrzeuge gefunden</span></p>
       <div class="vehicle-grid" id="vehicle-grid" aria-live="polite"></div>
-      <div class="more"><a href="index.html#ankauf" class="btn btn-yellow">Eigenes Fahrzeug verkaufen</a></div>
+
+      <div class="stock-cta">
+        <div class="sc-card sc-dark">
+          <h2>Nicht das Richtige dabei?</h2>
+          <p>Sagen Sie uns, was Sie suchen. Wir finden das passende Fahrzeug für Sie.</p>
+          <div class="sc-actions">
+            <a href="tel:+4960339285448" class="btn btn-yellow f-call"><svg><use href="assets/img/icons.svg#i-phone"/></svg>Anrufen</a>
+            <a href="https://wa.me/491773214225" target="_blank" rel="noopener" class="btn btn-ghost f-call"><svg><use href="assets/img/icons.svg#i-whatsapp"/></svg>WhatsApp</a>
+          </div>
+        </div>
+        <div class="sc-card">
+          <h2>Sie möchten verkaufen?</h2>
+          <p>Wir kaufen LKW, Baumaschinen und Industrieanlagen an. Kostenlos und unverbindlich bewerten lassen.</p>
+          <div class="sc-actions">
+            <a href="index.html#anfrage" class="btn btn-dark">Fahrzeug verkaufen</a>
+          </div>
+        </div>
+      </div>
+      <p class="stock-more">Noch mehr Fahrzeuge finden Sie auch auf <a href="https://home.mobile.de/SANISAGMBH" target="_blank" rel="noopener">mobile.de</a>.</p>
     </div>
   </section>
 </main>
 
 <footer class="site-footer" id="kontakt">
-  <div class="wrap footer-grid">
-    <div class="f-contact">
-      <h2>Kontakt<br>SANISA Baumaschinen</h2>
-      <ul class="f-list">
-        <li><svg><use href="assets/img/icons.svg#i-mail"/></svg><a href="mailto:info@sanisa.de">info@sanisa.de</a></li>
-        <li><svg><use href="assets/img/icons.svg#i-phone"/></svg><a href="tel:+4960339285448">+49 (0)6033 9285448</a></li>
-        <li><svg><use href="assets/img/icons.svg#i-whatsapp"/></svg><a href="https://wa.me/491773214225" target="_blank" rel="noopener">+49 177 3214225</a></li>
-        <li><svg><use href="assets/img/icons.svg#i-calendar"/></svg>Mo–Fr 10:00–18:00 Uhr<br>Sa 10:00–15:00 Uhr</li>
-        <li><svg><use href="assets/img/icons.svg#i-pin"/></svg>Otto-Hahn-Str. 13<br>35510 Butzbach</li>
-      </ul>
-    </div>
+  <div class="wrap">
     <div class="f-cta">
-      <h2>Sie möchten ein Fahrzeug verkaufen oder suchen eine bestimmte Maschine?</h2>
-      <p>Rufen Sie uns an oder fordern Sie direkt ein unverbindliches Angebot an. Besichtigungen gern nach Termin.</p>
-      <a href="index.html#anfrage" class="btn btn-yellow">Angebot anfordern</a>
+      <div>
+        <p class="f-kicker">Kontakt</p>
+        <h2 class="f-title">Fahrzeug verkaufen oder Maschine gesucht?</h2>
+        <p>Rufen Sie uns an oder fordern Sie ein unverbindliches Angebot an.</p>
+      </div>
+      <div class="f-cta-actions">
+        <a href="tel:+4960339285448" class="btn btn-yellow f-call"><svg><use href="assets/img/icons.svg#i-phone"/></svg>Jetzt anrufen</a>
+        <a href="index.html#anfrage" class="btn btn-ghost">Angebot anfordern</a>
+      </div>
+    </div>
+
+    <div class="f-cols">
+      <div class="f-brand">
+        <img src="assets/img/logo-hell.png" alt="SANISA Baumaschinen Handel" class="f-logo">
+        <p>Handel mit Nutzfahrzeugen und Baumaschinen.</p>
+      </div>
+      <div>
+        <h3>Kontakt</h3>
+        <ul class="f-list">
+          <li><svg><use href="assets/img/icons.svg#i-phone"/></svg><a href="tel:+4960339285448">+49 (0)6033 9285448</a></li>
+          <li><svg><use href="assets/img/icons.svg#i-whatsapp"/></svg><a href="https://wa.me/491773214225" target="_blank" rel="noopener">+49 177 3214225</a></li>
+          <li><svg><use href="assets/img/icons.svg#i-mail"/></svg><a href="mailto:info@sanisa.de">info@sanisa.de</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Öffnungszeiten</h3>
+        <ul class="f-hours">
+          <li><span>Mo – Fr</span><span>10:00 – 18:00</span></li>
+          <li><span>Sa</span><span>10:00 – 15:00</span></li>
+          <li><span>So</span><span>geschlossen</span></li>
+        </ul>
+        <p class="f-note">Besichtigung nach Termin.</p>
+      </div>
+      <div>
+        <h3>Standort</h3>
+        <p class="f-addr">SANISA GmbH<br>Otto-Hahn-Straße 13<br>35510 Butzbach</p>
+        <a class="f-route" href="https://www.google.com/maps/dir/?api=1&amp;destination=SANISA+GmbH+Otto-Hahn-Stra%C3%9Fe+13+35510+Butzbach" target="_blank" rel="noopener"><svg><use href="assets/img/icons.svg#i-pin"/></svg>Route planen</a>
+      </div>
     </div>
   </div>
   <div class="footer-bottom">
-    <div class="wrap"><span><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="login.html">Mitarbeiter-Login</a></span><span>© <span class="js-year">2026</span> SANISA GmbH</span></div>
+    <div class="wrap"><span>© <span class="js-year">2026</span> SANISA GmbH</span><span class="f-legal"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="login.html">Mitarbeiter-Login</a></span></div>
   </div>
 </footer>
 
