@@ -771,3 +771,34 @@ details[open] .faq-a { animation: faqIn .35s var(--ease); }
   .stock-sort span { display: none; }
 }
 @media (max-width: 560px) { .stock-grid { grid-template-columns: 1fr; } .stock-main .stock-bar { gap: 10px; } .fopen, .stock-sort { flex: 1; } .stock-sort select { width: 100%; } }
+
+/* Leistungen-Seite */
+.svc-tabs { position: sticky; top: 99px; z-index: 30; background: #fff; box-shadow: 0 8px 24px rgba(0,0,0,.06); }
+.svc-tabs .wrap { display: grid; grid-template-columns: repeat(4, 1fr); }
+.svc-tabs a { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 10px; text-decoration: none; color: var(--ink); font-weight: 500; font-size: .95rem; text-transform: uppercase; letter-spacing: .04em; border-bottom: 3px solid transparent; transition: border-color .2s, background .2s; }
+.svc-tabs a:hover, .svc-tabs a.is-active { border-bottom-color: var(--yellow); background: #fcfbf7; }
+.svc-tabs .ic svg { width: 30px; height: 30px; display: block; }
+.svc-page { padding-top: 70px; }
+.svc-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(36px, 6vw, 84px); align-items: center; scroll-margin-top: 190px; }
+.svc-row + .svc-row { margin-top: clamp(70px, 9vw, 120px); }
+.svc-row.rev .svc-media { order: 2; }
+.svc-media { position: relative; }
+.svc-media img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 12px; box-shadow: 0 24px 50px rgba(0,0,0,.16); }
+.svc-no { position: absolute; left: 18px; top: 18px; width: 54px; height: 54px; display: grid; place-items: center; border-radius: 10px; background: var(--yellow); color: var(--ink); font: 400 1.25rem/1 "Chonburi", Georgia, serif; box-shadow: 0 8px 20px rgba(0,0,0,.18); }
+.svc-mini svg { width: 22px; height: 22px; display: block; }
+.svc-text .about-kicker::before { display: none; }
+.svc-text .about-title { margin-bottom: 16px; }
+.svc-text > p:not(.about-kicker) { color: var(--muted); margin: 0 0 20px; }
+.svc-list { list-style: none; margin: 0 0 28px; padding: 18px 20px; display: grid; gap: 10px; background: #fff; border-radius: 10px; border-left: 3px solid var(--yellow); box-shadow: 0 10px 30px rgba(0,0,0,.05); }
+.svc-list li { display: flex; gap: 10px; align-items: flex-start; color: var(--ink); font-weight: 500; }
+.svc-list svg { width: 18px; height: 18px; color: #15803d; flex: none; margin-top: 3px; }
+.svc-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+@media (max-width: 900px) {
+  .svc-row { grid-template-columns: 1fr; }
+  .svc-row.rev .svc-media { order: 0; }
+  .svc-tabs { top: 72px; }
+  .svc-tabs .wrap { display: flex; overflow-x: auto; padding: 0; }
+  .svc-tabs a { flex: 1 0 auto; padding: 12px 16px; font-size: .82rem; }
+  .svc-tabs .ic svg { width: 24px; height: 24px; }
+}
+@media (max-width: 560px) { .svc-actions .btn { flex: 1; justify-content: center; } }
