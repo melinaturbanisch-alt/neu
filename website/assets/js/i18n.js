@@ -3,8 +3,8 @@
 // (deutscher Text → Übersetzung). Neue Sprache: JSON-Datei anlegen und unten in LANGS eintragen.
 (function () {
   const LANGS = {
-    de: { name: "Deutsch", flag: "🇩🇪" },
-    en: { name: "English", flag: "🇬🇧" },
+    de: { name: "Deutsch", flag: '<svg viewBox="0 0 5 3"><rect width="5" height="1" fill="#000"/><rect y="1" width="5" height="1" fill="#D00"/><rect y="2" width="5" height="1" fill="#FFCE00"/></svg>' },
+    en: { name: "English", flag: '<svg viewBox="0 0 60 30"><clipPath id="uk-t"><path d="M30,15h30v15zv15h-30zh-30v-15zv-15h30z"/></clipPath><path d="M0,0v30h60v-30z" fill="#012169"/><path d="M0,0 60,30M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30M60,0 0,30" clip-path="url(#uk-t)" stroke="#C8102E" stroke-width="4"/><path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/><path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6"/></svg>' },
   };
   const RTL = ["ar"];
   const STORE = "sanisa-lang";
@@ -64,7 +64,8 @@
     document.title = code === "de" ? titleOrig : tr(titleOrig);
     applyNode(document.body);
     try { localStorage.setItem(STORE, code); } catch {}
-    document.querySelectorAll(".lang-code").forEach((el) => (el.textContent = code.toUpperCase()));
+    document.querySelectorAll(".lang-code").forEach((el) => (el.innerHTML = LANGS[code].flag));
+    document.querySelectorAll(".lang-btn").forEach((el) => el.setAttribute("title", LANGS[code].name));
     document.querySelectorAll(".lang-menu button").forEach((b) => b.setAttribute("aria-current", b.dataset.lang === code));
   }
 
@@ -83,7 +84,7 @@
       const btn = box.querySelector(".lang-btn");
       const menu = box.querySelector(".lang-menu");
       menu.innerHTML = Object.entries(LANGS).map(([c, l]) =>
-        `<li><button type="button" data-lang="${c}" data-no-i18n><span aria-hidden="true">${l.flag}</span> ${l.name}</button></li>`).join("");
+        `<li><button type="button" data-lang="${c}" data-no-i18n><span class="lang-flag" aria-hidden="true">${l.flag}</span> ${l.name}</button></li>`).join("");
       btn.addEventListener("click", (e) => { e.stopPropagation(); const open = menu.hidden; menu.hidden = !open; btn.setAttribute("aria-expanded", open); });
       menu.addEventListener("click", (e) => {
         const b = e.target.closest("button[data-lang]");
@@ -99,5 +100,5 @@
   buildSwitch();
   const start = initialLang();
   if (start !== "de") setLang(start);
-  else document.querySelectorAll(".lang-code").forEach((el) => (el.textContent = "DE"));
+  else document.querySelectorAll(".lang-code").forEach((el) => (el.innerHTML = LANGS.de.flag));
 })();
