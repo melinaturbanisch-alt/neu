@@ -108,64 +108,147 @@ if ("IntersectionObserver" in window) {
   $$(".reveal").forEach((el) => el.classList.add("in"));
 }
 
-/* Fahrzeugbestand (nur auf der Startseite) */
+/* Fahrzeugbestand (Startseite: Auswahl, fahrzeuge.html: mit Filtern)
+   Daten aus data/fahrzeuge.json – später automatisch aus mobile.de */
 let vehicles = [];
+const MWST = 0.19;
+let priceMode = "netto";
+try { priceMode = localStorage.getItem("sanisa-preis") || "netto"; } catch {}
+const LABEL = { LKW: "LKW", Baumaschine: "Baumaschine", Industrie: "Industrieanlage" };
+const vTitle = (v) => v.titel || [v.hersteller, v.modell].filter(Boolean).join(" ");
+const brutto = (n) => Math.round(n * (1 + MWST));
+const priceOf = (v) => (v.preis_netto ? (priceMode === "brutto" ? brutto(v.preis_netto) : v.preis_netto) : null);
+const year = (ez) => (ez ? +String(ez).slice(0, 4) : null);
+const ezText = (ez) => { if (!ez) return ""; const [y, m] = String(ez).split("-"); return m ? `${m}/${y}` : y; };
 
 function card(v) {
   const icon = ICONS[v.kategorie] || "i-lkw";
-  const title = v.titel || [v.hersteller, v.modell].filter(Boolean).join(" ");
+  const title = vTitle(v);
   const media = v.bild
     ? `<img src="${esc(v.bild)}" alt="${esc(title)}" loading="lazy">`
     : `<svg aria-hidden="true"><use href="${SPRITE}#${icon}"/></svg>`;
-  const label = { LKW: "LKW", Baumaschine: "Baumaschine", Industrie: "Industrieanlage" }[v.kategorie] || v.kategorie;
   const specs = [
-    v.km && `<span><svg><use href="${SPRITE}#i-gauge"/></svg>${esc(v.km)}</span>`,
-    v.ez && `<span><svg><use href="${SPRITE}#i-calendar"/></svg>${esc(v.ez)}</span>`,
-    v.leistung && `<span><svg><use href="${SPRITE}#i-truck"/></svg>${esc(v.leistung)}</span>`,
+    v.ez && `<span title="Erstzulassung"><svg><use href="${SPRITE}#i-calendar"/></svg>EZ <b>${esc(ezText(v.ez))}</b></span>`,
+    v.km != null && `<span title="Kilometerstand"><svg><use href="${SPRITE}#i-gauge"/></svg><b>${fmt.format(v.km)}</b> <i>km</i></span>`,
+    v.stunden != null && `<span title="Betriebsstunden"><svg><use href="${SPRITE}#i-gauge"/></svg><b>${fmt.format(v.stunden)}</b> <i>Bh</i></span>`,
+    v.ps && `<span title="Leistung"><svg><use href="${SPRITE}#i-truck"/></svg><b>${v.ps}</b> <i>PS</i></span>`,
   ].filter(Boolean).join("");
+  const p = v.preis_netto;
+  const price = p
+    ? `<span class="price"><b>${fmt.format(priceOf(v))} €</b><small>${priceMode === "brutto" ? `${fmt.format(p)} € netto` : `${fmt.format(brutto(p))} € brutto`}</small></span>`
+    : `<span class="price"><b>Preis auf Anfrage</b></span>`;
+  const link = $("#kontakt") ? "#kontakt" : "kontakt.html";
   return `
     <article class="vehicle">
-      <div class="vehicle-media">${media}<span class="tag">${esc(label)}</span></div>
+      <div class="vehicle-media">${media}<span class="tag">${esc(v.typ || LABEL[v.kategorie] || v.kategorie)}</span>${v.beispiel ? `<span class="demo">Beispiel</span>` : ""}</div>
       <div class="vehicle-body">
         <h4>${esc(title)}</h4>
         <div class="loc"><svg><use href="${SPRITE}#i-pin"/></svg>Butzbach</div>
-        ${v.text ? `<p>${esc(v.text)}</p>` : ""}
         ${specs ? `<div class="specs">${specs}</div>` : ""}
         <div class="vehicle-foot">
-          <span class="price">${v.preis ? fmt.format(v.preis) + " €" : "Preis auf Anfrage"}</span>
-          <a class="more-link" href="${$("#kontakt") ? "#kontakt" : "kontakt.html"}">Anfragen »</a>
+          ${price}
+          <a class="more-link" href="${link}">Anfragen »</a>
         </div>
       </div>
     </article>`;
 }
 
-let curFilter = "alle";
-function render(filter = curFilter) {
-  curFilter = filter;
-  const grid = $("#vehicle-grid");
-  if (!grid) return;
-  const q = ($("#vehicle-search")?.value || "").trim().toLowerCase();
-  const title = (v) => (v.titel || [v.hersteller, v.modell].filter(Boolean).join(" ")) + " " + (v.text || "");
-  let list = filter === "alle" ? vehicles : vehicles.filter((v) => v.kategorie === filter);
-  if (q) list = list.filter((v) => title(v).toLowerCase().includes(q));
-  const limit = +grid.dataset.limit || 0; // Startseite: höchstens 8, Fahrzeugseite: alle
-  if (limit) list = list.slice(0, limit);
-  const cnt = $("#vehicle-count"); if (cnt) cnt.textContent = list.length;
+/* Filter */
+const F = { kategorie: "alle", typ: [], hersteller: "", preisVon: "", preisBis: "", km: "", stunden: "", ezVon: "", psVon: "", getriebe: [], q: "", sort: "neu" };
+
+function matches(v, skip) {
+  if (skip !== "kategorie" && F.kategorie !== "alle" && v.kategorie !== F.kategorie) return false;
+  if (skip !== "typ" && F.typ.length && !F.typ.includes(v.typ)) return false;
+  if (F.hersteller && v.hersteller !== F.hersteller) return false;
+  const pr = priceOf(v);
+  if (F.preisVon && (!pr || pr < +F.preisVon)) return false;
+  if (F.preisBis && (!pr || pr > +F.preisBis)) return false;
+  if (F.km && (v.km == null || v.km > +F.km)) return false;
+  if (F.stunden && (v.stunden == null || v.stunden > +F.stunden)) return false;
+  if (F.ezVon && (!year(v.ez) || year(v.ez) < +F.ezVon)) return false;
+  if (F.psVon && (!v.ps || v.ps < +F.psVon)) return false;
+  if (F.getriebe.length && !F.getriebe.includes(v.getriebe)) return false;
+  if (F.q && !(vTitle(v) + " " + (v.typ || "") + " " + (v.text || "")).toLowerCase().includes(F.q)) return false;
+  return true;
+}
+
+const SORT = {
+  neu: (a, b) => String(b.datum || "").localeCompare(String(a.datum || "")),
+  preis_auf: (a, b) => (a.preis_netto || 1e12) - (b.preis_netto || 1e12),
+  preis_ab: (a, b) => (b.preis_netto || 0) - (a.preis_netto || 0),
+  km_auf: (a, b) => (a.km ?? 1e12) - (b.km ?? 1e12),
+  ez_neu: (a, b) => String(b.ez || "").localeCompare(String(a.ez || "")),
+};
+
+function fillOptions() {
+  const sel = $("#f-hersteller");
+  if (sel && sel.options.length <= 1) {
+    [...new Set(vehicles.map((v) => v.hersteller).filter(Boolean))].sort().forEach((h) => sel.add(new Option(h, h)));
+  }
+  const ez = $("#f-ez");
+  if (ez && ez.options.length <= 1) {
+    const now = new Date().getFullYear();
+    for (let y = now; y >= now - 25; y--) ez.add(new Option(`ab ${y}`, y));
+  }
+  const typBox = $("#f-typ");
+  if (typBox) {
+    const pool = vehicles.filter((v) => matches(v, "typ"));
+    const types = [...new Set(vehicles.filter((v) => F.kategorie === "alle" || v.kategorie === F.kategorie).map((v) => v.typ).filter(Boolean))].sort();
+    F.typ = F.typ.filter((t) => types.includes(t));
+    typBox.innerHTML = types.map((t) => `<label class="fcheck"><input type="checkbox" value="${esc(t)}" ${F.typ.includes(t) ? "checked" : ""}><span>${esc(t)}</span><em>${pool.filter((v) => v.typ === t).length}</em></label>`).join("") || `<p class="fnone">–</p>`;
+  }
   $$("[data-cnt]").forEach((el) => {
     const k = el.dataset.cnt;
-    el.textContent = k === "alle" ? vehicles.length : vehicles.filter((v) => v.kategorie === k).length;
+    el.textContent = vehicles.filter((v) => (k === "alle" || v.kategorie === k) && matches(v, "kategorie")).length;
   });
+}
+
+function render() {
+  const grid = $("#vehicle-grid");
+  if (!grid) return;
+  const limit = +grid.dataset.limit || 0; // Startseite: höchstens 8
+  let list = limit ? [...vehicles].sort(SORT.neu).slice(0, limit) : vehicles.filter((v) => matches(v)).sort(SORT[F.sort] || SORT.neu);
+  if (!limit) fillOptions();
+  const cnt = $("#vehicle-count"); if (cnt) cnt.textContent = list.length;
+  const cb = $("#vehicle-count-btn"); if (cb) cb.textContent = list.length + " ";
+  const active = Object.entries(F).filter(([k, v]) => !["sort", "kategorie", "q"].includes(k) && (Array.isArray(v) ? v.length : v)).length + (F.kategorie !== "alle") + (F.q ? 1 : 0);
+  $$(".js-fcount").forEach((el) => { el.textContent = active || ""; el.hidden = !active; });
   grid.innerHTML = list.length
     ? list.map(card).join("")
-    : `<p class="empty">Aktuell nichts gefunden. Rufen Sie uns an, wir finden etwas für Sie.</p>`;
+    : `<p class="empty">Keine Fahrzeuge mit diesen Filtern. Ändern Sie die Auswahl oder rufen Sie uns an, wir finden etwas für Sie.</p>`;
+}
+
+function setPriceMode(m) {
+  priceMode = m;
+  try { localStorage.setItem("sanisa-preis", m); } catch {}
+  $$("[data-pmode]").forEach((b) => b.classList.toggle("is-active", b.dataset.pmode === m));
+  $$(".js-pmode-label").forEach((el) => (el.textContent = m === "brutto" ? "brutto" : "netto"));
+  render();
 }
 
 if ($("#vehicle-grid")) {
-  $$(".chip").forEach((c) => c.addEventListener("click", () => {
-    $$(".chip").forEach((x) => x.classList.toggle("is-active", x === c));
-    render(c.dataset.filter);
-  }));
-  $("#vehicle-search")?.addEventListener("input", () => render());
+  const form = $("#vfilter");
+  if (form) {
+    const read = () => {
+      F.kategorie = (form.querySelector("[name=kategorie]:checked") || {}).value || "alle";
+      F.typ = $$("#f-typ input:checked").map((i) => i.value);
+      F.hersteller = form.hersteller.value;
+      F.preisVon = form.preisVon.value; F.preisBis = form.preisBis.value;
+      F.km = form.km.value; F.stunden = form.stunden.value; F.ezVon = form.ezVon.value; F.psVon = form.psVon.value;
+      F.getriebe = $$("[name=getriebe]:checked", form).map((i) => i.value);
+      F.q = ($("#vehicle-search")?.value || "").trim().toLowerCase();
+      render();
+    };
+    form.addEventListener("input", read);
+    form.addEventListener("change", read);
+    form.addEventListener("reset", () => setTimeout(() => { $$("#f-typ input").forEach((i) => (i.checked = false)); read(); }, 0));
+    $("#vehicle-search")?.addEventListener("input", read);
+    $("#vehicle-sort")?.addEventListener("change", (e) => { F.sort = e.target.value; render(); });
+    $$("[data-pmode]").forEach((b) => b.addEventListener("click", () => setPriceMode(b.dataset.pmode)));
+    $$(".js-filter-open").forEach((b) => b.addEventListener("click", () => document.body.classList.add("filter-open")));
+    $$(".js-filter-close").forEach((b) => b.addEventListener("click", () => document.body.classList.remove("filter-open")));
+    setPriceMode(priceMode);
+  }
   fetch("data/fahrzeuge.json", { cache: "no-store" })
     .then((r) => r.json())
     .then((d) => { vehicles = d; render(); })
