@@ -162,34 +162,29 @@ if ($("#vehicle-grid")) {
 }
 
 /* Team (Daten aus data/team.json, später über den Mitarbeiter-Bereich pflegbar) */
-let memberNo = 0;
 function member(m) {
   const initials = m.name.split(" ").map((w) => w[0]).join("").slice(0, 2);
-  const pos = ["20% 50%", "50% 50%", "80% 50%", "35% 60%", "65% 40%"][memberNo++ % 5];
   const photo = m.bild
     ? `<div class="member-photo"><img src="${esc(m.bild)}" alt="${esc(m.name)}" loading="lazy"></div>`
-    : `<div class="member-photo ph" style="--bgpos:${pos}"><span class="ini">${esc(initials)}</span><span class="soon">Foto folgt</span></div>`;
-  const tel = m.telefon ? `<a href="tel:${esc(m.telefon.replace(/[^+\d]/g, ""))}"><svg><use href="${SPRITE}#i-phone"/></svg>${esc(m.telefon)}</a>` : "";
-  const mail = m.email ? `<a href="mailto:${esc(m.email)}"><svg><use href="${SPRITE}#i-mail"/></svg>${esc(m.email)}</a>` : "";
+    : `<div class="member-photo ph"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="38" r="17"/><path d="M16 100c2-22 16-34 34-34s32 12 34 34z"/></svg><span class="ini">${esc(initials)}</span></div>`;
+  const tel = m.telefon ? `<a href="tel:${esc(m.telefon.replace(/[^+\d]/g, ""))}" aria-label="Anrufen" title="${esc(m.telefon)}"><svg><use href="${SPRITE}#i-phone"/></svg></a>` : "";
+  const mail = m.email ? `<a href="mailto:${esc(m.email)}" aria-label="E-Mail schreiben" title="${esc(m.email)}"><svg><use href="${SPRITE}#i-mail"/></svg></a>` : "";
   return `
     <article class="member">
       ${photo}
-      <h4>${esc(m.name)}</h4>
-      <p class="role">${esc(m.rolle)}</p>
-      <div class="contact">${tel}${mail}</div>
+      <div class="member-body">
+        <span class="member-group">${esc(m.gruppe || "")}</span>
+        <h4>${esc(m.name)}</h4>
+        <p class="role">${esc(m.rolle)}</p>
+        ${tel || mail ? `<div class="contact">${tel}${mail}</div>` : ""}
+      </div>
     </article>`;
 }
 const teamGrid = $("#team-grid");
 if (teamGrid) {
   fetch("data/team.json", { cache: "no-store" })
     .then((r) => r.json())
-    .then((list) => {
-      // nach Gruppen sortiert ausgeben (Reihenfolge wie in der Datei)
-      const groups = [...new Set(list.map((m) => m.gruppe || ""))];
-      teamGrid.innerHTML = groups.map((g) => `
-        ${g ? `<h3 class="team-group">${esc(g)}</h3>` : ""}
-        <div class="team-grid">${list.filter((m) => (m.gruppe || "") === g).map(member).join("")}</div>`).join("");
-    })
+    .then((list) => { teamGrid.innerHTML = `<div class="team-grid">${list.map(member).join("")}</div>`; })
     .catch(() => {});
 }
 
