@@ -395,3 +395,35 @@ h3 { font-size: 1.1rem; font-weight: 700; text-transform: uppercase; letter-spac
   html { scroll-behavior: auto; }
 }
 
+
+/* Ankauf: Schritte links, Formular rechts */
+.ank-grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(32px, 5vw, 72px); align-items: start; margin-top: 8px; }
+.ank-grid .quote-wrap { max-width: none; margin: 0; }
+.steps-v { list-style: none; margin: 0; padding: 8px 0 0; position: relative; }
+.steps-v::before { content: ""; position: absolute; left: 35px; top: 44px; bottom: 44px; width: 2px; background: repeating-linear-gradient(180deg, #d9d4c6 0 6px, transparent 6px 12px); }
+.stp { position: relative; display: grid; grid-template-columns: 72px 1fr; gap: 20px; align-items: center; padding: 12px 0; cursor: default; }
+.stp .ic { position: relative; width: 72px; height: 72px; border-radius: 50%; background: #fff; box-shadow: 0 8px 24px rgba(0,0,0,.08); display: grid; place-items: center; transition: background .3s, transform .3s var(--ease); }
+.stp .ic svg { width: 40px; height: 40px; }
+.stp .ic::after { counter-increment: stp; content: counter(stp); position: absolute; top: -2px; right: -2px; width: 22px; height: 22px; border-radius: 50%; background: var(--ink); color: #fff; font: 700 .72rem/22px var(--sans); text-align: center; }
+.steps-v { counter-reset: stp; }
+.stp h3 { font-size: 1.02rem; letter-spacing: .05em; margin: 0 0 2px; }
+.stp p { margin: 0; color: var(--muted); font-size: .93rem; }
+.stp:hover .ic { background: #fff7d6; transform: scale(1.05); }
+.stp .ic svg g { transform-box: fill-box; }
+.stp:hover .a-wave { animation: waveBlink .9s ease-in-out 2; }
+@keyframes waveBlink { 50% { opacity: .2; } }
+.stp:hover .a-lens { transform-origin: 30% 30%; animation: lensSearch 1.1s ease-in-out both; }
+@keyframes lensSearch { 25% { transform: translate(-4px, -3px); } 50% { transform: translate(-1px, -6px); } 75% { transform: translate(-5px, 0); } 100% { transform: none; } }
+.stp:hover .a-seal { transform-origin: 50% 50%; animation: sealPop .6s var(--ease) both; }
+@keyframes sealPop { 0% { transform: scale(.6); } 70% { transform: scale(1.15); } 100% { transform: scale(1); } }
+.stp:hover .a-truck { animation: truckDrive 1s var(--ease) both; }
+.stp:hover .a-coin { animation: coinDrop .9s var(--ease) both; }
+@media (max-width: 920px) { .ank-grid { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { .stp .ic svg g { animation: none !important; } }
+
+/* Fahrzeugauswahl im Formular: größere Icons, Bewegung beim Darüberfahren */
+.choice span { padding: 16px 6px 12px; }
+.choice svg { width: 58px; height: 38px; color: #2a2a2f; transition: transform .35s var(--ease), color .2s; }
+.choice label:hover svg { transform: translateX(4px); }
+.choice input:checked + span { border-color: var(--yellow); background: #fff7d6; box-shadow: inset 0 0 0 1px var(--yellow); }
+.choice input:checked + span svg { color: #a37c00; }
