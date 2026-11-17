@@ -802,3 +802,22 @@ details[open] .faq-a { animation: faqIn .35s var(--ease); }
   .svc-tabs .ic svg { width: 24px; height: 24px; }
 }
 @media (max-width: 560px) { .svc-actions .btn { flex: 1; justify-content: center; } }
+
+/* Leistungen: Text-Karten statt großer Bilder */
+.svc-page { padding-top: 56px; }
+.svc-page .wrap { display: grid; gap: 22px; }
+.svc-block { display: grid; grid-template-columns: 330px minmax(0, 1fr); background: #fff; border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,.06); overflow: hidden; scroll-margin-top: 190px; }
+.svc-head { position: relative; padding: 36px 34px; background: linear-gradient(160deg, #fbfaf6 0%, #f1eee6 100%); border-right: 1px solid #eee; display: flex; flex-direction: column; }
+.svc-head::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--yellow); }
+.svc-ic { width: 76px; height: 76px; border-radius: 18px; background: #fff; display: grid; place-items: center; box-shadow: 0 8px 20px rgba(0,0,0,.07); margin-bottom: 22px; }
+.svc-ic svg { width: 46px; height: 46px; }
+.svc-head .svc-no { position: absolute; right: 26px; top: 26px; left: auto; width: auto; height: auto; background: none; box-shadow: none; font: 400 2.4rem/1 "Chonburi", Georgia, serif; color: #e3ddcd; }
+.svc-name { margin: 0 0 6px; font-size: .76rem; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+.svc-head h2 { margin: 0; font: 400 1.45rem/1.25 "Chonburi", Georgia, serif; letter-spacing: .02em; text-transform: uppercase; color: var(--ink); }
+.svc-body { padding: 36px 40px; display: flex; flex-direction: column; justify-content: center; }
+.svc-body > p { color: var(--text); margin: 0 0 20px; font-size: 1.02rem; line-height: 1.7; }
+.svc-body .svc-list { list-style: none; margin: 0 0 26px; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; background: none; box-shadow: none; border: 0; }
+.svc-body .svc-list li { display: flex; gap: 10px; align-items: flex-start; background: var(--bg); border-radius: 10px; padding: 12px 14px; font-size: .9rem; font-weight: 500; line-height: 1.4; color: var(--ink); }
+.svc-body .svc-list svg { width: 18px; height: 18px; color: #15803d; flex: none; margin-top: 1px; }
+@media (max-width: 1000px) { .svc-block { grid-template-columns: 1fr; } .svc-head { border-right: 0; border-bottom: 1px solid #eee; padding: 28px 26px; } .svc-body { padding: 28px 26px; } }
+@media (max-width: 700px) { .svc-body .svc-list { grid-template-columns: 1fr; } .svc-ic { width: 62px; height: 62px; margin-bottom: 16px; } .svc-ic svg { width: 38px; height: 38px; } }
