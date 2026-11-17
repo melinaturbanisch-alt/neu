@@ -1,0 +1,13 @@
+{
+  "platzhalter": true,
+  "hinweis": "Platzhalter! Echte Werte aus dem Google-Unternehmensprofil eintragen und platzhalter auf false setzen.",
+  "bewertung": 4.9,
+  "anzahl": 0,
+  "link": "https://www.google.com/maps/search/?api=1&query=SANISA+GmbH+Butzbach",
+  "schreiben": "https://www.google.com/maps/search/?api=1&query=SANISA+GmbH+Butzbach",
+  "eintraege": [
+    { "name": "Kundenname", "sterne": 5, "datum": "vor 2 Monaten", "text": "Hier steht später eine echte Google-Bewertung eines Kunden. Der Text wird aus dem Google-Profil übernommen." },
+    { "name": "Kundenname", "sterne": 5, "datum": "vor 4 Monaten", "text": "Platz für die zweite Bewertung, zum Beispiel zu Ankauf, Abwicklung oder Beratung." },
+    { "name": "Kundenname", "sterne": 5, "datum": "vor 6 Monaten", "text": "Platz für die dritte Bewertung, zum Beispiel von einem Kunden aus dem Ausland zu Export und Verladung." }
+  ]
+}
