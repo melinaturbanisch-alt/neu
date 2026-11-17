@@ -180,7 +180,14 @@ const teamGrid = $("#team-grid");
 if (teamGrid) {
   fetch("data/team.json", { cache: "no-store" })
     .then((r) => r.json())
-    .then((list) => { teamGrid.innerHTML = `<div class="team-grid">${list.map(member).join("")}</div>`; })
+    .then((list) => {
+      const groups = [...new Set(list.map((m) => m.gruppe || ""))];
+      teamGrid.innerHTML = groups.map((g) => `
+        <section class="team-block">
+          ${g ? `<h3 class="team-group"><span>${esc(g)}</span></h3>` : ""}
+          <div class="team-grid">${list.filter((m) => (m.gruppe || "") === g).map(member).join("")}</div>
+        </section>`).join("");
+    })
     .catch(() => {});
 }
 

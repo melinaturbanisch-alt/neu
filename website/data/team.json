@@ -1,13 +1,13 @@
 [
-  { "gruppe": "Geschäftsführung", "name": "Siawash Hematyar", "rolle": "Geschäftsführer & Inhaber", "email": "sh@sanisa.de", "telefon": "", "bild": "" },
-  { "gruppe": "Leitung", "name": "Tobias Wagner", "rolle": "Kaufmännischer Leiter", "email": "wagner@sanisa.de", "telefon": "", "bild": "" },
-  { "gruppe": "Leitung", "name": "Name folgt", "rolle": "Kaufmännische Leitung Einkauf & Akquise", "email": "", "telefon": "", "bild": "" },
-  { "gruppe": "Verkauf & Büro", "name": "Nilab Hematyar", "rolle": "Verkauf", "email": "nh@sanisa.de", "telefon": "", "bild": "" },
-  { "gruppe": "Verkauf & Büro", "name": "Sarina Hematyar", "rolle": "Büro", "email": "sarina.hematyar@sanisa.de", "telefon": "", "bild": "" },
-  { "gruppe": "Verkauf & Büro", "name": "Vivien", "rolle": "Rolle folgt", "email": "", "telefon": "", "bild": "" },
-  { "gruppe": "Verkauf & Büro", "name": "Markus Mettbach", "rolle": "Rolle folgt", "email": "", "telefon": "", "bild": "" },
-  { "gruppe": "Verkauf & Büro", "name": "Virag Valyí", "rolle": "Disposition", "email": "info@sanisa.de", "telefon": "", "bild": "" },
-  { "gruppe": "Werkstatt & Aufbereitung", "name": "Stefan Humpf", "rolle": "Werkstattleitung", "email": "", "telefon": "", "bild": "" },
-  { "gruppe": "Werkstatt & Aufbereitung", "name": "Florian", "rolle": "Fahrzeugaufbereitung", "email": "", "telefon": "", "bild": "" },
-  { "gruppe": "Werkstatt & Aufbereitung", "name": "Jawed", "rolle": "Fahrzeugaufbereitung", "email": "", "telefon": "", "bild": "" }
+  {"gruppe": "Geschäftsführung & Leitung", "name": "Siawash Hematyar", "rolle": "Geschäftsführer & Inhaber", "email": "sh@sanisa.de", "telefon": "", "bild": ""},
+  {"gruppe": "Geschäftsführung & Leitung", "name": "Tobias Wagner", "rolle": "Kaufmännischer Leiter", "email": "wagner@sanisa.de", "telefon": "", "bild": ""},
+  {"gruppe": "Geschäftsführung & Leitung", "name": "Name folgt", "rolle": "Kaufmännische Leitung Einkauf & Akquise", "email": "", "telefon": "", "bild": ""},
+  {"gruppe": "Verkauf, Büro & Disposition", "name": "Nilab Hematyar", "rolle": "Verkauf", "email": "nh@sanisa.de", "telefon": "", "bild": ""},
+  {"gruppe": "Verkauf, Büro & Disposition", "name": "Sarina Hematyar", "rolle": "Büro", "email": "sarina.hematyar@sanisa.de", "telefon": "", "bild": ""},
+  {"gruppe": "Verkauf, Büro & Disposition", "name": "Vivien", "rolle": "Rolle folgt", "email": "", "telefon": "", "bild": ""},
+  {"gruppe": "Verkauf, Büro & Disposition", "name": "Markus Mettbach", "rolle": "Rolle folgt", "email": "", "telefon": "", "bild": ""},
+  {"gruppe": "Verkauf, Büro & Disposition", "name": "Virag Valyí", "rolle": "Disposition", "email": "info@sanisa.de", "telefon": "", "bild": ""},
+  {"gruppe": "Werkstatt & Aufbereitung", "name": "Stefan Humpf", "rolle": "Werkstattleitung", "email": "", "telefon": "", "bild": ""},
+  {"gruppe": "Werkstatt & Aufbereitung", "name": "Florian", "rolle": "Fahrzeugaufbereitung", "email": "", "telefon": "", "bild": ""},
+  {"gruppe": "Werkstatt & Aufbereitung", "name": "Jawed", "rolle": "Fahrzeugaufbereitung", "email": "", "telefon": "", "bild": ""}
 ]

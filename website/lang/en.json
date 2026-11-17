@@ -128,7 +128,7 @@
  "Kaufmännischer Leiter": "Commercial Manager",
  "Büro": "Office",
  "Disposition": "Dispatch",
- "Werkstatt & Aufbereitung": "Workshop & preparation",
+ "Werkstatt & Aufbereitung": "Workshop & reconditioning",
  "Werkstattleitung": "Workshop Manager",
  "Fahrzeugaufbereitung": "Vehicle preparation",
  "Häufige Fragen": "FAQ",
@@ -274,5 +274,10 @@
  "Teil der SANISA Group": "Part of the SANISA Group",
  "Sie suchen eine Immobilie oder Gewerbefläche?": "Looking for a property or commercial space?",
  "Unser Schwesterunternehmen SANISA Immobilien hilft Ihnen gern weiter.": "Our sister company SANISA Immobilien will be happy to help.",
- "Persönlich für Sie da: im Verkauf, im Büro und in der Werkstatt.": "Here for you in person: in sales, in the office and in the workshop."
+ "Persönlich für Sie da: im Verkauf, im Büro und in der Werkstatt.": "Here for you in person: in sales, in the office and in the workshop.",
+ "Geschäftsführung & Leitung": "Management",
+ "Verkauf, Büro & Disposition": "Sales, office & dispatch",
+ "Kaufmännische Leitung Einkauf & Akquise": "Commercial manager, purchasing & acquisition",
+ "Rolle folgt": "Role to follow",
+ "Name folgt": "Name to follow"
 }
