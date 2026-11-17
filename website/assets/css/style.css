@@ -427,3 +427,32 @@ h3 { font-size: 1.1rem; font-weight: 700; text-transform: uppercase; letter-spac
 .choice label:hover svg { transform: translateX(4px); }
 .choice input:checked + span { border-color: var(--yellow); background: #fff7d6; box-shadow: inset 0 0 0 1px var(--yellow); }
 .choice input:checked + span svg { color: #a37c00; }
+
+/* Ankauf v2: Schritte als Reihe über dem breiten Formular */
+.ank-stack { display: grid; gap: clamp(28px, 4vw, 48px); margin-top: 8px; }
+.ank-stack .quote-wrap { max-width: 1040px; width: 100%; margin: 0 auto; }
+.steps-h { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; position: relative; counter-reset: stp; }
+.steps-h::before { content: ""; position: absolute; left: 10%; right: 10%; top: 38px; height: 2px; background: repeating-linear-gradient(90deg, #d9d4c6 0 8px, transparent 8px 14px); }
+.steps-h .stp { display: flex; flex-direction: column; align-items: center; text-align: center; grid-template-columns: none; padding: 0; gap: 0; }
+.steps-h .stp .ic { width: 78px; height: 78px; margin-bottom: 14px; }
+.steps-h .stp .ic svg { width: 48px; height: 48px; }
+.steps-h .stp h3 { font-size: .95rem; margin-bottom: 4px; }
+.steps-h .stp p { font-size: .88rem; max-width: 190px; }
+@media (max-width: 860px) {
+  .steps-h { grid-template-columns: 1fr; gap: 14px; }
+  .steps-h::before { left: 38px; right: auto; top: 20px; bottom: 20px; width: 2px; height: auto; background: repeating-linear-gradient(180deg, #d9d4c6 0 8px, transparent 8px 14px); }
+  .steps-h .stp { display: grid; grid-template-columns: 78px 1fr; column-gap: 16px; align-items: center; text-align: left; }
+  .steps-h .stp .ic { grid-row: span 2; margin: 0; }
+  .steps-h .stp h3 { align-self: end; margin: 0; }
+  .steps-h .stp p { align-self: start; }
+  .steps-h .stp p { max-width: none; }
+}
+/* Auswahl im breiten Formular: eine Reihe mit 6 Kacheln */
+.ank-stack .choice { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 10px; }
+.choice span { gap: 4px; padding: 16px 6px 12px; text-transform: none; }
+.choice span svg { width: 64px; height: 40px; margin-bottom: 6px; transition: transform .35s var(--ease); }
+.choice span b { font-size: .82rem; font-weight: 600; text-transform: uppercase; letter-spacing: .03em; line-height: 1.25; }
+.choice span small { font-size: .72rem; color: var(--muted); line-height: 1.3; }
+.choice label:hover span svg { transform: translateY(-3px) translateX(2px); }
+@media (max-width: 980px) { .ank-stack .choice { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 480px) { .ank-stack .choice { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
