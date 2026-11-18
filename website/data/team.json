@@ -1,13 +1,13 @@
 [
   {"gruppe": "Geschäftsführung", "name": "Siawash Hematyar", "rolle": "Geschäftsführer & Inhaber", "email": "sh@sanisa.de", "telefon": "", "bild": ""},
   {"gruppe": "Kaufmännische Leitung & Personal", "name": "Tobias Wagner", "rolle": "Kaufmännischer Leiter", "email": "wagner@sanisa.de", "telefon": "", "bild": ""},
-  {"gruppe": "Kaufmännische Leitung & Personal", "name": "Weber", "rolle": "Personalabteilung", "email": "", "telefon": "", "bild": ""},
+  {"gruppe": "Kaufmännische Leitung & Personal", "name": "(Vorname) Weber", "rolle": "Personalabteilung", "email": "", "telefon": "", "bild": ""},
   {"gruppe": "Disposition", "name": "Nilab Hematyar", "rolle": "Disposition", "email": "nh@sanisa.de", "telefon": "", "bild": ""},
   {"gruppe": "Disposition", "name": "Virag Valyí", "rolle": "Disposition", "email": "info@sanisa.de", "telefon": "", "bild": ""},
-  {"gruppe": "Einkauf & Ankauf", "name": "Sarina Hematyar", "rolle": "Leitung Einkauf", "email": "sarina.hematyar@sanisa.de", "telefon": "", "bild": ""},
-  {"gruppe": "Einkauf & Ankauf", "name": "Name folgt", "rolle": "Kaufmännische Leitung Einkauf & Akquise", "email": "", "telefon": "", "bild": ""},
+  {"gruppe": "Einkauf & Ankauf", "name": "Sarah Hematyar", "rolle": "Leitung Einkauf", "email": "", "telefon": "", "bild": ""},
+  {"gruppe": "Einkauf & Ankauf", "name": "Melina Turbanisch", "rolle": "Kaufmännische Leitung Einkauf & Akquise", "email": "", "telefon": "", "bild": ""},
   {"gruppe": "Einkauf & Ankauf", "name": "Markus Mettbach", "rolle": "Einkäufer", "email": "", "telefon": "", "bild": ""},
-  {"gruppe": "Werkstatt & Transport", "name": "Stefan Humpf", "rolle": "Werkstattmeister", "email": "", "telefon": "", "bild": ""},
+  {"gruppe": "Werkstatt & Transport", "name": "Stephan Humpf", "rolle": "Werkstattmeister", "email": "", "telefon": "", "bild": ""},
   {"gruppe": "Werkstatt & Transport", "name": "Florian", "rolle": "Fahrzeugtechnik & Aufbereitung", "email": "", "telefon": "", "bild": ""},
   {"gruppe": "Werkstatt & Transport", "name": "Jawed", "rolle": "Fahrzeugtechnik & Aufbereitung", "email": "", "telefon": "", "bild": ""},
   {"gruppe": "Werkstatt & Transport", "name": "Fahad Hematyar", "rolle": "Fahrzeugtransport & Überführung", "email": "", "telefon": "", "bild": ""}
