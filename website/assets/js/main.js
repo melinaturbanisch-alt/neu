@@ -391,3 +391,21 @@ $$(".js-year").forEach((el) => (el.textContent = new Date().getFullYear()));
       </figure>`).join("");
   }).catch(() => {});
 })();
+
+/* Kontaktformular (Versand folgt mit dem Mail-Dienst) */
+$$(".js-contact").forEach((form) => {
+  const msg = $(".form-msg", form);
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const bad = $$("input, textarea", form).find((f) => !f.checkValidity());
+    if (bad) {
+      msg.className = "form-msg err";
+      msg.textContent = bad.type === "checkbox" ? "Bitte stimmen Sie der Datenverarbeitung zu." : "Bitte füllen Sie die Pflichtfelder aus.";
+      bad.focus();
+      return;
+    }
+    msg.className = "form-msg ok";
+    msg.textContent = "Vielen Dank! Ihre Nachricht ist bei uns angekommen. (Vorschau: wird noch nicht versendet.)";
+    form.reset();
+  });
+});
