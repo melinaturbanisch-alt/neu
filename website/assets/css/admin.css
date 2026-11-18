@@ -1,0 +1,134 @@
+/* SANISA – Mitarbeiter-Login und -Bereich */
+
+/* Login */
+.login-page { margin: 0; background: var(--bg); }
+.login-split { min-height: 100vh; display: grid; grid-template-columns: 1.1fr 1fr; }
+.login-visual { position: relative; background: #222 center / cover no-repeat; display: flex; align-items: flex-end; padding: clamp(28px, 5vw, 64px); color: #fff; isolation: isolate; }
+.login-visual::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(20,20,24,.25), rgba(20,20,24,.85)); }
+.lv-logo { height: 52px; width: auto; display: block; margin-bottom: 18px; }
+.lv-text { max-width: 440px; color: rgba(255,255,255,.85); font-size: 1.05rem; margin: 0; }
+.login-side { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 32px 16px; }
+.login-card { width: 100%; max-width: 400px; background: #fff; border-radius: 14px; padding: 34px 30px; box-shadow: 0 18px 50px rgba(0,0,0,.08); display: grid; gap: 14px; border-top: 3px solid var(--yellow); }
+.login-card h1 { font: 400 1.6rem "Chonburi", Georgia, serif; text-transform: uppercase; letter-spacing: .02em; margin: 0 0 6px; }
+.login-card .about-kicker { margin: 0; }
+.login-card label { display: grid; gap: 6px; font-size: .9rem; color: var(--ink); }
+.login-card input { font: 400 1rem var(--sans); padding: 12px 14px; border: 1px solid #d0d0d0; border-radius: 8px; }
+.login-card input:focus { outline: none; border-color: var(--ink); box-shadow: 0 0 0 3px var(--yellow-soft); }
+.login-card .btn { width: 100%; justify-content: center; margin-top: 4px; }
+.demo-note { display: flex; gap: 10px; align-items: flex-start; background: var(--yellow-soft); border-radius: 8px; padding: 12px 14px; font-size: .82rem; color: #5a4a12; line-height: 1.5; }
+.demo-note svg { width: 18px; height: 18px; flex: none; margin-top: 2px; }
+.demo-note b { display: block; color: var(--ink); }
+.demo-note code { background: #fff; padding: 1px 6px; border-radius: 4px; }
+.login-back { margin-top: 18px; color: var(--muted); font-size: .9rem; text-decoration: none; }
+.login-back:hover { color: var(--ink); }
+@media (max-width: 860px) { .login-split { grid-template-columns: 1fr; } .login-visual { min-height: 200px; } }
+
+/* Bereich */
+.admin-page { margin: 0; background: #f4f4f2; display: grid; grid-template-columns: 240px minmax(0, 1fr); min-height: 100vh; }
+.adm-side { background: var(--ink); color: #fff; display: flex; flex-direction: column; padding: 22px 16px; position: sticky; top: 0; height: 100vh; }
+.adm-logo img { height: 40px; width: auto; display: block; margin: 0 6px 28px; }
+.adm-nav { display: grid; gap: 4px; }
+.adm-nav button { display: flex; align-items: center; gap: 12px; width: 100%; border: 0; background: none; color: rgba(255,255,255,.75); font: 500 .95rem var(--sans); padding: 11px 12px; border-radius: 8px; cursor: pointer; text-align: left; }
+.adm-nav button svg { width: 18px; height: 18px; }
+.adm-nav button:hover { background: rgba(255,255,255,.06); color: #fff; }
+.adm-nav button.is-active { background: var(--yellow); color: var(--ink); }
+.adm-badge { margin-left: auto; min-width: 20px; height: 20px; border-radius: 999px; background: #e5484d; color: #fff; font-size: .72rem; display: grid; place-items: center; padding: 0 6px; }
+.adm-badge:empty { display: none; }
+.adm-user { margin-top: auto; display: flex; align-items: center; gap: 10px; padding: 12px 6px 0; border-top: 1px solid rgba(255,255,255,.1); flex-wrap: wrap; }
+.adm-avatar { width: 34px; height: 34px; border-radius: 50%; background: var(--yellow); color: var(--ink); display: grid; place-items: center; font-weight: 700; }
+.adm-user span:nth-child(2) { display: flex; flex-direction: column; font-size: .88rem; line-height: 1.3; }
+.adm-user small { color: rgba(255,255,255,.55); }
+.adm-user button { width: 100%; margin-top: 10px; border: 1px solid rgba(255,255,255,.2); background: none; color: rgba(255,255,255,.8); padding: 8px; border-radius: 8px; cursor: pointer; font: 500 .85rem var(--sans); }
+.adm-user button:hover { border-color: var(--yellow); color: var(--yellow); }
+.adm-main { padding: 24px clamp(16px, 3vw, 40px) 60px; min-width: 0; }
+.adm-demo { display: flex; align-items: center; gap: 10px; background: var(--yellow-soft); border: 1px solid #f3e2a0; border-radius: 10px; padding: 10px 14px; font-size: .86rem; color: #5a4a12; margin-bottom: 24px; }
+.adm-demo svg { width: 18px; height: 18px; flex: none; }
+.adm-demo span { flex: 1; }
+.adm-demo button { border: 0; background: none; text-decoration: underline; color: #5a4a12; cursor: pointer; font: 500 .82rem var(--sans); white-space: nowrap; }
+.adm-view { display: none; }
+.adm-view.is-active { display: block; }
+.adm-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
+.adm-head h1 { font: 400 1.7rem "Chonburi", Georgia, serif; text-transform: uppercase; letter-spacing: .02em; margin: 0; }
+.adm-head p { margin: 4px 0 0; color: var(--muted); }
+.adm-head-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.adm-head-actions .btn { padding: 10px 18px; font-size: .9rem; }
+.plus { font-size: 1.2rem; line-height: 1; }
+.adm-toolbar { display: flex; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
+.adm-toolbar .stock-search { flex: 1 1 260px; }
+.adm-toolbar select, .adm-dialog select { font: 400 .94rem var(--sans); padding: 10px 12px; border: 1px solid #d5d5d5; border-radius: 999px; background: #fff; }
+.adm-table-wrap { background: #fff; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,.05); overflow-x: auto; }
+.adm-table { width: 100%; border-collapse: collapse; font-size: .92rem; min-width: 760px; }
+.adm-table th { text-align: left; font: 500 .72rem var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); padding: 14px 12px; border-bottom: 1px solid #eee; }
+.adm-table td { padding: 10px 12px; border-bottom: 1px solid #f1f1f1; vertical-align: middle; }
+.adm-table tr:last-child td { border-bottom: 0; }
+.adm-table td b { display: block; color: var(--ink); }
+.adm-table td small { color: var(--muted); }
+.adm-table .empty { text-align: center; color: var(--muted); padding: 30px; }
+.v-thumb { width: 64px; height: 48px; border-radius: 6px; background: #eee; overflow: hidden; }
+.v-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.muted { color: var(--muted); }
+.acts { white-space: nowrap; text-align: right; }
+.acts button, .ta-acts button { border: 1px solid #ddd; background: #fff; border-radius: 6px; padding: 6px 10px; font: 500 .8rem var(--sans); cursor: pointer; margin-left: 4px; }
+.acts button:hover, .ta-acts button:hover { border-color: var(--ink); }
+.acts .js-del:hover, .ta-acts .js-tdel:hover { border-color: #e5484d; color: #e5484d; }
+.pill { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: .74rem; font-weight: 500; }
+.pill-aktiv { background: #e7f6ec; color: #15803d; }
+.pill-reserviert { background: var(--yellow-soft); color: #8a6a00; }
+.pill-verkauft { background: #eee; color: #777; }
+.pill-neu { background: #fde8e8; color: #c62828; }
+.pill-ankauf { background: var(--yellow); color: var(--ink); }
+.pill-kontakt { background: var(--ink); color: #fff; }
+
+/* Anfragen */
+.req-list { display: grid; gap: 14px; }
+.req { background: #fff; border-radius: 12px; padding: 20px 22px; box-shadow: 0 10px 30px rgba(0,0,0,.05); border-left: 4px solid transparent; }
+.req.is-new { border-left-color: var(--yellow); }
+.req-top { display: flex; align-items: center; gap: 8px; }
+.req-top time { margin-left: auto; color: var(--muted); font-size: .84rem; }
+.req h3 { margin: 12px 0 6px; font-size: 1.05rem; text-transform: none; }
+.req p { margin: 0 0 12px; color: var(--muted); }
+.req-meta { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: .9rem; }
+.req-meta a { color: var(--ink); }
+.req-acts { margin-top: 14px; }
+.req-acts .btn { padding: 8px 16px; font-size: .82rem; }
+
+/* Team */
+.ta-group { font: 500 .78rem var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin: 26px 0 10px; }
+.ta-group:first-child { margin-top: 0; }
+.ta-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 10px; }
+.ta-card { display: flex; align-items: center; gap: 12px; background: #fff; border-radius: 10px; padding: 10px 12px; box-shadow: 0 6px 18px rgba(0,0,0,.04); }
+.ta-photo { width: 46px; height: 46px; border-radius: 50%; background: #eceae4; overflow: hidden; display: grid; place-items: center; flex: none; font-weight: 700; color: #8a857a; }
+.ta-photo img { width: 100%; height: 100%; object-fit: cover; }
+.ta-info { flex: 1; min-width: 0; display: flex; flex-direction: column; line-height: 1.3; }
+.ta-info small { color: var(--muted); }
+.ta-acts { white-space: nowrap; }
+
+/* Dialog */
+.adm-dialog { border: 0; border-radius: 14px; padding: 0; width: min(720px, calc(100vw - 24px)); max-height: calc(100vh - 40px); box-shadow: 0 30px 80px rgba(0,0,0,.3); }
+.adm-dialog.small { width: min(520px, calc(100vw - 24px)); }
+.adm-dialog::backdrop { background: rgba(20,20,24,.55); }
+.adm-dialog form { display: flex; flex-direction: column; max-height: calc(100vh - 40px); gap: 0; }
+.adm-dialog header, .adm-dialog footer { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 16px 22px; border-bottom: 1px solid #eee; }
+.adm-dialog footer { border-top: 1px solid #eee; border-bottom: 0; justify-content: flex-end; }
+.adm-dialog h2 { font: 400 1.2rem "Chonburi", Georgia, serif; text-transform: uppercase; margin: 0; }
+.adm-dialog .x { border: 0; background: none; font-size: 1.6rem; cursor: pointer; line-height: 1; }
+.dlg-body { padding: 18px 22px; overflow: auto; display: grid; gap: 14px; }
+.adm-dialog select { border-radius: 4px; width: 100%; padding: 12px 14px; }
+.thumbs .thumb { position: relative; }
+.thumb .cover { position: absolute; left: 4px; bottom: 4px; background: var(--yellow); font-size: .62rem; padding: 1px 6px; border-radius: 4px; font-weight: 600; }
+
+.adm-toast { position: fixed; left: 50%; bottom: 24px; transform: translate(-50%, 20px); background: var(--ink); color: #fff; padding: 12px 20px; border-radius: 999px; font-size: .9rem; opacity: 0; pointer-events: none; transition: opacity .25s, transform .25s; z-index: 200; }
+.adm-toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+@media (max-width: 860px) {
+  .admin-page { grid-template-columns: 1fr; }
+  .adm-side { position: static; height: auto; flex-direction: row; align-items: center; flex-wrap: wrap; gap: 10px; padding: 12px 14px; }
+  .adm-logo img { height: 30px; margin: 0; }
+  .adm-nav { grid-auto-flow: column; overflow-x: auto; flex: 1 1 100%; order: 3; }
+  .adm-nav button { padding: 9px 12px; white-space: nowrap; }
+  .adm-user { margin: 0 0 0 auto; border: 0; padding: 0; }
+  .adm-user span:nth-child(2) { display: none; }
+  .adm-user button { width: auto; margin: 0; }
+}
+
+@media (max-width: 860px) { .admin-page { grid-template-columns: minmax(0, 1fr); overflow-x: hidden; } .adm-nav { min-width: 0; } .adm-demo { flex-wrap: wrap; } }

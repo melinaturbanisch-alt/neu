@@ -4,34 +4,48 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex">
-  <title>Sanisa Mitarbeiter-Login</title>
+  <title>Mitarbeiter-Login | SANISA</title>
   <link rel="icon" href="assets/img/favicon.png">
+  <!-- Vor dem Livegang Schriften lokal einbinden (DSGVO) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=Chonburi&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
-  <style>
-    body { min-height: 100vh; display: grid; place-items: center; background: var(--bg); padding: 16px; }
-    .login { background: #fff; border: 1px solid var(--line); box-shadow: var(--shadow); border-radius: var(--radius); padding: 36px 28px; width: 100%; max-width: 400px; display: grid; gap: 14px; }
-    .login img { height: 48px; width: auto; margin: 0 auto 8px; }
-    .login h1 { font-size: 1.6rem; text-align: center; margin: 0; }
-    .login label { display: grid; gap: 8px; font-size: .74rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
-    .login input { font: 400 1rem var(--sans); padding: 11px 12px; border: 1px solid #d4d4d8; border-radius: 6px; }
-    .login .hint { font-size: .85rem; color: var(--muted); text-align: center; margin: 0; }
-    .back { color: var(--muted); text-align: center; display: block; margin-top: 16px; font-size: .9rem; }
-  </style>
+  <link rel="stylesheet" href="assets/css/admin.css">
 </head>
-<body>
-  <div>
-    <form class="login" onsubmit="event.preventDefault(); document.getElementById('h').textContent='Der Login wird im nächsten Schritt angebunden.';">
-      <img src="assets/img/logo.png" alt="Sanisa Baumaschinen Handel">
-      <h1>Mitarbeiter-Login</h1>
-      <label>Benutzername<input name="user" autocomplete="username"></label>
-      <label>Passwort<input name="pass" type="password" autocomplete="current-password"></label>
-      <button class="btn btn-dark btn-block" type="submit">Anmelden</button>
-      <p class="hint" id="h">Hier tragen Mitarbeiter neue Fahrzeuge ein (in Vorbereitung).</p>
-    </form>
-    <a href="index.html" class="back">← Zurück zur Website</a>
+<body class="login-page">
+  <div class="login-split">
+    <div class="login-visual" style="background-image:url('assets/img/hero-2.jpg')">
+      <div>
+        <img src="assets/img/logo-hell.png" alt="SANISA Baumaschinen Handel" class="lv-logo">
+        <p class="lv-text">Interner Bereich für das SANISA-Team: Fahrzeuge pflegen, Anfragen bearbeiten, Team aktualisieren.</p>
+      </div>
+    </div>
+    <div class="login-side">
+      <form class="login-card" id="login-form" novalidate>
+        <p class="about-kicker">Intern</p>
+        <h1>Mitarbeiter-Login</h1>
+        <label>E-Mail oder Benutzername<input name="user" autocomplete="username" required></label>
+        <label>Passwort<input name="pass" type="password" autocomplete="current-password" required></label>
+        <button class="btn btn-yellow" type="submit">Anmelden</button>
+        <p class="form-msg" id="login-msg" role="status"></p>
+        <div class="demo-note"><svg><use href="assets/img/icons.svg#i-lock"/></svg><span><b>Vorschau-Version</b> Zum Ausprobieren: Benutzer <code>demo</code>, Passwort <code>demo</code>. Eigene, sichere Zugänge für jeden Mitarbeiter folgen mit dem Firmen-Hosting.</span></div>
+      </form>
+      <a href="index.html" class="login-back">← Zurück zur Website</a>
+    </div>
   </div>
+  <script>
+    document.getElementById("login-form").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const f = e.target, msg = document.getElementById("login-msg");
+      if (f.user.value.trim().toLowerCase() === "demo" && f.pass.value === "demo") {
+        try { sessionStorage.setItem("sanisa-demo-login", "1"); } catch {}
+        location.href = "admin.html";
+      } else {
+        msg.className = "form-msg err";
+        msg.textContent = "Benutzername oder Passwort falsch.";
+      }
+    });
+  </script>
 </body>
 </html>
