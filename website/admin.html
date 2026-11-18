@@ -20,6 +20,7 @@
       <button data-view="fahrzeuge" class="is-active"><svg><use href="assets/img/icons.svg#i-truck"/></svg>Fahrzeuge</button>
       <button data-view="anfragen"><svg><use href="assets/img/icons.svg#i-mail"/></svg>Anfragen <span class="adm-badge" id="req-badge"></span></button>
       <button data-view="team"><svg><use href="assets/img/icons.svg#i-hand"/></svg>Team</button>
+      <button data-view="website"><svg><use href="assets/img/icons.svg#i-globe"/></svg>Website</button>
     </nav>
     <div class="adm-user">
       <span class="adm-avatar">D</span><span><b>Demo-Zugang</b><small>Vorschau-Version</small></span>
@@ -64,6 +65,24 @@
         <div class="adm-head-actions"><button class="btn btn-yellow f-call" id="add-member"><span class="plus">+</span>Person hinzufügen</button></div>
       </header>
       <div class="team-admin" id="t-list"></div>
+    </section>
+    <!-- WEBSITE -->
+    <section class="adm-view" id="view-website">
+      <header class="adm-head">
+        <div><h1>Website</h1><p>Bilder, Video und Texte der Startseite austauschen</p></div>
+        <div class="adm-head-actions"><a class="btn btn-yellow f-call" href="index.html?vorschau=1" target="_blank" rel="noopener"><svg><use href="assets/img/icons.svg#i-globe"/></svg>Vorschau ansehen</a></div>
+      </header>
+      <div class="site-grid">
+        <div class="site-card">
+          <h2>Bilder &amp; Video</h2>
+          <div id="site-media"></div>
+        </div>
+        <form class="site-card form" id="site-texts">
+          <h2>Texte</h2>
+          <div id="site-fields"></div>
+          <div class="site-actions"><button type="submit" class="btn btn-yellow">Texte speichern</button><button type="button" class="btn btn-ghost-dark" id="site-reset">Original wiederherstellen</button></div>
+        </form>
+      </div>
     </section>
   </main>
 
@@ -125,6 +144,7 @@
   </dialog>
 
   <div class="adm-toast" id="toast" role="status"></div>
+  <script src="assets/js/site-content.js"></script>
   <script src="assets/js/admin.js"></script>
 </body>
 </html>

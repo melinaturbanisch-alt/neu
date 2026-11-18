@@ -46,6 +46,7 @@
   $("#reset-demo").addEventListener("click", async () => {
     if (!confirm("Alle Änderungen in der Vorschau verwerfen?")) return;
     Object.values(KEY).forEach((k) => { try { localStorage.removeItem(k); } catch {} });
+    try { window.SanisaSite.texts.set({}); await window.SanisaSite.media.clear(); } catch {}
     await load(); renderAll(); toast("Vorschau zurückgesetzt.");
   });
   $$("dialog .js-close").forEach((b) => b.addEventListener("click", () => b.closest("dialog").close()));
@@ -193,6 +194,79 @@
     if (save()) toast("Team gespeichert."); renderTeam();
   });
 
-  function renderAll() { renderVehicles(); renderRequests(); renderTeam(); }
-  load().then(renderAll);
+
+  /* ---------- Website (Bilder, Video, Texte) ---------- */
+  const S = window.SanisaSite;
+  let siteDefaults = {}, origMedia = {};
+  async function loadSiteDefaults() {
+    const html = await (await fetch("index.html", { cache: "no-store" })).text();
+    const doc = new DOMParser().parseFromString(html, "text/html");
+    for (const [k, f] of Object.entries(S.FIELDS)) {
+      const el = doc.querySelector(f.sel);
+      siteDefaults[k] = el ? (f.html ? el.innerHTML.replace(/<br\s*\/?>/gi, "\n").replace(/<[^>]+>/g, "").replace(/&amp;/g, "&").trim() : el.textContent.trim()) : "";
+    }
+    const v = doc.querySelector(".stage-video");
+    origMedia = {
+      heroVideo: v && v.querySelector("source") ? v.querySelector("source").getAttribute("src") : "",
+      heroPoster: v ? v.getAttribute("poster") : "",
+      aboutImg: (doc.querySelector(S.MEDIA.aboutImg.sel) || {}).getAttribute ? doc.querySelector(S.MEDIA.aboutImg.sel).getAttribute("src") : "",
+    };
+  }
+  function renderSiteFields() {
+    const t = S.texts.get();
+    $("#site-fields").innerHTML = Object.entries(S.FIELDS).map(([k, f]) => {
+      const val = esc(t[k] != null && t[k] !== "" ? t[k] : siteDefaults[k] || "");
+      const changed = t[k] != null && t[k] !== "" && t[k] !== siteDefaults[k];
+      return `<label><span>${esc(f.label)} ${changed ? '<em class="changed">geändert</em>' : ""}</span>${f.html || (siteDefaults[k] || "").length > 70 ? `<textarea name="${k}" rows="3">${val}</textarea>` : `<input name="${k}" value="${val}">`}</label>`;
+    }).join("");
+  }
+  async function renderSiteMedia() {
+    const rows = [];
+    for (const [k, m] of Object.entries(S.MEDIA)) {
+      const blob = await S.media.get(k).catch(() => null);
+      const src = blob ? URL.createObjectURL(blob) : origMedia[k];
+      const isVideo = k === "heroVideo";
+      rows.push(`
+        <div class="media-row" data-k="${k}">
+          <div class="media-prev">${src ? (isVideo ? `<video src="${esc(src)}" muted playsinline loop autoplay></video>` : `<img src="${esc(src)}" alt="">`) : ""}</div>
+          <div class="media-info">
+            <b>${esc(m.label)}</b>
+            <small>${blob ? `Eigene Datei · ${(blob.size / 1048576).toFixed(1)} MB` : "Original"}</small>
+            <div class="media-acts">
+              <label class="btn btn-dark media-btn">${isVideo ? "Video" : "Bild"} austauschen<input type="file" accept="${m.accept}" hidden></label>
+              ${blob ? '<button type="button" class="js-media-reset">Original</button>' : ""}
+            </div>
+          </div>
+        </div>`);
+    }
+    $("#site-media").innerHTML = rows.join("") + '<p class="media-tip">Tipp: Videos am besten im Querformat, kurz (5–10 Sekunden) und unter 20 MB. Bilder im Querformat, mindestens 1600 Pixel breit.</p>';
+  }
+  $("#site-media").addEventListener("change", async (e) => {
+    const inp = e.target.closest("input[type=file]"); if (!inp || !inp.files[0]) return;
+    const k = inp.closest(".media-row").dataset.k, file = inp.files[0];
+    if (k === "heroVideo" && file.size > 80 * 1048576) { toast("Das Video ist zu groß (max. 80 MB)."); return; }
+    let blob = file;
+    if (k !== "heroVideo") { const d = await shrink(file, 2400); if (d) blob = await (await fetch(d)).blob(); }
+    try { await S.media.set(k, blob); toast("Gespeichert. Mit „Vorschau ansehen“ prüfen."); } catch { toast("Speichern nicht möglich (Speicher voll?)."); }
+    renderSiteMedia();
+  });
+  $("#site-media").addEventListener("click", async (e) => {
+    if (!e.target.closest(".js-media-reset")) return;
+    await S.media.del(e.target.closest(".media-row").dataset.k); toast("Original wiederhergestellt."); renderSiteMedia();
+  });
+  $("#site-texts").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const t = {};
+    for (const k of Object.keys(S.FIELDS)) { const v = e.target[k].value.trim(); if (v && v !== siteDefaults[k]) t[k] = v; }
+    if (S.texts.set(t)) toast("Texte gespeichert. Mit „Vorschau ansehen“ prüfen.");
+    renderSiteFields();
+  });
+  $("#site-reset").addEventListener("click", () => {
+    if (!confirm("Alle Text-Änderungen verwerfen?")) return;
+    S.texts.set({}); renderSiteFields(); toast("Original-Texte wiederhergestellt.");
+  });
+  if (location.hash === "#website") $('.adm-nav [data-view="website"]').click();
+
+  function renderAll() { renderVehicles(); renderRequests(); renderTeam(); renderSiteFields(); renderSiteMedia(); }
+  Promise.all([load(), loadSiteDefaults()]).then(renderAll);
 })();
