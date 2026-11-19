@@ -943,3 +943,21 @@ details[open] .faq-a { animation: faqIn .35s var(--ease); }
 @media (max-width: 700px) { .stage { align-items: flex-start; } .stage-text { padding-top: 30svh; } }
 @media (max-width: 700px) { .stage-text { padding-top: 19svh; } }
 @media (max-width: 700px) { .stage-text h1.script { font-size: 6.8vw; } }
+
+/* Weniger Abstand zwischen Startbild und "Aktuelle Fahrzeuge" */
+#fahrzeuge { padding-top: 48px; }
+#fahrzeuge .intro { margin-bottom: 32px; }
+@media (max-width: 700px) { #fahrzeuge { padding-top: 32px; } #fahrzeuge .intro { margin-bottom: 24px; } }
+
+/* Handy: Striche neben den Überschriften immer sichtbar, Überschrift einzeilig */
+@media (max-width: 640px) {
+  .title { gap: 10px; }
+  .title.serif { font-size: clamp(1.05rem, 5.6vw, 1.6rem); letter-spacing: .02em; white-space: nowrap; }
+  .title::before, .title::after { flex: 1 1 18px; min-width: 18px; max-width: 60px; }
+}
+@media (max-width: 640px) {
+  .title.serif { white-space: normal; font-size: clamp(1.15rem, 5.8vw, 1.6rem); line-height: 1.25; }
+  .title::before, .title::after { flex: 0 0 22px; min-width: 22px; max-width: 22px; }
+  .title.about-title::before, .title.about-title::after { display: none; }
+}
+@media (max-width: 640px) { .title.serif { font-size: clamp(1rem, 5vw, 1.5rem); letter-spacing: .01em; } }
