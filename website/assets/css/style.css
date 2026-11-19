@@ -930,7 +930,6 @@ details[open] .faq-a { animation: faqIn .35s var(--ease); }
 @media (max-width: 700px) and (orientation: portrait) { .stage-video { object-position: center 100%; } }
 
 /* Überschrift: immer genau 2 Zeilen, etwas kleiner */
-.stage-text h1.script { font-size: clamp(1.5rem, 3.3vw, 3rem); }
 .stage-text h1.script span { white-space: nowrap; }
 @media (max-width: 700px) {
   .stage-text h1.script { font-size: 6.4vw; line-height: 1.2; }
