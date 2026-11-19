@@ -937,3 +937,6 @@ details[open] .faq-a { animation: faqIn .35s var(--ease); }
   .stage-text .actions .btn { flex: 1 1 0; font-size: .92rem; padding: .85rem 1rem; white-space: nowrap; }
 }
 @media (max-width: 360px) { .stage-text .actions .btn { font-size: .8rem; padding: .8rem .6rem; } }
+
+/* Handy: Text im Kopfbereich weiter nach unten */
+@media (max-width: 700px) { .stage { align-items: center; } .stage-text { padding-top: 70px; } }
