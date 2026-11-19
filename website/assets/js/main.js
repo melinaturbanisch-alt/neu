@@ -160,13 +160,23 @@ function card(v) {
     </article>`;
 }
 
-/* Filter */
-const F = { kategorie: "alle", typ: [], hersteller: "", preisVon: "", preisBis: "", km: "", stunden: "", ezVon: "", psVon: "", getriebe: [], q: "", sort: "neu" };
+/* Filter
+   Auswahl-Filter (Hersteller, Schadstoffklasse, Achsen, Kraftstoff, Getriebe) bauen sich
+   automatisch aus dem aktuellen Bestand auf: Es erscheinen nur Werte, die es gerade gibt. */
+const FACETS = {
+  hersteller: { label: (x) => x },
+  euronorm:   { label: (x) => x },
+  achsen:     { label: (x) => `${x} Achsen`, sort: (a, b) => a - b },
+  kraftstoff: { label: (x) => x },
+  getriebe:   { label: (x) => x },
+};
+const F = { kategorie: "alle", typ: [], facets: {}, preisVon: "", preisBis: "", km: "", stunden: "", ezVon: "", psVon: "", gewVon: "", gewBis: "", q: "", sort: "neu" };
+Object.keys(FACETS).forEach((k) => (F.facets[k] = []));
 
 function matches(v, skip) {
   if (skip !== "kategorie" && F.kategorie !== "alle" && v.kategorie !== F.kategorie) return false;
   if (skip !== "typ" && F.typ.length && !F.typ.includes(v.typ)) return false;
-  if (F.hersteller && v.hersteller !== F.hersteller) return false;
+  for (const k of Object.keys(FACETS)) if (skip !== k && F.facets[k].length && !F.facets[k].includes(String(v[k]))) return false;
   const pr = priceOf(v);
   if (F.preisVon && (!pr || pr < +F.preisVon)) return false;
   if (F.preisBis && (!pr || pr > +F.preisBis)) return false;
@@ -174,7 +184,8 @@ function matches(v, skip) {
   if (F.stunden && (v.stunden == null || v.stunden > +F.stunden)) return false;
   if (F.ezVon && (!year(v.ez) || year(v.ez) < +F.ezVon)) return false;
   if (F.psVon && (!v.ps || v.ps < +F.psVon)) return false;
-  if (F.getriebe.length && !F.getriebe.includes(v.getriebe)) return false;
+  if (F.gewVon && (!v.gewicht || v.gewicht < +F.gewVon)) return false;
+  if (F.gewBis && (!v.gewicht || v.gewicht > +F.gewBis)) return false;
   if (F.q && !(vTitle(v) + " " + (v.typ || "") + " " + (v.text || "")).toLowerCase().includes(F.q)) return false;
   return true;
 }
@@ -187,27 +198,49 @@ const SORT = {
   ez_neu: (a, b) => String(b.ez || "").localeCompare(String(a.ez || "")),
 };
 
+function checkList(box, values, selected, counts, label, name) {
+  const open = box.classList.contains("is-open");
+  box.innerHTML = values.map((x, i) => `<label class="fcheck${i >= 6 && !open ? " is-more" : ""}"><input type="checkbox" data-facet="${name}" value="${esc(x)}" ${selected.includes(String(x)) ? "checked" : ""}><span>${esc(label(x))}</span><em>${counts(x)}</em></label>`).join("")
+    + (values.length > 6 ? `<button type="button" class="fmore">${open ? "Weniger anzeigen" : `Alle ${values.length} anzeigen`}</button>` : "");
+}
+
 function fillOptions() {
-  const sel = $("#f-hersteller");
-  if (sel && sel.options.length <= 1) {
-    [...new Set(vehicles.map((v) => v.hersteller).filter(Boolean))].sort().forEach((h) => sel.add(new Option(h, h)));
-  }
   const ez = $("#f-ez");
   if (ez && ez.options.length <= 1) {
     const now = new Date().getFullYear();
     for (let y = now; y >= now - 25; y--) ez.add(new Option(`ab ${y}`, y));
   }
+  const inCat = vehicles.filter((v) => F.kategorie === "alle" || v.kategorie === F.kategorie);
+  // Aufbau / Art
   const typBox = $("#f-typ");
   if (typBox) {
     const pool = vehicles.filter((v) => matches(v, "typ"));
-    const types = [...new Set(vehicles.filter((v) => F.kategorie === "alle" || v.kategorie === F.kategorie).map((v) => v.typ).filter(Boolean))].sort();
+    const types = [...new Set(inCat.map((v) => v.typ).filter(Boolean))].sort();
     F.typ = F.typ.filter((t) => types.includes(t));
-    typBox.innerHTML = types.map((t) => `<label class="fcheck"><input type="checkbox" value="${esc(t)}" ${F.typ.includes(t) ? "checked" : ""}><span>${esc(t)}</span><em>${pool.filter((v) => v.typ === t).length}</em></label>`).join("") || `<p class="fnone">–</p>`;
+    checkList(typBox, types, F.typ, (t) => pool.filter((v) => v.typ === t).length, (x) => x, "typ");
   }
+  // automatische Auswahl-Filter
+  for (const [k, cfg] of Object.entries(FACETS)) {
+    const box = $(`[data-facet-box="${k}"]`); if (!box) continue;
+    const pool = vehicles.filter((v) => matches(v, k));
+    const vals = [...new Set(inCat.map((v) => v[k]).filter((x) => x != null && x !== ""))].map(String).sort(cfg.sort || ((a, b) => a.localeCompare(b, "de")));
+    F.facets[k] = F.facets[k].filter((x) => vals.includes(x));
+    box.closest(".fgroup").hidden = vals.length < 1;
+    checkList(box, vals, F.facets[k], (x) => pool.filter((v) => String(v[k]) === x).length, cfg.label, k);
+  }
+  // Bereichs-Filter nur zeigen, wenn es dazu Daten gibt
+  $$("[data-need]").forEach((g) => { g.hidden = !inCat.some((v) => v[g.dataset.need] != null && v[g.dataset.need] !== ""); });
   $$("[data-cnt]").forEach((el) => {
     const k = el.dataset.cnt;
     el.textContent = vehicles.filter((v) => (k === "alle" || v.kategorie === k) && matches(v, "kategorie")).length;
   });
+}
+
+function activeCount() {
+  let n = (F.kategorie !== "alle") + F.typ.length + (F.q ? 1 : 0);
+  Object.values(F.facets).forEach((a) => (n += a.length));
+  ["preisVon", "preisBis", "km", "stunden", "ezVon", "psVon", "gewVon", "gewBis"].forEach((k) => (n += F[k] ? 1 : 0));
+  return n;
 }
 
 function render() {
@@ -218,7 +251,7 @@ function render() {
   if (!limit) fillOptions();
   const cnt = $("#vehicle-count"); if (cnt) cnt.textContent = list.length;
   const cb = $("#vehicle-count-btn"); if (cb) cb.textContent = list.length + " ";
-  const active = Object.entries(F).filter(([k, v]) => !["sort", "kategorie", "q"].includes(k) && (Array.isArray(v) ? v.length : v)).length + (F.kategorie !== "alle") + (F.q ? 1 : 0);
+  const active = activeCount();
   $$(".js-fcount").forEach((el) => { el.textContent = active || ""; el.hidden = !active; });
   grid.innerHTML = list.length
     ? list.map(card).join("")
@@ -238,17 +271,19 @@ if ($("#vehicle-grid")) {
   if (form) {
     const read = () => {
       F.kategorie = (form.querySelector("[name=kategorie]:checked") || {}).value || "alle";
-      F.typ = $$("#f-typ input:checked").map((i) => i.value);
-      F.hersteller = form.hersteller.value;
-      F.preisVon = form.preisVon.value; F.preisBis = form.preisBis.value;
-      F.km = form.km.value; F.stunden = form.stunden.value; F.ezVon = form.ezVon.value; F.psVon = form.psVon.value;
-      F.getriebe = $$("[name=getriebe]:checked", form).map((i) => i.value);
+      F.typ = $$('#f-typ input:checked').map((i) => i.value);
+      Object.keys(FACETS).forEach((k) => (F.facets[k] = $$(`input[data-facet="${k}"]:checked`, form).map((i) => i.value)));
+      ["preisVon", "preisBis", "km", "stunden", "ezVon", "psVon", "gewVon", "gewBis"].forEach((k) => (F[k] = form[k] ? form[k].value : ""));
       F.q = ($("#vehicle-search")?.value || "").trim().toLowerCase();
       render();
     };
     form.addEventListener("input", read);
     form.addEventListener("change", read);
-    form.addEventListener("reset", () => setTimeout(() => { $$("#f-typ input").forEach((i) => (i.checked = false)); read(); }, 0));
+    form.addEventListener("click", (e) => {
+      const b = e.target.closest(".fmore"); if (!b) return;
+      b.parentElement.classList.toggle("is-open"); render();
+    });
+    form.addEventListener("reset", () => setTimeout(() => { $$("input[type=checkbox]", form).forEach((i) => (i.checked = false)); read(); }, 0));
     $("#vehicle-search")?.addEventListener("input", read);
     $("#vehicle-sort")?.addEventListener("change", (e) => { F.sort = e.target.value; render(); });
     $$("[data-pmode]").forEach((b) => b.addEventListener("click", () => setPriceMode(b.dataset.pmode)));
@@ -258,7 +293,7 @@ if ($("#vehicle-grid")) {
   }
   fetch("data/fahrzeuge.json", { cache: "no-store" })
     .then((r) => r.json())
-    .then((d) => { vehicles = d; render(); })
+    .then((d) => { vehicles = d.filter((v) => v.status !== "verkauft"); render(); })
     .catch(() => render());
 }
 
