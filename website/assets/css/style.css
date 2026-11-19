@@ -940,3 +940,5 @@ details[open] .faq-a { animation: faqIn .35s var(--ease); }
 
 /* Handy: Text im Kopfbereich weiter nach unten */
 @media (max-width: 700px) { .stage { align-items: center; } .stage-text { padding-top: 70px; } }
+@media (max-width: 700px) { .stage { align-items: flex-start; } .stage-text { padding-top: 30svh; } }
+@media (max-width: 700px) { .stage-text { padding-top: 19svh; } }
