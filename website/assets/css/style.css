@@ -924,3 +924,7 @@ details[open] .faq-a { animation: faqIn .35s var(--ease); }
 
 .stage .btn-ghost { background: rgba(20,20,24,.35); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
 .stage .btn-ghost:hover { background: #fff; color: var(--ink); }
+
+/* Mehr Boden, weniger Himmel */
+.stage-video { object-position: center 100%; }
+@media (max-width: 700px) and (orientation: portrait) { .stage-video { object-position: center 100%; } }
