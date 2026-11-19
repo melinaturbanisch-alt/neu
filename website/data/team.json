@@ -8,7 +8,7 @@
   {"gruppe": "Einkauf & Ankauf", "name": "Melina Turbanisch", "rolle": "Leitung Einkauf & Akquise", "email": "", "telefon": "", "bild": ""},
   {"gruppe": "Einkauf & Ankauf", "name": "Markus Mettbach", "rolle": "Einkäufer", "email": "", "telefon": "", "bild": ""},
   {"gruppe": "Werkstatt & Transport", "name": "Stephan Humpf", "rolle": "Werkstattmeister", "email": "", "telefon": "", "bild": ""},
-  {"gruppe": "Werkstatt & Transport", "name": "Florian", "rolle": "Fahrzeugtechnik & Aufbereitung", "email": "", "telefon": "", "bild": ""},
-  {"gruppe": "Werkstatt & Transport", "name": "Jawed", "rolle": "Fahrzeugtechnik & Aufbereitung", "email": "", "telefon": "", "bild": ""},
+  {"gruppe": "Werkstatt & Transport", "name": "Florian (Nachname)", "rolle": "Fahrzeugtechnik & Aufbereitung", "email": "", "telefon": "", "bild": ""},
+  {"gruppe": "Werkstatt & Transport", "name": "Jawed (Nachname)", "rolle": "Fahrzeugtechnik & Aufbereitung", "email": "", "telefon": "", "bild": ""},
   {"gruppe": "Werkstatt & Transport", "name": "Fahad Hematyar", "rolle": "Fahrzeugtransport & Überführung", "email": "", "telefon": "", "bild": ""}
 ]
