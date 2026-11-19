@@ -72,13 +72,20 @@ if (stage) {
     if (dots[0]) dots[0].classList.add("on");
     start();
   };
+  // Handy (hochkant): eigenes Hochformat-Video
+  const portrait = matchMedia("(max-width: 700px) and (orientation: portrait)").matches;
+  if (video && portrait) {
+    video.querySelectorAll("source").forEach((s) => s.remove());
+    video.poster = "assets/video/hero-m-start.jpg";
+    video.src = "assets/video/hero-m.mp4";
+  }
   if (video && !reduced) {
     video.addEventListener("error", fallback, true);
     const p = video.play();
     if (p && p.catch) p.catch(() => { /* Autoplay blockiert: Startbild des Videos bleibt stehen */ });
   } else if (video && reduced) {
     // Animationen reduziert: Video nicht abspielen, sein Endbild zeigen
-    video.poster = "assets/video/hero-poster.jpg";
+    video.poster = portrait ? "assets/video/hero-m-poster.jpg" : "assets/video/hero-poster.jpg";
   } else {
     fallback();
   }
