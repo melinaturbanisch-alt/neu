@@ -928,3 +928,13 @@ details[open] .faq-a { animation: faqIn .35s var(--ease); }
 /* Mehr Boden, weniger Himmel */
 .stage-video { object-position: center 100%; }
 @media (max-width: 700px) and (orientation: portrait) { .stage-video { object-position: center 100%; } }
+
+/* Überschrift: immer genau 2 Zeilen, etwas kleiner */
+.stage-text h1.script { font-size: clamp(1.5rem, 3.3vw, 3rem); }
+.stage-text h1.script span { white-space: nowrap; }
+@media (max-width: 700px) {
+  .stage-text h1.script { font-size: 6.4vw; line-height: 1.2; }
+  .stage-text .actions { gap: 10px; }
+  .stage-text .actions .btn { flex: 1 1 0; font-size: .92rem; padding: .85rem 1rem; white-space: nowrap; }
+}
+@media (max-width: 360px) { .stage-text .actions .btn { font-size: .8rem; padding: .8rem .6rem; } }
