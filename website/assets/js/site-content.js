@@ -11,7 +11,6 @@ window.SanisaSite = (function () {
     facts:    { label: "Leistungen unter der Überschrift", sel: ".stage-text .facts .strong" },
     zeiten:   { label: "Öffnungszeiten (Box „Sie erreichen uns“)", sel: ".hb-time" },
     fzIntro:  { label: "Text unter „Aktuelle Fahrzeuge“", sel: "#fahrzeuge .intro", html: true },
-    aboutLead:{ label: "Über uns: hervorgehobener Satz", sel: "#ueber-uns .about-lead" },
   };
   const MEDIA = {
     heroVideo: { label: "Startvideo", accept: "video/mp4,video/webm,video/quicktime", sel: ".stage-video" },
