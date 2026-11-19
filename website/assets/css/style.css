@@ -961,3 +961,6 @@ details[open] .faq-a { animation: faqIn .35s var(--ease); }
   .title.about-title::before, .title.about-title::after { display: none; }
 }
 @media (max-width: 640px) { .title.serif { font-size: clamp(1rem, 5vw, 1.5rem); letter-spacing: .01em; } }
+
+/* Offizielles WhatsApp-Logo (nur im Footer und in der FAQ-Box), in Grün */
+svg:has(use[href$="#i-wa-logo"]) { color: #25d366; }
