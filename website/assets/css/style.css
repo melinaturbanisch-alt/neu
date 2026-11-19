@@ -942,3 +942,4 @@ details[open] .faq-a { animation: faqIn .35s var(--ease); }
 @media (max-width: 700px) { .stage { align-items: center; } .stage-text { padding-top: 70px; } }
 @media (max-width: 700px) { .stage { align-items: flex-start; } .stage-text { padding-top: 30svh; } }
 @media (max-width: 700px) { .stage-text { padding-top: 19svh; } }
+@media (max-width: 700px) { .stage-text h1.script { font-size: 6.8vw; } }
