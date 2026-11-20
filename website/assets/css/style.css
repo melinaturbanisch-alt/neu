@@ -977,3 +977,6 @@ svg:has(use[href$="#i-wa-logo"]) { color: #25d366; }
 .fcheck.is-more { display: none; }
 .fmore { border: 0; background: none; padding: 6px 0 0; font: 500 .84rem var(--sans); color: var(--ink); text-decoration: underline; text-decoration-color: var(--yellow); text-decoration-thickness: 2px; text-underline-offset: 3px; cursor: pointer; }
 .fgroup[hidden] { display: none; }
+
+.form-note { font-size: .82rem; color: var(--muted); margin: 0; }
+.form-note a { color: var(--ink); }
