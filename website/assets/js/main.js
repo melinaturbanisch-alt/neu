@@ -380,6 +380,14 @@ $$(".js-quote").forEach((form) => {
       if (bad.type !== "radio") bad.focus();
       return false;
     }
+    // Telefon oder E-Mail: mindestens eins, damit wir uns melden können
+    const tel = $('[name="telefon"]', steps[i]), mail = $('[name="email"]', steps[i]);
+    if (tel && mail && !tel.value.trim() && !mail.value.trim()) {
+      msg.className = "form-msg err";
+      msg.textContent = "Bitte geben Sie eine Telefonnummer oder E-Mail-Adresse an, damit wir Sie erreichen können.";
+      tel.focus();
+      return false;
+    }
     return true;
   };
 
