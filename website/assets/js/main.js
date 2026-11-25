@@ -399,6 +399,7 @@ $$(".js-quote").forEach((form) => {
     "Anhänger / Auflieger": ["Schmitz Cargobull", "SKO 24", ""],
     "Baumaschine": ["Liebherr", "R 946", "12.000 Bh"],
     "Industrieanlage": ["Doppstadt", "DW 3060", "6.500 Bh"],
+    "Sonstiges": ["", "", ""],
   };
   const setEx = (art) => {
     const ex = EX[art] || EX.LKW;
