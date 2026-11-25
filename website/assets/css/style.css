@@ -981,3 +981,11 @@ svg:has(use[href$="#i-wa-logo"]) { color: #25d366; }
 .form-note { font-size: .82rem; color: var(--muted); margin: 0; }
 .form-note a { color: var(--ink); }
 .form-hint{margin:-4px 0 14px;font-size:.82rem;color:var(--muted,#6b6b6b)}
+/* SANISA Immobilien im Header */
+.header-immo { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1.5px #d6d6da; padding: .85rem 1.2rem; text-transform: none; font-weight: 500; }
+.header-immo:hover { box-shadow: inset 0 0 0 1.5px var(--ink); }
+.header-immo + .header-phone { margin-left: -20px; }
+.main-nav .nav-immo { display: none; }
+@media (max-width: 1320px) { .header-immo span { display: none; } .header-immo { padding: .85rem; } }
+@media (max-width: 1000px) { .main-nav .nav-immo { display: block; } .header-immo + .header-phone { margin-left: 0; } }
+@media (max-width: 600px) { .header-immo { display: none; } }
