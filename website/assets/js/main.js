@@ -392,6 +392,23 @@ $$(".js-quote").forEach((form) => {
 
   $$(".js-next", form).forEach((b) => b.addEventListener("click", () => valid() && show(i + 1)));
   $$(".js-prev", form).forEach((b) => b.addEventListener("click", () => show(i - 1)));
+  // Passende Beispiele je nach Maschinenart
+  const EX = {
+    "LKW": ["Mercedes-Benz", "Arocs 2645", "390.000 km"],
+    "Sattelzugmaschine": ["Mercedes-Benz", "Actros 1845", "650.000 km"],
+    "Anhänger / Auflieger": ["Schmitz Cargobull", "SKO 24", ""],
+    "Baumaschine": ["Liebherr", "L 526", "9.800 Bh"],
+    "Industrieanlage": ["Doppstadt", "SM 620", "6.500 Bh"],
+  };
+  const setEx = (art) => {
+    const ex = EX[art] || EX.LKW;
+    const t = (x) => (window.SanisaI18n ? window.SanisaI18n.t(x) : x);
+    [["hersteller", ex[0]], ["modell", ex[1]], ["stunden", ex[2]]].forEach(([n, v]) => {
+      const el = form.querySelector(`[name="${n}"]`);
+      if (el) el.placeholder = v ? t(`z. B. ${v}`) : "";
+    });
+  };
+  $$('input[name="art"]', form).forEach((r) => r.addEventListener("change", () => setEx(r.value)));
   // Bei Auswahl der Maschinenart direkt weiter
   $$('input[name="art"]', form).forEach((r) => r.addEventListener("change", () => setTimeout(() => show(1), 180)));
 
