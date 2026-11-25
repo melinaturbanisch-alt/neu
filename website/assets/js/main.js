@@ -374,6 +374,7 @@ $$(".js-quote").forEach((form) => {
       msg.className = "form-msg err";
       msg.textContent = bad.type === "radio" ? "Bitte wählen Sie eine Maschinenart."
         : bad.type === "checkbox" ? "Bitte stimmen Sie der Datenverarbeitung zu."
+        : bad.name === "preis" ? "Bitte geben Sie Ihre Preisvorstellung an."
         : "Bitte füllen Sie die Pflichtfelder aus.";
       if (bad.type !== "radio") bad.focus();
       return false;
