@@ -998,3 +998,7 @@ svg:has(use[href$="#i-wa-logo"]) { color: #25d366; }
 .page-hero-facts .maps-link { display: inline-flex; align-items: center; gap: inherit; }
 a.loc { text-decoration: none; width: fit-content; }
 a.loc:hover { color: var(--ink); }
+/* Vorteile: 3 Karten */
+.why { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 900px) { .why { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 760px) { .why { grid-template-columns: 1fr; } }
