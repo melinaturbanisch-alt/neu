@@ -1002,3 +1002,6 @@ a.loc:hover { color: var(--ink); }
 .why { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 @media (max-width: 900px) { .why { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 @media (max-width: 760px) { .why { grid-template-columns: 1fr; } }
+.career .career-contact { margin-top: 14px; font-size: .92rem; }
+.career .career-contact a { color: var(--yellow); text-decoration: none; }
+.career .career-contact a:hover { text-decoration: underline; }
