@@ -572,10 +572,10 @@
  "Mit dem Absenden werden Ihre Angaben zur Bearbeitung der Anfrage verwendet. Mehr dazu in der": "When you send the form, we use your details to answer your request. More information in the",
  "Bitte geben Sie eine Telefonnummer oder E-Mail-Adresse an, damit wir Sie erreichen können.": "Please enter a phone number or email so we can reach you.",
  "Bitte Telefon oder E-Mail angeben, damit wir Sie erreichen können.": "Please enter a phone number or email so we can reach you.",
- "9:00 – 17:00": "9 am – 5 pm",
  "nach Vereinbarung": "by appointment",
- "Mo – Fr 9:00 – 17:00 Uhr": "Mon – Fri 9 am – 5 pm",
  "Sa nach Vereinbarung": "Sat by appointment",
- "Mo–Fr 9:00–17:00 Uhr · Sa nach Vereinbarung": "Mon–Fri 9 am – 5 pm · Sat by appointment",
- "Mo – Fr 9–17 Uhr · Sa nach Vereinbarung": "Mon – Fri 9 am – 5 pm · Sat by appointment"
+ "9:00 – 17:30": "9 am – 5:30 pm",
+ "Mo – Fr 9:00 – 17:30 Uhr": "Mon – Fri 9 am – 5:30 pm",
+ "Mo–Fr 9:00–17:30 Uhr · Sa nach Vereinbarung": "Mon–Fri 9 am – 5:30 pm · Sat by appointment",
+ "Mo – Fr 9–17:30 Uhr · Sa nach Vereinbarung": "Mon – Fri 9 am – 5:30 pm · Sat by appointment"
 }
