@@ -246,7 +246,7 @@ function activeCount() {
 function render() {
   const grid = $("#vehicle-grid");
   if (!grid) return;
-  const limit = +grid.dataset.limit || 0; // Startseite: höchstens 8
+  const limit = +grid.dataset.limit || 0; // Startseite: höchstens 4
   let list = limit ? [...vehicles].sort(SORT.neu).slice(0, limit) : vehicles.filter((v) => matches(v)).sort(SORT[F.sort] || SORT.neu);
   if (!limit) fillOptions();
   const cnt = $("#vehicle-count"); if (cnt) cnt.textContent = list.length;

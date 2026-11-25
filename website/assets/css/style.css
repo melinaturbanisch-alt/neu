@@ -989,3 +989,6 @@ svg:has(use[href$="#i-wa-logo"]) { color: #25d366; }
 @media (max-width: 1320px) { .header-immo span { display: none; } .header-immo { padding: .85rem; } }
 @media (max-width: 1000px) { .main-nav .nav-immo { display: block; } .header-immo + .header-phone { margin-left: 0; } }
 @media (max-width: 600px) { .header-immo { display: none; } }
+/* Fahrzeugkarten: Fußzeile immer gleich hoch, auch bei „Preis auf Anfrage“ */
+.vehicle-foot .price { min-height: 2.3rem; justify-content: center; }
+@media (max-width: 700px) { .vehicle-foot .price { min-height: 2rem; } }

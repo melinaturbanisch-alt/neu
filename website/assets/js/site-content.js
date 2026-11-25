@@ -10,7 +10,7 @@ window.SanisaSite = (function () {
     h1b:      { label: "Überschrift, Zeile 2", sel: ".stage-text h1 span:nth-child(2)" },
     facts:    { label: "Leistungen unter der Überschrift", sel: ".stage-text .facts .strong" },
     zeiten:   { label: "Öffnungszeiten (Box „Sie erreichen uns“)", sel: ".hb-time" },
-    fzIntro:  { label: "Text unter „Aktuelle Fahrzeuge“", sel: "#fahrzeuge .intro", html: true },
+    fzIntro:  { label: "Text unter „Neueste Fahrzeuge“", sel: "#fahrzeuge .intro", html: true },
   };
   const MEDIA = {
     heroVideo: { label: "Startvideo", accept: "video/mp4,video/webm,video/quicktime", sel: ".stage-video" },
