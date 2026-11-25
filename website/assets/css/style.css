@@ -1006,10 +1006,11 @@ a.loc:hover { color: var(--ink); }
 .career .career-contact a { color: var(--yellow); text-decoration: none; }
 .career .career-contact a:hover { text-decoration: underline; }
 
-/* SANISA Immobilien – schmales Band */
-.immo-band { background: #e9e9ea; border-top: 1px solid #e0e0e2; border-bottom: 1px solid #e0e0e2; }
-.immo-inner { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 10px 28px; padding: 26px 16px; text-decoration: none; color: var(--ink); text-align: center; }
-.immo-script { font: 400 clamp(2rem, 4vw, 2.6rem)/1.1 "Herr Von Muellerhoff", "Brush Script MT", cursive; }
-.immo-link { display: inline-flex; align-items: center; gap: 8px; font-weight: 500; font-size: .9rem; letter-spacing: .08em; text-transform: uppercase; border-bottom: 2px solid var(--yellow); padding-bottom: 2px; }
-.immo-link svg { width: 16px; height: 16px; transition: transform .2s; }
-.immo-inner:hover .immo-link svg { transform: translateX(4px); }
+/* SANISA Immobilien – Band */
+.immo-band { background: #e9e9ea; overflow: hidden; }
+.immo-inner { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 22px; padding: clamp(60px, 8vw, 104px) 16px; text-decoration: none; color: var(--ink); text-align: center; }
+.immo-bg { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font: 400 clamp(5.5rem, 19vw, 16rem)/1 "Chonburi", Georgia, serif; letter-spacing: .02em; color: #fff; pointer-events: none; user-select: none; white-space: nowrap; }
+.immo-script { position: relative; font: 400 clamp(2.4rem, 5.4vw, 4.3rem)/1.2 "Great Vibes", "Brush Script MT", cursive; color: var(--ink); text-wrap: balance; }
+.immo-btn { position: relative; }
+.immo-btn svg { width: 18px; height: 18px; }
+.immo-inner:hover .immo-btn { background: var(--yellow); color: var(--ink); }
