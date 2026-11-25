@@ -116,7 +116,7 @@ if ("IntersectionObserver" in window) {
 }
 
 /* Fahrzeugbestand (Startseite: Auswahl, fahrzeuge.html: mit Filtern)
-   Daten aus data/fahrzeuge.json – später automatisch aus mobile.de */
+   Daten aus data/fahrzeuge.json – Pflege von Hand über den Mitarbeiterbereich */
 let vehicles = [];
 const MWST = 0.19;
 let priceMode = "netto";
@@ -140,17 +140,15 @@ function card(v) {
     v.stunden != null && `<span title="Betriebsstunden"><svg><use href="${SPRITE}#i-gauge"/></svg><b>${fmt.format(v.stunden)}</b> <i>Bh</i></span>`,
     v.ps && `<span title="Leistung"><svg><use href="${SPRITE}#i-truck"/></svg><b>${v.ps}</b> <i>PS</i></span>`,
   ].filter(Boolean).join("");
-  const p = v.preis_netto;
-  const price = p
-    ? `<span class="price"><b>${fmt.format(priceOf(v))} €</b><small>${priceMode === "brutto" ? `${fmt.format(p)} € netto` : `${fmt.format(brutto(p))} € brutto`}</small></span>`
-    : `<span class="price"><b>Preis auf Anfrage</b></span>`;
+  // Preise werden nicht angezeigt – alle Fahrzeuge „Preis auf Anfrage“
+  const price = `<span class="price"><b>Preis auf Anfrage</b></span>`;
   const link = $("#kontakt") ? "#kontakt" : "kontakt.html";
   return `
     <article class="vehicle">
       <div class="vehicle-media">${media}<span class="tag">${esc(v.typ || LABEL[v.kategorie] || v.kategorie)}</span>${v.beispiel ? `<span class="demo">Beispiel</span>` : ""}</div>
       <div class="vehicle-body">
         <h4>${esc(title)}</h4>
-        <div class="loc"><svg><use href="${SPRITE}#i-pin"/></svg>Butzbach</div>
+        <a class="loc" href="https://www.google.com/maps/search/?api=1&amp;query=SANISA+GmbH+Otto-Hahn-Stra%C3%9Fe+13+35510+Butzbach" target="_blank" rel="noopener"><svg><use href="${SPRITE}#i-pin"/></svg>Butzbach</a>
         ${specs ? `<div class="specs">${specs}</div>` : ""}
         <div class="vehicle-foot">
           ${price}

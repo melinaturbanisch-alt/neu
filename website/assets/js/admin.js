@@ -134,7 +134,6 @@
     if (save()) toast(editId ? "Änderungen gespeichert." : "Fahrzeug angelegt.");
     renderVehicles();
   });
-  $("#sync-mde").addEventListener("click", () => toast("Der automatische Abgleich mit mobile.de folgt, sobald die Zugangsdaten vorliegen."));
 
   /* ---------- Anfragen ---------- */
   function renderRequests() {
