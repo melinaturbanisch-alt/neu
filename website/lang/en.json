@@ -292,7 +292,6 @@
  "Mo – Fr": "Mon – Fri",
  "Sa": "Sat",
  "So": "Sun",
- "geschlossen": "closed",
  "Standort": "Location",
  "Route planen": "Get directions",
  "Fahrzeug verkaufen oder Maschine gesucht?": "Want to sell a vehicle or need a machine?",
@@ -572,5 +571,11 @@
  "Fotos": "Photos",
  "Mit dem Absenden werden Ihre Angaben zur Bearbeitung der Anfrage verwendet. Mehr dazu in der": "When you send the form, we use your details to answer your request. More information in the",
  "Bitte geben Sie eine Telefonnummer oder E-Mail-Adresse an, damit wir Sie erreichen können.": "Please enter a phone number or email so we can reach you.",
- "Bitte Telefon oder E-Mail angeben, damit wir Sie erreichen können.": "Please enter a phone number or email so we can reach you."
+ "Bitte Telefon oder E-Mail angeben, damit wir Sie erreichen können.": "Please enter a phone number or email so we can reach you.",
+ "9:00 – 17:00": "9 am – 5 pm",
+ "nach Vereinbarung": "by appointment",
+ "Mo – Fr 9:00 – 17:00 Uhr": "Mon – Fri 9 am – 5 pm",
+ "Sa nach Vereinbarung": "Sat by appointment",
+ "Mo–Fr 9:00–17:00 Uhr · Sa nach Vereinbarung": "Mon–Fri 9 am – 5 pm · Sat by appointment",
+ "Mo – Fr 9–17 Uhr · Sa nach Vereinbarung": "Mon – Fri 9 am – 5 pm · Sat by appointment"
 }
