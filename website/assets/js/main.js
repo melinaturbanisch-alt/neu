@@ -397,8 +397,8 @@ $$(".js-quote").forEach((form) => {
     "LKW": ["Mercedes-Benz", "Arocs 2645", "390.000 km"],
     "Sattelzugmaschine": ["Mercedes-Benz", "Actros 1845", "650.000 km"],
     "Anhänger / Auflieger": ["Schmitz Cargobull", "SKO 24", ""],
-    "Baumaschine": ["Liebherr", "L 526", "9.800 Bh"],
-    "Industrieanlage": ["Doppstadt", "SM 620", "6.500 Bh"],
+    "Baumaschine": ["Liebherr", "R 946", "12.000 Bh"],
+    "Industrieanlage": ["Doppstadt", "DW 3060", "6.500 Bh"],
   };
   const setEx = (art) => {
     const ex = EX[art] || EX.LKW;
