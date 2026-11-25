@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Mitarbeiter-Bereich | SANISA</title>
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon.png">
+  <!-- Vor dem Livegang Schriften lokal einbinden (DSGVO) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=Chonburi&family=Roboto:wght@400;500&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body class="admin-page">
+  <aside class="adm-side">
+    <a href="index.html" class="adm-logo"><img src="assets/img/logo-hell.svg" alt="SANISA"></a>
+    <nav class="adm-nav">
+      <button data-view="fahrzeuge" class="is-active"><svg><use href="assets/img/icons.svg#i-truck"/></svg>Fahrzeuge</button>
+      <button data-view="anfragen"><svg><use href="assets/img/icons.svg#i-mail"/></svg>Anfragen <span class="adm-badge" id="req-badge"></span></button>
+      <button data-view="team"><svg><use href="assets/img/icons.svg#i-hand"/></svg>Team</button>
+      <button data-view="website"><svg><use href="assets/img/icons.svg#i-globe"/></svg>Website</button>
+    </nav>
+    <div class="adm-user">
+      <span class="adm-avatar">D</span><span><b>Demo-Zugang</b><small>Vorschau-Version</small></span>
+      <button id="logout" title="Abmelden">Abmelden</button>
+    </div>
+  </aside>
+
+  <main class="adm-main">
+    <div class="adm-demo"><svg><use href="assets/img/icons.svg#i-lock"/></svg><span><b>Vorschau-Version:</b> Änderungen werden nur in diesem Browser gespeichert und erscheinen noch nicht auf der Website. Die echte Speicherung folgt mit dem Firmen-Hosting.</span><button id="reset-demo">Demo zurücksetzen</button></div>
+
+    <!-- FAHRZEUGE -->
+    <section class="adm-view is-active" id="view-fahrzeuge">
+      <header class="adm-head">
+        <div><h1>Fahrzeuge</h1><p><span id="v-count">0</span> Fahrzeuge im Bestand</p></div>
+        <div class="adm-head-actions">
+          <button class="btn btn-yellow f-call" id="add-vehicle"><span class="plus">+</span>Fahrzeug anlegen</button>
+        </div>
+      </header>
+      <div class="adm-toolbar">
+        <label class="stock-search"><svg><use href="assets/img/icons.svg#i-search"/></svg><input type="search" id="v-search" placeholder="Suchen …"></label>
+        <select id="v-filter"><option value="">Alle Kategorien</option><option>LKW</option><option>Baumaschine</option><option>Industrie</option></select>
+      </div>
+      <div class="adm-table-wrap">
+        <table class="adm-table">
+          <thead><tr><th></th><th>Fahrzeug</th><th>Kategorie</th><th>EZ</th><th>km / Bh</th><th>Preis netto</th><th>Status</th><th></th></tr></thead>
+          <tbody id="v-rows"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ANFRAGEN -->
+    <section class="adm-view" id="view-anfragen">
+      <header class="adm-head"><div><h1>Anfragen</h1><p>Ankauf- und Kontaktanfragen von der Website</p></div></header>
+      <div class="req-list" id="req-list"></div>
+    </section>
+
+    <!-- TEAM -->
+    <section class="adm-view" id="view-team">
+      <header class="adm-head">
+        <div><h1>Team</h1><p>Mitarbeiter auf der Website pflegen</p></div>
+        <div class="adm-head-actions"><button class="btn btn-yellow f-call" id="add-member"><span class="plus">+</span>Person hinzufügen</button></div>
+      </header>
+      <div class="team-admin" id="t-list"></div>
+    </section>
+    <!-- WEBSITE -->
+    <section class="adm-view" id="view-website">
+      <header class="adm-head">
+        <div><h1>Website</h1><p>Bilder, Video und Texte der Startseite austauschen</p></div>
+        <div class="adm-head-actions"><a class="btn btn-yellow f-call" href="index.html?vorschau=1" target="_blank" rel="noopener"><svg><use href="assets/img/icons.svg#i-globe"/></svg>Vorschau ansehen</a></div>
+      </header>
+      <div class="site-grid">
+        <div class="site-card">
+          <h2>Bilder &amp; Video</h2>
+          <div id="site-media"></div>
+        </div>
+        <form class="site-card form" id="site-texts">
+          <h2>Texte</h2>
+          <div id="site-fields"></div>
+          <div class="site-actions"><button type="submit" class="btn btn-yellow">Texte speichern</button><button type="button" class="btn btn-ghost-dark" id="site-reset">Original wiederherstellen</button></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Fahrzeug-Formular -->
+  <dialog class="adm-dialog" id="v-dialog">
+    <form method="dialog" class="form" id="v-form">
+      <header><h2 id="v-title">Fahrzeug anlegen</h2><button type="button" class="x js-close" aria-label="Schließen">×</button></header>
+      <div class="dlg-body">
+        <div class="row">
+          <label>Kategorie<select name="kategorie"><option>LKW</option><option>Baumaschine</option><option value="Industrie">Industrieanlage</option></select></label>
+          <label>Aufbau / Art<input name="typ" placeholder="z. B. Sattelzugmaschine, Radlader"></label>
+        </div>
+        <div class="row">
+          <label>Hersteller<input name="hersteller" required placeholder="z. B. MAN"></label>
+          <label>Modell<input name="modell" placeholder="z. B. TGS 26.400"></label>
+        </div>
+        <label><span>Titel auf der Website <em class="opt">(optional, sonst Hersteller + Modell)</em></span><input name="titel"></label>
+        <div class="row">
+          <label>Erstzulassung<input name="ez" type="month"></label>
+          <label>Leistung (PS)<input name="ps" type="number" min="0"></label>
+        </div>
+        <div class="row">
+          <label>Kilometer<input name="km" type="number" min="0"></label>
+          <label>Betriebsstunden<input name="stunden" type="number" min="0"></label>
+        </div>
+        <div class="row">
+          <label>Getriebe<select name="getriebe"><option value="">–</option><option>Automatik</option><option>Schaltgetriebe</option></select></label>
+          <label><span>Preis netto (€) <em class="opt">(leer = auf Anfrage)</em></span><input name="preis_netto" type="number" min="0" step="100"></label>
+        </div>
+        <label>Kurzbeschreibung<textarea name="text" rows="3"></textarea></label>
+        <div class="row">
+          <label>Status<select name="status"><option value="aktiv">Aktiv (sichtbar)</option><option value="reserviert">Reserviert</option><option value="verkauft">Verkauft (ausgeblendet)</option></select></label>
+          <span></span>
+        </div>
+        <div class="upload">
+          <span class="up-label">Fotos <em class="opt">(das erste ist das Titelbild)</em></span>
+          <label class="dropzone"><input type="file" id="v-photos" accept="image/*" multiple><svg><use href="assets/img/icons.svg#i-doc"/></svg><strong>Fotos hier ablegen oder <u>auswählen</u></strong><small>Am Handy direkt mit der Kamera</small></label>
+          <div class="thumbs" id="v-thumbs"></div>
+        </div>
+      </div>
+      <footer><button type="button" class="btn btn-ghost-dark js-close">Abbrechen</button><button type="submit" class="btn btn-yellow" value="save">Speichern</button></footer>
+    </form>
+  </dialog>
+
+  <!-- Team-Formular -->
+  <dialog class="adm-dialog small" id="t-dialog">
+    <form method="dialog" class="form" id="t-form">
+      <header><h2 id="t-title">Person bearbeiten</h2><button type="button" class="x js-close" aria-label="Schließen">×</button></header>
+      <div class="dlg-body">
+        <label>Name<input name="name" required></label>
+        <label>Rolle<input name="rolle"></label>
+        <label>Bereich<input name="gruppe" list="t-groups"></label>
+        <datalist id="t-groups"></datalist>
+        <div class="row"><label>E-Mail<input name="email" type="email"></label><label>Telefon<input name="telefon" type="tel"></label></div>
+        <div class="upload"><span class="up-label">Foto</span><label class="dropzone"><input type="file" id="t-photo" accept="image/*"><strong>Foto <u>auswählen</u></strong></label><div class="thumbs" id="t-thumb"></div></div>
+      </div>
+      <footer><button type="button" class="btn btn-ghost-dark js-close">Abbrechen</button><button type="submit" class="btn btn-yellow" value="save">Speichern</button></footer>
+    </form>
+  </dialog>
+
+  <div class="adm-toast" id="toast" role="status"></div>
+  <script src="assets/js/site-content.js"></script>
+  <script src="assets/js/admin.js"></script>
+</body>
+</html>

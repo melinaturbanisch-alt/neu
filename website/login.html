@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Mitarbeiter-Login | SANISA</title>
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon.png">
+  <!-- Vor dem Livegang Schriften lokal einbinden (DSGVO) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=Chonburi&family=Roboto:wght@400;500&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body class="login-page">
+  <div class="login-split">
+    <div class="login-visual" style="background-image:url('assets/img/hero-2.jpg')">
+      <div>
+        <img src="assets/img/logo-hell.svg" alt="SANISA Baumaschinen Handel" class="lv-logo">
+        <p class="lv-text">Interner Bereich für das SANISA-Team: Fahrzeuge pflegen, Anfragen bearbeiten, Team aktualisieren.</p>
+      </div>
+    </div>
+    <div class="login-side">
+      <form class="login-card" id="login-form" novalidate>
+        <p class="about-kicker">Intern</p>
+        <h1>Mitarbeiter-Login</h1>
+        <label>E-Mail oder Benutzername<input name="user" autocomplete="username" required></label>
+        <label>Passwort<input name="pass" type="password" autocomplete="current-password" required></label>
+        <button class="btn btn-yellow" type="submit">Anmelden</button>
+        <p class="form-msg" id="login-msg" role="status"></p>
+        <div class="demo-note"><svg><use href="assets/img/icons.svg#i-lock"/></svg><span><b>Vorschau-Version</b> Zum Ausprobieren: Benutzer <code>demo</code>, Passwort <code>demo</code>. Eigene, sichere Zugänge für jeden Mitarbeiter folgen mit dem Firmen-Hosting.</span></div>
+      </form>
+      <a href="index.html" class="login-back">← Zurück zur Website</a>
+    </div>
+  </div>
+  <script>
+    document.getElementById("login-form").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const f = e.target, msg = document.getElementById("login-msg");
+      if (f.user.value.trim().toLowerCase() === "demo" && f.pass.value === "demo") {
+        try { sessionStorage.setItem("sanisa-demo-login", "1"); } catch {}
+        location.href = "admin.html";
+      } else {
+        msg.className = "form-msg err";
+        msg.textContent = "Benutzername oder Passwort falsch.";
+      }
+    });
+  </script>
+</body>
+</html>
