@@ -186,6 +186,34 @@ def designs():
         f = mk()
         f.logo(logo, f.W / 2, f.strip_y + f.bottom / 2, h)
         out[key] = (f, strip, lines)
+    # ---------- E: LKW-Design, Logo + klare englische Leistungsbeschreibung ----------
+    L1 = "TRUCKS & CONSTRUCTION MACHINERY"
+    L2 = "SALES  ·  EXPORT  ·  WORLDWIDE"
+
+    def logo_and_text(f, logo, c1, c2, lh, cap1, cap2, gap=10):
+        cy = f.strip_y + f.bottom / 2
+        ar, _ = img(logo)
+        _, w1 = text_path("Inter-Bold.otf", L1, cap1, 0.06)
+        _, w2 = text_path("Inter-SemiBold.otf", L2, cap2, 0.16)
+        total = lh * ar + gap + 0.8 + gap + max(w1, w2)
+        x = f.W / 2 - total / 2
+        f.logo(logo, x, cy, lh, anchor="start")
+        x += lh * ar + gap
+        f.el.append(f'<rect x="{x:.2f}" y="{cy - lh / 2:.2f}" width="0.8" height="{lh:.2f}" fill="{c2}"/>')
+        x += 0.8 + gap
+        f.text(L1, x, cy - 1.6, cap1, c1, font="Inter-Bold.otf", track=0.06)
+        f.text(L2, x, cy + 1.6 + cap2, cap2, c2, font="Inter-SemiBold.otf", track=0.16)
+
+    f = A30(); logo_and_text(f, "group_nur-logo_hell", WHITE, YELLOW, 20, 5.2, 4.2)
+    out["E1_520x110_trucks_english"] = (f, BLACK, 1)
+    f = A30(); logo_and_text(f, "group_nur-logo_dunkel", DARK, DARK, 20, 5.2, 4.2)
+    out["E2_520x110_trucks_english_yellow"] = (f, YELLOW, 1)
+
+    f = Frame(340, 200, side=8, top=8, bottom=40, r=7); y = f.strip_y
+    f.logo("group_nur-logo_hell", f.W / 2, y + 12.5, 17)
+    f.text(L1, f.W / 2, y + 28.2, 4.4, WHITE, font="Inter-Bold.otf", track=0.06, anchor="middle")
+    f.text(L2, f.W / 2, y + 35.2, 3.6, YELLOW, font="Inter-SemiBold.otf", track=0.16, anchor="middle")
+    out["E3_340x200_trucks_english"] = (f, BLACK, 2)
     return out
 
 
