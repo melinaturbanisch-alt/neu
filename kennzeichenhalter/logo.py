@@ -50,3 +50,26 @@ for name, (mc, tc) in variants.items():
     full.save(D / f"sanisa_logo_{name}.png")
     compact(full).save(D / f"sanisa_kompakt_{name}.png")
 print("ok")
+
+
+# Buchstaben-Spalten von "SANISA" im Original (px), für eine breiter gesperrte Version
+LETTERS = [(351, 486), (490, 666), (667, 839), (858, 942), (963, 1094), (1097, 1280)]
+
+
+def wide(img, extra=150):
+    """Zeichen + SANISA mit größerem Buchstabenabstand (Buchstaben selbst unverzerrt)."""
+    TEXT_H = 186
+    mark = img.crop((0, 0, 251, H)).resize((round(251 * TEXT_H / H), TEXT_H), Image.LANCZOS)
+    gaps = [b[0] - a[1] for a, b in zip(LETTERS, LETTERS[1:])]
+    width = mark.width + 64 + extra + sum(r - l for l, r in LETTERS) + sum(gaps) + extra * len(gaps)
+    c = Image.new("RGBA", (width, TEXT_H), (0, 0, 0, 0))
+    c.paste(mark, (0, 0))
+    x = mark.width + 64 + extra
+    for i, (l, r) in enumerate(LETTERS):
+        c.paste(img.crop((l, 0, r, TEXT_H)), (x, 0))
+        x += (r - l) + (gaps[i] + extra if i < len(gaps) else 0)
+    return c
+
+
+for name, (mc, tc) in variants.items():
+    wide(render(mc, tc)).save(D / f"sanisa_breit_{name}.png")

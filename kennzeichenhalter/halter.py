@@ -157,6 +157,18 @@ def designs():
         f.text(line, f.W / 2, y + 21.2, 2.9, col_line, track=0.06, anchor="middle")
         f.text(WEB, f.W / 2, y + 26.4, 2.9, col_web, font="Inter-Bold.otf", track=0.16, anchor="middle")
         out[key] = (f, strip, 2)
+    # ---------- Nur Logo, breiter gezogen (ohne Text) ----------
+    f = A(); cy = f.strip_y + f.bottom / 2
+    f.logo("sanisa_breit_hell", f.W / 2, cy, 14)
+    out["A4_520x110_nur-logo"] = (f, BLACK, 1)
+
+    f = A(); cy = f.strip_y + f.bottom / 2
+    f.logo("sanisa_breit_dunkel", f.W / 2, cy, 14)
+    out["A5_520x110_nur-logo_yellow"] = (f, YELLOW, 1)
+
+    f = B(); cy = f.strip_y + f.bottom / 2
+    f.logo("sanisa_breit_hell", f.W / 2, cy, 17)
+    out["B4_340x200_nur-logo"] = (f, BLACK, 2)
     return out
 
 
