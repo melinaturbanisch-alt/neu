@@ -44,6 +44,23 @@
 .lp-inklusive li{ list-style: none; position: relative; padding-left: 1.5rem; font-size: 0.95rem; color: var(--cream); }
 .lp-inklusive li::before{ content: "✓"; position: absolute; left: 0; color: var(--copper-400); font-weight: 600; }
 
+.lp-aktion{
+  margin: 1.4rem 0 0;
+  max-width: 40rem;
+  padding: 0.85rem 1.1rem;
+  border: 1px solid var(--copper-500);
+  border-left: 4px solid var(--copper-400);
+  background: rgba(214,157,108,0.08);
+  font-size: 0.95rem;
+  color: var(--cream);
+}
+.lp-aktion strong{ color: var(--copper-300); }
+.lp-abschluss .lp-aktion{ margin: 0 0 1.2rem; }
+.lp-inklusive li strong{ color: var(--copper-300); }
+
+.btn-whatsapp{ background: #25d366; color: #06210f; border: 1px solid #25d366; }
+.btn-whatsapp:hover{ background: #1ebe5b; border-color: #1ebe5b; color: #06210f; }
+
 .lp-intro{ margin: -0.6rem 0 2rem; }
 
 .lp-mockups{ display: grid; grid-template-columns: 2.6fr 1fr; gap: 2rem; align-items: end; }
@@ -133,8 +150,8 @@
 
   .lp-sticky{
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.6rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.5rem;
     position: fixed;
     left: 0; right: 0; bottom: 0;
     z-index: 90;
@@ -142,7 +159,7 @@
     background: rgba(6, 15, 24, 0.95);
     border-top: 1px solid var(--line-strong);
   }
-  .lp-sticky .btn{ justify-content: center; padding: 0.9em 0.6em; letter-spacing: 0.12em; }
+  .lp-sticky .btn{ justify-content: center; padding: 0.9em 0.3em; letter-spacing: 0.06em; font-size: 0.72rem; }
 
   .lp-actions .btn{ width: 100%; justify-content: center; text-align: center; white-space: normal; letter-spacing: 0.14em; }
   .lp-fakten li{ min-width: 0; padding: 0.8rem 0.7rem; }

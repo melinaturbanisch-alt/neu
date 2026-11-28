@@ -69,9 +69,9 @@ var MELVONA_ADS = {
     if (istDankeSeite()) sendeAnfrageConversion();
   }
 
-  // Klicks auf Telefonnummern als Conversion zählen
+  // Klicks auf Telefonnummer und WhatsApp als Kontakt-Conversion zählen
   document.addEventListener('click', function (ev) {
-    var link = ev.target.closest && ev.target.closest('a[href^="tel:"]');
+    var link = ev.target.closest && ev.target.closest('a[href^="tel:"], a[href*="wa.me/"]');
     if (!link || !geladen) return;
     if (!cfg.labelTelefon || cfg.labelTelefon.indexOf('XXX') !== -1) return; // Label noch nicht eingetragen
     gtag('event', 'conversion', { send_to: cfg.id + '/' + cfg.labelTelefon });
