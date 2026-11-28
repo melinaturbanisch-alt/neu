@@ -169,6 +169,23 @@ def designs():
     f = B(); cy = f.strip_y + f.bottom / 2
     f.logo("sanisa_breit_hell", f.W / 2, cy, 17)
     out["B4_340x200_nur-logo"] = (f, BLACK, 2)
+    # ---------- SANISA GROUP: Logo groß, Original-Abstände, höhere Leiste ----------
+    def A30():
+        return Frame(520, 110, side=8, top=8, bottom=30)
+
+    def B34():
+        return Frame(340, 200, side=8, top=8, bottom=34, r=7)
+
+    for key, mk, logo, strip, h, lines in [
+        ("C1_520x110_group_nur-logo", A30, "group_nur-logo_hell", BLACK, 24, 1),
+        ("C2_520x110_group_logo-group", A30, "group_mit-group_hell", BLACK, 24, 1),
+        ("C3_520x110_group_logo-group_yellow", A30, "group_mit-group_dunkel", YELLOW, 24, 1),
+        ("D1_340x200_group_nur-logo", B34, "group_nur-logo_hell", BLACK, 27, 2),
+        ("D2_340x200_group_logo-group", B34, "group_mit-group_hell", BLACK, 25, 2),
+    ]:
+        f = mk()
+        f.logo(logo, f.W / 2, f.strip_y + f.bottom / 2, h)
+        out[key] = (f, strip, lines)
     return out
 
 
